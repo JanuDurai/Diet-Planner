@@ -1,0 +1,42 @@
+<div class="background">
+  <form action="" [formGroup]="loginDetails" class="card">
+    <label for=""  class="newline">Login</label>
+    <br />
+    <div class="paddingdiv">
+      <div>
+        <input
+          type="text"
+          formControlName="username"
+          class="form-control form-control lg"
+          placeholder="UserName"
+        />
+
+        <div *ngIf="loginDetails.get('username')?.invalid && (this.loginDetails.get('username')?.touched || this.loginDetails.get('username')?.dirty)">
+          <div *ngIf="loginDetails.get('username')?.errors?.['required']" class="invalidError">*Username  required</div>
+        </div>
+
+      </div>
+      <br />  
+      <div>
+        <input
+          type="text"
+          formControlName="password"
+          class="form-control form-control lg"
+          placeholder="Password"    
+        />
+      </div>
+
+      <div *ngIf="loginDetails.get('password')?.invalid && this.loginDetails.get('password')?.touched ">
+        <div *ngIf="loginDetails.get('password')?.errors?.['required']" class="invalidError">*Password required</div>
+      </div>
+     
+      <div *ngIf="loginvalid" class="invalidError">*Invalid UserName or Password</div>    
+
+      <br />
+      <button (click)="checkPassword()">Submit</button>
+
+    </div>
+    <p> New User? <a routerLink= 'register' > Register </a> </p>
+
+  </form>
+</div>
