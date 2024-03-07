@@ -4,11 +4,11 @@ import { RegisterComponent } from './Register/register.component';
 import { HomeComponent } from './Home/home.component';
 import { ProfileComponent } from './Profile/profile.component';
 import { LoginComponent } from './Login/login.component';
-import { loggedInProfileGuard } from './shared/logged-in-profile.guard';
+import { loggedInProfileGuard, loginGuard } from './shared/logged-in-profile.guard';
 
 const routes: Routes = [{path:'', redirectTo:'login', pathMatch:'full'},
 {path:"home", component:HomeComponent,canActivate:[loggedInProfileGuard]},
-{path:'login', component:LoginComponent},
+{path:'login', component:LoginComponent,canActivate:[loginGuard]},
 {path:"login", children:[{path:'register', component:RegisterComponent}]},
 {path:'register',component:RegisterComponent,canActivate:[loggedInProfileGuard]},
 {path:"profile",component:ProfileComponent,canActivate:[loggedInProfileGuard]},

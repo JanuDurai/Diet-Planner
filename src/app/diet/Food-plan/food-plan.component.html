@@ -1,15 +1,59 @@
 <div class="background">
 
+  <label for="" class="head">Today's Meal Plan</label>
+
+    <div class="container" id="divcontainer">
+     <div class="row" >
+      <div class="col-sm w-30">
+        <img [src]="foodData.breakfast.foodData.img" alt="" >
+        <h2>Breakfast</h2>
+        <p class="food">{{foodData.breakfast.foodData.food}}</p>
+        <p class="quantity">{{foodData.breakfast.itemquantity}}{{foodData.breakfast.foodData.foodunit}}</p>
+        <div *ngFor="let item of foodData.breakfast.foodData.sidedish" class="food">{{item}}</div>
+        <p class="quantity">{{foodData.breakfast.sidedishquantity}}{{foodData.breakfast.foodData.sidedishunit}}</p>
+    </div>
+
+    <div class="col-sm  w-30">
+      <img [src]="foodData.lunch.foodData.img" alt="" >
+      <h2>Lunch</h2>
+      <p class="food">{{foodData.lunch.foodData.food}}</p>
+      <p class="quantity">{{foodData.lunch.itemquantity}}{{foodData.lunch.foodData.foodunit}}</p>
+      <div *ngFor="let item of foodData.lunch.foodData.sidedish" class="food">{{item}}</div>
+      <p class="quantity">{{foodData.lunch.sidedishquantity}}{{foodData.lunch.foodData.sidedishunit}}</p>
+    </div>
+   
+   <div class="col-sm  w-30">
+    <img [src]="foodData.dinner.foodData.img" alt="" >
+    <h2>Dinner</h2>
+    <p class="food">{{foodData.dinner.foodData.food}}</p>
+    <p class="quantity">{{foodData.dinner.itemquantity}}{{foodData.dinner.foodData.foodunit}}</p>
+    <div *ngFor="let item of foodData.dinner.foodData.sidedish" class="food">{{item}}</div>
+    <p class="quantity">{{foodData.dinner.sidedishquantity}}{{foodData.dinner.foodData.sidedishunit}}</p>
+ </div>
+
+     </div>
+
+    </div>
 
 
 
-  <div></div>
+  </div> 
+
+      
+    
+    <!-- </div> -->
+   <!-- <p style="color: blue;">{{foodData.breakfast.foodData.calorie}}</p>
+   <p>{{foodData.breakfast.sidedishquantity}}</p> -->
+
+         
+   
+
+
+  
+  <!--</div> -->
 
 
 
-
-
-</div>
 
 
 <!-- <div class ="color-style"   *ngFor="let item of object | keyvalue ">

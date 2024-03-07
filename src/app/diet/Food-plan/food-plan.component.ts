@@ -4,6 +4,7 @@ import { DietService } from 'src/app/services/diet.service';
 import { UserService } from 'src/app/services/user.service';
 import { map } from 'rxjs';
 
+
 @Component({
   selector: 'app-food-plan',
   templateUrl: './food-plan.component.html',
@@ -15,10 +16,10 @@ export class FoodPlanComponent implements OnInit {
   userDetail: any;
 
   // object={ firstee:{name:"first"}, secondee:{dept:"second"}}
-  object = {
-    first: { name: 'janu', dept: 'eee', marks: { pmp: 500, dns: 900 } },
-    second: { name: 'vinu', dept: 'cse', marks: { pmp: 500, dns: 900 } },
-  };
+  // object = {
+  //   first: { name: 'janu', dept: 'eee', marks: { pmp: 500, dns: 900 } },
+  //   second: { name: 'vinu', dept: 'cse', marks: { pmp: 500, dns: 900 } },
+  // };
 
   Data = {
     breakfast: {
@@ -93,3 +94,12 @@ export class FoodPlanComponent implements OnInit {
     //  );
   }
 }
+
+
+//img 
+//food name
+//sidedishname
+//foodquantity
+//sidedishquantity
+//foodunit
+//sidedishunit

@@ -157,7 +157,7 @@
       "sidedishquantity": 50,
       "sidedishunit": "g",
       "calorie": 123,
-      "img": "/assets/background.jpg",
+      "img": "/assets/idly.jpeg",
       "id": "6a81"
     },
     {
@@ -176,7 +176,7 @@
       "sidedishquantity": 200,
       "sidedishunit": "g",
       "calorie": 310,
-      "img": "/assets/background.jpg",
+      "img": "/assets/whiterice.jpeg",
       "id": "72d0"
     },
     {
@@ -193,7 +193,7 @@
       "sidedishquantity": 50,
       "sidedishunit": "g",
       "calorie": 150,
-      "img": "/assets/background.jpg",
+      "img": "/assets/chapathi.jpg",
       "id": "ad1c"
     },
     {
@@ -210,7 +210,7 @@
       "sidedishquantity": 1,
       "sidedishunit": "piece",
       "calorie": 279,
-      "img": "/assets/background.jpg",
+      "img": "/assets/upma.jpg",
       "id": "06a3"
     },
     {
@@ -227,7 +227,7 @@
       "sidedishquantity": 100,
       "sidedishunit": "g",
       "calorie": 408,
-      "img": "/assets/background.jpg",
+      "img": "/assets/pulao.jpg",
       "id": "4e48"
     },
     {
@@ -245,7 +245,7 @@
       "sidedishquantity": 50,
       "sidedishunit": "g",
       "calorie": 145,
-      "img": "/assets/background.jpg",
+      "img": "/assets/dosa.jpg",
       "id": "9c87"
     },
     {
@@ -256,11 +256,11 @@
       "food": "Millet Upma",
       "quantity": 100,
       "foodunit": "g",
-      "sidedish": "Coconut Chutney",
+      "sidedish": ["Coconut Chutney"],
       "sidedishquantity": 10,
       "sidedishunit": "g",
       "calorie": 116,
-      "img": "/assets/background.jpg",
+      "img": "/assets/upma.jpg",
       "id": "b575"
     },
     {
@@ -279,7 +279,7 @@
       "sidedishquantity": 100,
       "sidedishunit": "g",
       "calorie": 546,
-      "img": "/assets/background.jpg",
+      "img": "/assets/whiterice.jpeg",
       "id": "b90d"
     },
     {
@@ -296,7 +296,7 @@
       "sidedishquantity": 15,
       "sidedishunit": "g",
       "calorie": 150,
-      "img": "/assets/background.jpg",
+      "img": "/assets/kitchadi.jpg",
       "id": "8ce6"
     },
     {
@@ -313,7 +313,7 @@
       "sidedishquantity": 200,
       "sidedishunit": "g",
       "calorie": 288,
-      "img": "/assets/background.jpg",
+      "img": "/assets/whiterice.jpeg",
       "id": "41cc"
     },
     {
@@ -330,7 +330,7 @@
       "sidedishquantity": 1,
       "sidedishunit": "piece",
       "calorie": 174,
-      "img": "/assets/background.jpg",
+      "img": "/assets/poha.jpg",
       "id": "f5f5"
     },
     {
@@ -347,7 +347,7 @@
       "sidedishquantity": 100,
       "sidedishunit": "g",
       "calorie": 264,
-      "img": "/assets/background.jpg",
+      "img": "/assets/whiterice.jpeg",
       "id": "fb3b"
     },
     {
@@ -364,7 +364,7 @@
       "sidedishquantity": 80,
       "sidedishunit": "ml",
       "calorie": 136,
-      "img": "/assets/background.jpg",
+      "img": "/assets/Appam.jpg",
       "id": "80ef"
     },
     {
@@ -381,7 +381,7 @@
       "sidedishquantity": 50,
       "sidedishunit": "g",
       "calorie": 259,
-      "img": "/assets/background.jpg",
+      "img": "/assets/whiterice.jpeg",
       "id": "ac3f"
     },
     {
@@ -398,7 +398,7 @@
       "sidedishquantity": 50,
       "sidedishunit": "g",
       "calorie": 114,
-      "img": "/assets/background.jpg",
+      "img": "/assets/chapathi.jpg",
       "id": "410c"
     },
     {
@@ -416,7 +416,7 @@
       "sidedishquantity": 70,
       "sidedishunit": "g",
       "calorie": 448,
-      "img": "/assets/background.jpg",
+      "img": "/assets/pongal.jpg",
       "id": "4fe1"
     },
     {
@@ -432,7 +432,7 @@
       "sidedishquantity": 100,
       "sidedishunit": "g",
       "calorie": 582,
-      "img": "/assets/background.jpg",
+      "img": "/assets/biriyani.jpg",
       "id": "5e5c"
     },
     {
@@ -449,7 +449,7 @@
       "sidedishquantity": 240,
       "sidedishunit": "ml",
       "calorie": 165,
-      "img": "/assets/background.jpg",
+      "img": "/assets/noodles.webp",
       "id": "5e98"
     },
     {
@@ -466,7 +466,7 @@
       "sidedishquantity": 10,
       "sidedishunit": "g",
       "calorie": 156,
-      "img": "/assets/background.jpg",
+      "img": "/assets/dosa.jpg",
       "id": "031e"
     },
     {
@@ -483,7 +483,7 @@
       "sidedishquantity": 150,
       "sidedishunit": "g",
       "calorie": 345,
-      "img": "/assets/background.jpg",
+      "img": "/assets/whiterice.jpeg",
       "id": "5fe4"
     },
     {
@@ -500,7 +500,7 @@
       "sidedishquantity": 50,
       "sidedishunit": "g",
       "calorie": 167,
-      "img": "/assets/background.jpg",
+      "img": "/assets/poori.jpeg",
       "id": "e56b"
     },
     {
@@ -516,7 +516,7 @@
       "sidedishquantity": 100,
       "sidedishunit": "g",
       "calorie": 239,
-      "img": "/assets/background.jpg",
+      "img": "/assets/whiterice.jpeg",
       "id": "637c"
     },
     {
@@ -533,7 +533,7 @@
       "sidedishquantity": 1,
       "sidedishunit": "piece",
       "calorie": 190,
-      "img": "/assets/background.jpg",
+      "img": "/assets/vermi.jpeg",
       "id": "bac4"
     },
     {
@@ -551,7 +551,7 @@
       "sidedishquantity": 50,
       "sidedishunit": "g",
       "calorie": 175,
-      "img": "/assets/background.jpg",
+      "img": "/assets/uthapam.jpg",
       "id": "98f8"
     },
     {
@@ -568,6 +568,7 @@
       "sidedishquantity": 75,
       "sidedishunit": "g",
       "calorie": 141,
+      "img": "/assets/chapathi.jpg",
       "id": "bf07"
     },
     {
@@ -583,6 +584,7 @@
       "sidedishquantity": 150,
       "sidedishunit": "g",
       "calorie": 252,
+      "img": "/assets/whiterice.jpeg",
       "id": "6263"
     }
   ]
