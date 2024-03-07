@@ -1,0 +1,589 @@
+{
+  "user": [
+    {
+      "userfirstname": "Sumeka",
+      "userlastname": "Arasakumar",
+      "userage": 38,
+      "usergender": "Female",
+      "userheight": 172,
+      "userweight": 79,
+      "usertargetweight": 0.25,
+      "userchoice": "Weight Loss",
+      "userusername": "Sumeka",
+      "userpassword": "Sumeka",
+      "userconfirmpassword": "Sume123",
+      "id": "f630"
+    },
+    {
+      "id": "bbcc",
+      "userfirstname": "Vinu",
+      "userlastname": "Dharshini",
+      "userage": 24,
+      "usergender": "Male",
+      "userheight": 175,
+      "userweight": 35,
+      "usertargetweight": 1,
+      "userchoice": "Weight Gain",
+      "userusername": "Vinu",
+      "userpassword": "Vinu123",
+      "userconfirmpassword": "Vinu123"
+    },
+    {
+      "id": "95be",
+      "userfirstname": "Vasu",
+      "userlastname": "Subburaj",
+      "userage": 40,
+      "usergender": "Male",
+      "userheight": 180,
+      "userweight": 90,
+      "usertargetweight": 1,
+      "userchoice": "Weight Loss",
+      "userusername": "Vasu",
+      "userpassword": "Vasi123",
+      "userconfirmpassword": "Vasu123"
+    },
+    {
+      "id": "ee06",
+      "userfirstname": "Janu",
+      "userlastname": "Shree",
+      "userage": 19,
+      "usergender": "Female",
+      "userheight": 150,
+      "userweight": 54,
+      "usertargetweight": 0,
+      "userchoice": "Weight Loss",
+      "userusername": "Janu",
+      "userpassword": "Janu@123",
+      "userconfirmpassword": "Janu@123"
+    },
+    {
+      "id": "4a23",
+      "userfirstname": "fghj",
+      "userlastname": "cv",
+      "userage": 33,
+      "usergender": "Male",
+      "userheight": 32,
+      "userweight": 34,
+      "usertargetweight": 1,
+      "userchoice": "Weight Gain",
+      "userusername": "vbnm",
+      "userpassword": "12",
+      "userconfirmpassword": "12"
+    },
+    {
+      "id": "bef1",
+      "userfirstname": "fghj",
+      "userlastname": "cv",
+      "userage": 33,
+      "usergender": "Male",
+      "userheight": 32,
+      "userweight": 34,
+      "usertargetweight": 1,
+      "userchoice": "Weight Gain",
+      "userusername": "vbnm",
+      "userpassword": "12",
+      "userconfirmpassword": "1"
+    },
+    {
+      "id": "2f75",
+      "userfirstname": "",
+      "userlastname": "",
+      "userage": "",
+      "usergender": "",
+      "userheight": "",
+      "userweight": "",
+      "usertargetweight": "",
+      "userchoice": "",
+      "userusername": "",
+      "userpassword": "12",
+      "userconfirmpassword": "12"
+    },
+    {
+      "id": "7aef",
+      "userfirstname": "",
+      "userlastname": "",
+      "userage": "",
+      "usergender": "",
+      "userheight": "",
+      "userweight": "",
+      "usertargetweight": "",
+      "userchoice": "",
+      "userusername": "",
+      "userpassword": "123",
+      "userconfirmpassword": "1233"
+    },
+    {
+      "id": "2ef0",
+      "userfirstname": "",
+      "userlastname": "",
+      "userage": "",
+      "usergender": "",
+      "userheight": "",
+      "userweight": "",
+      "usertargetweight": "",
+      "userchoice": "",
+      "userusername": "",
+      "userpassword": "",
+      "userconfirmpassword": ""
+    },
+    {
+      "id": "ce1d",
+      "userfirstname": "danjghj",
+      "userlastname": "dhhjkvbn",
+      "userage": 32,
+      "usergender": "Male",
+      "userheight": 100,
+      "userweight": 56,
+      "usertargetweight": 0.75,
+      "userchoice": "Weight Gain",
+      "userusername": "cxvbi",
+      "userpassword": "12345678",
+      "userconfirmpassword": "12345678"
+    }
+  ],
+  "diet": [
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Idly",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Sambar",
+        "Coconut Chutney"
+      ],
+      "sidedishquantity": 50,
+      "sidedishunit": "g",
+      "calorie": 123,
+      "img": "/assets/background.jpg",
+      "id": "6a81"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "White Rice",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Dal",
+        "Rasam",
+        "Curd",
+        "Beetroot"
+      ],
+      "sidedishquantity": 200,
+      "sidedishunit": "g",
+      "calorie": 310,
+      "img": "/assets/background.jpg",
+      "id": "72d0"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Chappathi",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Channa Masala"
+      ],
+      "sidedishquantity": 50,
+      "sidedishunit": "g",
+      "calorie": 150,
+      "img": "/assets/background.jpg",
+      "id": "ad1c"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Upma",
+      "foodunit": "g",
+      "quantity": 100,
+      "sidedish": [
+        "Banana"
+      ],
+      "sidedishquantity": 1,
+      "sidedishunit": "piece",
+      "calorie": 279,
+      "img": "/assets/background.jpg",
+      "id": "06a3"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "Vegetable Pulao",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Raita",
+        "Egg"
+      ],
+      "sidedishquantity": 100,
+      "sidedishunit": "g",
+      "calorie": 408,
+      "img": "/assets/background.jpg",
+      "id": "4e48"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Dosa",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Sambar",
+        "Coconut Chutney"
+      ],
+      "sidedishquantity": 50,
+      "sidedishunit": "g",
+      "calorie": 145,
+      "img": "/assets/background.jpg",
+      "id": "9c87"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Millet Upma",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": "Coconut Chutney",
+      "sidedishquantity": 10,
+      "sidedishunit": "g",
+      "calorie": 116,
+      "img": "/assets/background.jpg",
+      "id": "b575"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "White rice",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Moong dal",
+        "Rasam",
+        "Curd",
+        "Broccoli"
+      ],
+      "sidedishquantity": 100,
+      "sidedishunit": "g",
+      "calorie": 546,
+      "img": "/assets/background.jpg",
+      "id": "b90d"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Kichadi",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Coconut Chutney"
+      ],
+      "sidedishquantity": 15,
+      "sidedishunit": "g",
+      "calorie": 150,
+      "img": "/assets/background.jpg",
+      "id": "8ce6"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "White Rice",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Chicken Gravy",
+        "Rasam"
+      ],
+      "sidedishquantity": 200,
+      "sidedishunit": "g",
+      "calorie": 288,
+      "img": "/assets/background.jpg",
+      "id": "41cc"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Poha",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Banana"
+      ],
+      "sidedishquantity": 1,
+      "sidedishunit": "piece",
+      "calorie": 174,
+      "img": "/assets/background.jpg",
+      "id": "f5f5"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "White rice",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Mushroom gravy",
+        "Rasam"
+      ],
+      "sidedishquantity": 100,
+      "sidedishunit": "g",
+      "calorie": 264,
+      "img": "/assets/background.jpg",
+      "id": "fb3b"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Appam",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Coconut Milk"
+      ],
+      "sidedishquantity": 80,
+      "sidedishunit": "ml",
+      "calorie": 136,
+      "img": "/assets/background.jpg",
+      "id": "80ef"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "White Rice",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Panneer Gravy",
+        "Rasam"
+      ],
+      "sidedishquantity": 50,
+      "sidedishunit": "g",
+      "calorie": 259,
+      "img": "/assets/background.jpg",
+      "id": "ac3f"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Chappathi",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Stuffed vegetables"
+      ],
+      "sidedishquantity": 50,
+      "sidedishunit": "g",
+      "calorie": 114,
+      "img": "/assets/background.jpg",
+      "id": "410c"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Pongal",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Sambar",
+        "Vada"
+      ],
+      "sidedishquantity": 70,
+      "sidedishunit": "g",
+      "calorie": 448,
+      "img": "/assets/background.jpg",
+      "id": "4fe1"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "Mutton Biriyani",
+      "quantity": 200,
+      "foodunit": "g",
+      "sidedish": [
+        "Pepper chicken"
+      ],
+      "sidedishquantity": 100,
+      "sidedishunit": "g",
+      "calorie": 582,
+      "img": "/assets/background.jpg",
+      "id": "5e5c"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Wheat Noodles",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Tender Coconut Water"
+      ],
+      "sidedishquantity": 240,
+      "sidedishunit": "ml",
+      "calorie": 165,
+      "img": "/assets/background.jpg",
+      "id": "5e98"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Ragi Dosa",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Brown Sugar"
+      ],
+      "sidedishquantity": 10,
+      "sidedishunit": "g",
+      "calorie": 156,
+      "img": "/assets/background.jpg",
+      "id": "031e"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "White Rice",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Fish Curry",
+        "Rasam"
+      ],
+      "sidedishquantity": 150,
+      "sidedishunit": "g",
+      "calorie": 345,
+      "img": "/assets/background.jpg",
+      "id": "5fe4"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Poori",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Potato Masala"
+      ],
+      "sidedishquantity": 50,
+      "sidedishunit": "g",
+      "calorie": 167,
+      "img": "/assets/background.jpg",
+      "id": "e56b"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "White Rice",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Chickpeas Gravy"
+      ],
+      "sidedishquantity": 100,
+      "sidedishunit": "g",
+      "calorie": 239,
+      "img": "/assets/background.jpg",
+      "id": "637c"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Vermicelli",
+      "quantity": 70,
+      "foodunit": "g",
+      "sidedish": [
+        "Banana"
+      ],
+      "sidedishquantity": 1,
+      "sidedishunit": "piece",
+      "calorie": 190,
+      "img": "/assets/background.jpg",
+      "id": "bac4"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Uthappam",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Sambar",
+        "Mint Chutney"
+      ],
+      "sidedishquantity": 50,
+      "sidedishunit": "g",
+      "calorie": 175,
+      "img": "/assets/background.jpg",
+      "id": "98f8"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Chappathi",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Pepper Chicken"
+      ],
+      "sidedishquantity": 75,
+      "sidedishunit": "g",
+      "calorie": 141,
+      "id": "bf07"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "White rice",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "Chicken Chukka"
+      ],
+      "sidedishquantity": 150,
+      "sidedishunit": "g",
+      "calorie": 252,
+      "id": "6263"
+    }
+  ]
+}
