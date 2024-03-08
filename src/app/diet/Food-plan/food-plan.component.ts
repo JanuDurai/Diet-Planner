@@ -90,26 +90,20 @@ export class FoodPlanComponent implements OnInit {
             {
               "catogory": 'BREAKFAST',
               "img": this.foodData.breakfast.foodData.img,
-              "food": this.foodData.breakfast.foodData.food,
-              "foodQuantity":[this.foodData.breakfast.itemquantity, this.foodData.breakfast.foodData.foodunit].join(''),
-              "sidedish" :this.foodData.breakfast.foodData.sidedish,
-              "sidedishQuantity":[this.foodData.breakfast.sidedishquantity,this.foodData.breakfast.foodData.sidedishunit].join('')
+              "food": [this.foodData.breakfast.foodData.food,[this.foodData.breakfast.itemquantity, this.foodData.breakfast.foodData.foodunit].join('')].join(' - '),
+              "sidedish" :[this.foodData.breakfast.foodData.sidedish,[this.foodData.breakfast.sidedishquantity,this.foodData.breakfast.foodData.sidedishunit].join('')].join(' - ')
             },
             {
               "catogory": 'LUNCH',
               "img": this.foodData.lunch.foodData.img,
-              "food": this.foodData.lunch.foodData.food,
-              "foodQuantity":[this.foodData.lunch.itemquantity, this.foodData.lunch.foodData.foodunit].join(''),
-              "sidedish" :this.foodData.lunch.foodData.sidedish,
-              "sidedishQuantity":[this.foodData.lunch.sidedishquantity,this.foodData.lunch.foodData.sidedishunit].join('')
+              "food": [this.foodData.lunch.foodData.food,[this.foodData.lunch.itemquantity, this.foodData.lunch.foodData.foodunit].join('')].join(' - '),
+              "sidedish" :[this.foodData.lunch.foodData.sidedish,[this.foodData.lunch.sidedishquantity,this.foodData.lunch.foodData.sidedishunit].join('')].join(' - ')
             },
             {
               "catogory": 'DINNER',
               "img": this.foodData.dinner.foodData.img,
-              "food": this.foodData.dinner.foodData.food,
-              "foodQuantity":[this.foodData.dinner.itemquantity, this.foodData.dinner.foodData.foodunit].join(''),
-              "sidedish" :this.foodData.dinner.foodData.sidedish,
-              "sidedishQuantity":[this.foodData.dinner.sidedishquantity,this.foodData.dinner.foodData.sidedishunit].join('')
+              "food": [this.foodData.dinner.foodData.food,[this.foodData.dinner.itemquantity, this.foodData.dinner.foodData.foodunit].join('')].join(' - '),
+              "sidedish" :[this.foodData.dinner.foodData.sidedish,[this.foodData.dinner.sidedishquantity,this.foodData.dinner.foodData.sidedishunit].join('')].join(' - ')
             }
           ];
           console.log(this.foodDataArray);
