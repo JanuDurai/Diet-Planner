@@ -30,6 +30,8 @@
         <div *ngIf="loginDetails.get('password')?.errors?.['required']" class="invalidError">*Password required</div>
       </div>
      
+ <!-- TODO: shouls not display error msg when user enters value for the second time -->
+
       <div *ngIf="loginvalid" class="invalidError">*Invalid UserName or Password</div>    
 
       <br />

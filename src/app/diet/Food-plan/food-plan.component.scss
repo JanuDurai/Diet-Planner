@@ -5,10 +5,6 @@
   height: 98vh;
   background-attachment: fixed;
 }
-.color-style {
-  color: black;
-  font-weight: bold;
-}
 
 img {
   width: 400px;
@@ -16,28 +12,26 @@ img {
 }
 
 #divcontainer {
-   border-radius: 6px;
-   background-color:transparent;
-   backdrop-filter: brightness(60%);
-   padding: 10px 10px;
-   margin: 100px 350px;
+  border-radius: 6px;
+  background-color: transparent;
+  backdrop-filter: brightness(60%);
+  padding: 10px 10px;
+  margin: 100px 350px;
 }
 
-.head{
-   font-size:xx-large;
-   display: block;
-   color:white;
-   font-weight: bolder;
-   height:70px;
-   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   border-radius: 4px;
-   padding: 25px 100px;
-   text-align: center;
+.head {
+  font-size: xx-large;
+  display: block;
+  color: white;
+  font-weight: bolder;
+  height: 70px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 4px;
+  padding: 25px 100px;
+  text-align: center;
 }
 
-
-p{
-  color:white;
+#para {
+  color: white;
   font-size: larger;
-  
 }

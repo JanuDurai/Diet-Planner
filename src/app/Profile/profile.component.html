@@ -1,80 +1,109 @@
 <div class="background">
-    <label for="" class="newline">User Details </label>
+  <label for="" class="newline">User Details </label>
   <form action="" [formGroup]="Data">
+    <div class="row">
+      <label for="" class="col"> First Name </label>
+      <input
+        type="text"
+        formControlName="userfirstname"
+        class="form-control form-control-lg border border-white col"
+      />
+    </div>
+    <br />
+    <div class="row">
+      <label for="" class="col"> Last Name </label>
+      <input
+        type="text"
+        formControlName="userlastname"
+        class="form-control form-control-lg border border-white col"
+      />
+    </div>
+    <br />
 
-     <div class="row">
-        <label for="" class="col"> First Name </label>
-        <input type="text" formControlName="userfirstname" class="form-control form-control-lg border border-white col">
-       </div>
-    <br>
-       <div class="row">
-        <label for="" class="col"> Last Name </label>
-            <input type="text" formControlName="userlastname" class="form-control form-control-lg border border-white col">
-       </div>
-    <br>
+    <div class="row">
+      <label for="" class="col"> Age </label>
+      <input
+        type="number"
+        formControlName="userage"
+        class="form-control form-control-lg border border-white col"
+      />
+    </div>
+    <br />
 
-    
-       <div class="row">
-        <label for="" class="col"> Age </label>
-        <input type="number" formControlName="userage" class="form-control form-control-lg border border-white col">
-       </div>
-    <br>
+    <div class="row">
+      <label for="" class="col"> Gender </label>
+      <input
+        type="text"
+        formControlName="usergender"
+        class="form-control form-control-lg border border-white col"
+      />
+    </div>
+    <br />
 
+    <div class="row">
+      <label for="" class="col"> Height </label>
+      <input
+        type="number"
+        formControlName="userheight"
+        class="form-control form-control-lg border border-white col"
+      />
+    </div>
+    <br />
 
-       <div class="row">
-        <label for="" class="col"> Gender </label>
-        <input type="text" formControlName="usergender" class="form-control form-control-lg border border-white col">
-       </div>
-    <br>
+    <div class="row">
+      <label for="" class="col"> Weight </label>
+      <input
+        type="number"
+        formControlName="userweight"
+        class="form-control form-control-lg border border-white col"
+      />
+    </div>
+    <br />
 
-    
-       <div class="row">
-        <label for="" class="col"> Height </label>
-        <input type="number" formControlName="userheight" class="form-control form-control-lg border border-white col">
-       </div>
-    <br>
+    <div class="row">
+      <label for="" class="col"> Target Weight </label>
+      <input
+        type="number"
+        formControlName="usertargetweight"
+        class="form-control form-control-lg border border-white col"
+        min="0"
+        max="1"
+      />
+    </div>
+    <br />
 
-    
-       <div class="row">
-        <label for="" class="col"> Weight </label>
-        <input type="number" formControlName="userweight" class="form-control form-control-lg border border-white col">
-       </div>
-    <br>
+    <div class="row">
+      <label for="" class="col"> Preferrence </label>
+      <input
+        type="text"
+        formControlName="userchoice"
+        class="form-control form-control-lg border border-white col"
+      />
+    </div>
+    <br />
 
+    <div class="row">
+      <label for="" class="col"> UserName </label>
+      <input
+        type="text"
+        formControlName="userusername"
+        class="form-control form-control-lg border border-white col"
+      />
+    </div>
+    <br />
 
-       <div class="row">
-        <label for="" class="col"> Target Weight </label>
-        <input type="number" formControlName="usertargetweight" class="form-control form-control-lg border border-white col" min="0" max="1">
-       </div>
-    <br>
-
-
-       <div class="row">
-        <label for="" class="col"> Preferrence </label>
-        <input type="text" formControlName="userchoice" class="form-control form-control-lg border border-white col">
-       </div>
-    <br>
-
-    
-       <div class="row">
-        <label for="" class="col"> UserName </label>
-        <input type="text" formControlName="userusername" class="form-control form-control-lg border border-white col">
-       </div>
-    <br>
-
-    
-       <div class="row">
-        <label for="" class="col"> Password </label>
-        <input type="text" formControlName="userpassword" class="form-control form-control-lg border border-white col">
-       </div>
-    <br>
+    <div class="row">
+      <label for="" class="col"> Password </label>
+      <input
+        type="text"
+        formControlName="userpassword"
+        class="form-control form-control-lg border border-white col"
+      />
+    </div>
+    <br />
 
     <div id="flex">
-        <button (click)="UpdateChanges()">Update</button>
-
+      <button (click)="UpdateChanges()">Update</button>
     </div>
-
-      
- 
   </form>
 </div>

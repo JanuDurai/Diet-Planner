@@ -6,12 +6,7 @@ import { FoodPlanComponent } from './Food-plan/food-plan.component';
 import { WorkoutPlanComponent } from './Workout-plan/workout-plan.component';
 
 @NgModule({
-  declarations: [FoodPlanComponent,WorkoutPlanComponent],
-  imports: [
-    CommonModule,
-    DietRoutingModule
-  ],
-  exports:[FoodPlanComponent,WorkoutPlanComponent]
+  declarations: [FoodPlanComponent, WorkoutPlanComponent],
+  imports: [CommonModule, DietRoutingModule],
 })
-
-export class DietModule { }
+export class DietModule {}

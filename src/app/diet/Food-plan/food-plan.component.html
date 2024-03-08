@@ -2,30 +2,23 @@
   <label for="" class="head">Today's Meal Plan</label>
 
   <div id="divcontainer" class="container row">
-    <div *ngFor="let category of foodDataArray" class="col-sm w-30">
-      <div *ngFor="let item of category | keyvalue">
-        <p *ngIf="item.key === 'img'; then thenblock; else elseblock"></p>
-        <ng-template #thenblock>
-          <img [src]="item.value" alt="" />
-        </ng-template>
-        <ng-template #elseblock
-          ><p>{{ item.value }}</p>
-        </ng-template>
-      </div>
+    <div *ngFor="let category of foodCategory" class="col-sm w-30" id="para">
+      {{ category.label }}
+      <img [src]="foodData[category.name].foodData.img" />
+      {{ foodData[category.name].foodData.food }} -
+      {{ foodData[category.name].itemquantity }}
+      {{ foodData[category.name].foodData.foodunit }}
+      <p
+        *ngIf="foodData[category.name].foodData.foodunit == 'g'; else elseblock"
+      >
+        1 cup (approx 240g)
+      </p>
+      <ng-template #elseblock><br /></ng-template>
+      {{ foodData[category.name].foodData.sidedish }} -
+      {{ foodData[category.name].sidedishquantity }}
+      {{ foodData[category.name].foodData.sidedishunit }}
     </div>
   </div>
 </div>
 
-<!-- </div> -->
-<!-- <p style="color: blue;">{{foodData.breakfast.foodData.calorie}}</p>
-   <p>{{foodData.breakfast.sidedishquantity}}</p> -->
-
-<!--</div> -->
-
-<!-- <div class ="color-style"   *ngFor="let item of object | keyvalue ">
-<p>{{item.key}}</p>
-<div *ngFor="let category of item.value | keyvalue ">
-<p style="color:red"></p>
-<p style="color:blue">{{category.value}}</p>
-</div>
-</div> -->
+<!-- TODO: remove commented code -->

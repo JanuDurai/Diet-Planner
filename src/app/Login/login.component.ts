@@ -8,50 +8,49 @@ import { UserService } from '../services/user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
+  // check private or public
   userData: any;
   public url = 'http://localhost:3000/user';
-  loginusername!: any;
+  loginusername: string;
   loginvalid: boolean = false;
 
   route: Router = inject(Router);
 
   constructor(private userService: UserService) {}
-  ngOnInit(): void {
-
-  }
+  ngOnInit() {}
+  // TODO: change this to form builder
 
   loginDetails = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
 
- 
+  public checkPassword() {
+    this.userService.getAllUserDetails().subscribe({
+      next: (value) => {
+        this.userData = value;
+        console.log(this.userData);
 
-  checkPassword() {
-    this.userService.getAllUserDetails().subscribe({ next: (value) => {
-         this.userData=value;
-         console.log(this.userData);
-         
-         this.loginvalid=false;
-         for(let Data of this.userData){
-          console.log(Data.userusername,this.loginDetails.value.username);
-          
-          if(Data.userusername === this.loginDetails.value.username){
-               if(Data.userpassword === this.loginDetails.value.password){
-                this.userService.setUserName(Data.userusername);
-                    this.userService.isloggedIn();
-                    this.route.navigate(['home']);    
-                    break;  
-               }
+        this.loginvalid = false;
+        for (let Data of this.userData) {
+          console.log(Data.userusername, this.loginDetails.value.username);
+
+          if (Data.userusername === this.loginDetails.value.username) {
+            if (Data.userpassword === this.loginDetails.value.password) {
+              this.userService.setUserName(Data.userusername);
+              this.userService.isloggedIn();
+              this.route.navigate(['home']);
+              break;
             }
-             else if(this.loginDetails.value.password=='' && this.loginDetails.value.username==''){
-                  this.loginvalid=false;
-                  
-             }  
-             else this.loginvalid=true;
-         }
-    } });
+          } else if (
+            this.loginDetails.value.password == '' &&
+            this.loginDetails.value.username == ''
+          ) {
+            this.loginvalid = false;
+          } else this.loginvalid = true;
+        }
+      },
+    });
   }
 }
-
