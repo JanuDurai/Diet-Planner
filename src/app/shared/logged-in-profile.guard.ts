@@ -1,16 +1,15 @@
 import { CanActivateFn } from '@angular/router';
-import { UserService } from '../services/user.service';
 import { inject } from '@angular/core';
 
-export const loggedInProfileGuard: CanActivateFn = (route, state):boolean => {
+import { UserService } from '../services/user.service';
 
-  return inject(UserService).loggedIn == true? true:false ;
 
+export const loggedInProfileGuard: CanActivateFn = (route, state): boolean => {
+  return route.url[0].path == 'login'
+    ? inject(UserService).loggedIn == true
+      ? false
+      : true
+    : inject(UserService).loggedIn == true
+    ? true
+    : false;
 };
-
-export const loginGuard:CanActivateFn=(route,state):boolean =>{
-
-
-  return inject(UserService).loggedIn == true? false:true ;
-
-}

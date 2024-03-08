@@ -1,72 +1,70 @@
-.background{
-    background-image: url('/assets/bowl.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:98vh;
-    background-attachment: fixed;
- }
-
-form{
-    display: inline-block;
-    margin:0px 750px;
-    text-align: center;
-    border-radius: 6px;
-    background-color:transparent;
-    backdrop-filter: brightness(70%);
-    border: 2px solid white;
-    padding: 10px 100px;
+.background {
+  background-image: url("/assets/bowl.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 98vh;
+  background-attachment: fixed;
 }
 
-button{
-    color:white;
-    background-color: transparent;
-    border: 2px solid grey;
-    width:100px;
-    height:50px;
-    border-radius: 2px;
-    font-weight: bold;
+form {
+  display: inline-block;
+  margin: 0px 550px;
+  text-align: center;
+  border-radius: 6px;
+  background-color: transparent;
+  backdrop-filter: brightness(70%);
+  border: 2px solid white;
+  padding: 10px 100px;
 }
 
-#flex{
-    display: flex;
-    justify-content:center;
-
+button {
+  color: white;
+  background-color: transparent;
+  border: 2px solid grey;
+  width: 100px;
+  height: 50px;
+  border-radius: 2px;
+  font-weight: bold;
 }
 
-button:hover{
-background-color: transparent;
-color:white;
-border:2px solid white;
-font-weight: bolder;
-font-size: larger;
+#flex {
+  display: flex;
+  justify-content: center;
 }
 
-input{
-    display: block;
-    background-color:transparent;
-    color:white
+button:hover {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-weight: bolder;
+  font-size: larger;
 }
 
-
-.newline{
-    font-size:x-large;
-    display: block;
-    color:white;
-    font-weight: bolder;
-    height:70px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 4px;
-    padding-top: 15px;
-    text-align: center;
+input {
+  display: block;
+  background-color: transparent;
+  color: white;
 }
 
-input:focus{
-    background-color:transparent;
-    color:white;
+.newline {
+  font-size: x-large;
+  display: block;
+  color: white;
+  font-weight: bolder;
+  height: 70px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 4px;
+  padding-top: 15px;
+  text-align: center;
 }
 
-label{
-    font-size: larger;
-    font-weight: bolder;
-    color:white
+input:focus {
+  background-color: transparent;
+  color: white;
+}
+
+label {
+  font-size: larger;
+  font-weight: bolder;
+  color: white;
 }

@@ -1,6 +1,6 @@
 <div class="background">
   <form action="" [formGroup]="loginDetails" class="card">
-    <label for=""  class="newline">Login</label>
+    <label for="" class="newline">Login</label>
     <br />
     <div class="paddingdiv">
       <div>
@@ -11,37 +11,58 @@
           placeholder="UserName"
         />
 
-        <div *ngIf="loginDetails.get('username')?.invalid && (loginDetails.get('username')?.touched || loginDetails.get('username')?.dirty)">
-          <div *ngIf="loginDetails.get('username')?.errors?.['required']" class="invalidError">*Username  required</div>
+        <div
+          *ngIf="
+            loginDetails.get('username')?.invalid &&
+            (loginDetails.get('username')?.touched ||
+              loginDetails.get('username')?.dirty)
+          "
+        >
+          <div
+            *ngIf="loginDetails.get('username')?.errors?.['required']"
+            class="invalidError"
+          >
+            *Username required
+          </div>
         </div>
-
-
       </div>
-      <br />  
+      <br />
       <div>
         <input
           type="password"
           formControlName="password"
           class="form-control form-control lg"
-          placeholder="Password"    
+          placeholder="Password"
           (input)="ReEnterPasswordError()"
         />
       </div>
 
-      <div *ngIf="loginDetails.get('password')?.invalid && loginDetails.get('password')?.touched  ">
-        <div *ngIf="loginDetails.get('password')?.errors?.['required']" class="invalidError" >*Password required</div>
+      <div
+        *ngIf="
+          loginDetails.get('password')?.invalid &&
+          loginDetails.get('password')?.touched
+        "
+      >
+        <div
+          *ngIf="loginDetails.get('password')?.errors?.['required']"
+          class="invalidError"
+        >
+          *Password required
+        </div>
       </div>
-     
- <!-- TODO: shouls not display error msg when user enters value for the second time -->
 
-      <div *ngIf="loginvalid" class="invalidError">*Invalid UserName or Password</div> 
+      <!-- TODO: should not display error msg when user enters value for the second time -->
 
+      <div *ngIf="loginvalid" class="invalidError">
+        *Invalid UserName or Password
+      </div>
 
       <br />
       <button (click)="checkPassword()">Submit</button>
-
     </div>
-    <p> New User? <a routerLink= 'register' > Register </a> </p>
-
+    <p>New User? <a routerLink="register"> Register </a></p>
   </form>
 </div>
+
+
+<!-- <p [formGroup]></p> -->

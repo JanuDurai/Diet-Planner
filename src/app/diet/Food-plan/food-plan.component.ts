@@ -9,10 +9,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./food-plan.component.scss'],
 })
 export class FoodPlanComponent implements OnInit {
-  foodData: any;
-  username: any;
-  userDetail: any;
-  foodCategory = [
+  public foodData: any;
+  public username: string|undefined;
+  public userDetail: any;
+  public foodCategory = [
     {
       label: 'BREAKFAST',
       name: 'breakfast',

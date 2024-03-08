@@ -1,23 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light justify-content-between sticky-top  " style="background-color: grey;" *ngIf="userService.loggedIn">
+<nav
+  class="navbar navbar-expand-lg navbar-light justify-content-between sticky-top"
+  style="background-color: grey"
+  *ngIf="userService.loggedIn"
+>
+  <div class="form-inline">
+    <a
+      routerLink="diet"
+      routerLinkActive="active"
+      class="navbar-brand"
+      style="color: white"
+      >Diet</a
+    >
+    <a
+      routerLink="profile"
+      routerLinkActive="active"
+      class="navbar-brand"
+      style="color: white"
+      >Profile</a
+    >
+    <a
+      routerLink="home"
+      routerLinkActive="active"
+      class="navbar-brand"
+      style="color: white"
+      >Home</a
+    >
+  </div>
 
-    <div class="form-inline">
-     
-
-
-    <a routerLink="diet" routerLinkActive="active" class="navbar-brand" style="color:white" >Diet</a>
-  
-    <a routerLink="profile" routerLinkActive="active" class="navbar-brand" style="color:white" >Profile</a> 
-   
-   
-    <a routerLink="home" routerLinkActive="active" class="navbar-brand" style="color:white">Home</a>    
-
-    </div>
-    
-    <button class="navbar-brand" style="color:white" (click)="logout()" >Logout</button>
-
-
-
-
+  <button class="navbar-brand" style="color: white" (click)="logout()">
+    Logout
+  </button>
 </nav>
-
-

@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DietService } from './diet.service';
+
+import { jsonDataUrl } from '../shared/constants/user.constant';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   // TODO: move the baseurl to env file ==> http://localhost:3000
-  public url = 'http://localhost:3000/user';
-  loggedIn!: boolean;
+  public url = jsonDataUrl.user;
+  public loggedIn: boolean;
 
   constructor(private httpReq: HttpClient) {}
 
@@ -32,18 +33,22 @@ export class UserService {
     return this.httpReq.get(this.url + '?userusername=' + username);
   }
 
-  getUserName() {
-    return sessionStorage.getItem('username');
+  getUserName(): string | undefined {
+    return sessionStorage.getItem('username')?.toString();
   }
 
   // TODO: updateLoginStatus
-  isloggedIn() {
+
+  updateLoginStatus() {
     if (sessionStorage.getItem('username') == null) this.loggedIn = false;
     else this.loggedIn = true;
   }
 
   // TODO: update call
-  updateUserDetails(){
-
+  updateUserDetails(id: number, userData: any) {
+    console.log(this.url + '?id=' + id, userData);
+    console.log(`service: `, userData);
+    console.log(id);
+    this.httpReq.put(this.url + '?id=' + id, userData);
   }
 }

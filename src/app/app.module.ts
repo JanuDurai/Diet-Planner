@@ -26,9 +26,9 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
-  providers: [DietService,UserService],
-  bootstrap: [AppComponent]
+  providers: [DietService, UserService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

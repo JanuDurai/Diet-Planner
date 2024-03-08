@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { UserService } from '../services/user.service';
 
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { jsonDataUrl } from '../shared/constants/user.constant';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -11,11 +12,15 @@ import { UserService } from '../services/user.service';
 export class ProfileComponent implements OnInit {
   username: any;
   userDetails: any;
-  url = 'http://localhost:3000/user';
-  Data: any;
-  id!: number;
+  url = jsonDataUrl.user;
+  userData: any;
+  id: number;
 
-  constructor(private httpReq: HttpClient, private userservice: UserService) {}
+  constructor(private httpReq: HttpClient, private userservice: UserService,
+             private ProfileData:FormBuilder ) {}
+
+
+
 
   ngOnInit(): void {
     this.username = this.userservice.getUserName();
@@ -23,32 +28,35 @@ export class ProfileComponent implements OnInit {
       next: (value) => {
         this.userDetails = value;
         // TODO: change this to form builder and use set value to set the user values
-        this.Data = new FormGroup({
-          userfirstname: new FormControl(this.userDetails[0].userfirstname),
-          userlastname: new FormControl(this.userDetails[0].userlastname),
-          userage: new FormControl(this.userDetails[0].userage),
-          usergender: new FormControl(this.userDetails[0].usergender),
-          userheight: new FormControl(this.userDetails[0].userheight),
-          userweight: new FormControl(this.userDetails[0].userweight),
-          usertargetweight: new FormControl(
-            this.userDetails[0].usertargetweight
-          ),
-          userchoice: new FormControl(this.userDetails[0].userchoice),
-          userusername: new FormControl(this.userDetails[0].userusername),
-          userpassword: new FormControl(this.userDetails[0].userpassword),
-          userconfirmpassword: new FormControl(
-            this.userDetails[0].userconfirmpassword
-          ),
-        });
-        this.id = this.userDetails[0].id;
-      },
+        this.userData=this.ProfileData.group({
+          userfirstname:'',
+          userlastname: '',
+          userage: '',
+          usergender: '',
+          userheight: '',
+          userweight: '',
+          usertargetweight: '',
+          userchoice: '',
+          userusername: '',
+          userpassword: '',
+          userconfirmpassword:'',
+        })  ;
+
+        this.userData.setValue(this.userDetails[0]);         
+      }
     });
   }
 
   UpdateChanges() {
+     this.id = this.userDetails[0].id;
+  console.log(this.id);
+
+    this.userservice.updateUserDetails(this.id,this.userData);
+  console.log(this.userData);
+  
     //  TODO: pass username and updated data to
-    this.httpReq
-      .put(this.url + '/' + this.id, this.Data.value)
-      .subscribe(() => this.userDetails.push(this.Data.value));
+  //   this.httpReq
+  //     .put(this.url + '/' + this.id, this.Data.value)
+  //     .subscribe(() => this.userDetails.push(this.Data.value));
   }
 }

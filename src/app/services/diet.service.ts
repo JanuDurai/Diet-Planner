@@ -1,17 +1,16 @@
-import { Injectable, OnInit } from '@angular/core';
-import { UserService } from './user.service';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, forkJoin, map } from 'rxjs';
+
+import { jsonDataUrl } from '../shared/constants/user.constant';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DietService implements OnInit {
-  constructor(private userService: UserService, private httpReq: HttpClient) {}
-  ngOnInit(): void {}
+export class DietService {
+  constructor(private httpReq: HttpClient) {}
 
   calculateDailyCalorie(userDetail: any): Observable<any> {
-    // return userDetail.pipe(map((value)=>{
     const userData = userDetail;
     let BMR!: number;
     let MaintanenceCalorie: number;
@@ -31,62 +30,33 @@ export class DietService implements OnInit {
         1.85 * userData[0].userheight -
         4.676 * userData[0].userage;
     }
-
     MaintanenceCalorie = BMR * 1.55;
-    console.log(MaintanenceCalorie, reduceCalorie, BMR);
-
     if (userData[0].userchoice === 'Weight Loss')
       reduceWeight = MaintanenceCalorie - reduceCalorie;
     else if (userData[0].userchoice === 'Weight Gain')
       reduceWeight = MaintanenceCalorie + reduceCalorie;
     else reduceWeight = MaintanenceCalorie;
-
-    console.log(reduceWeight);
-
     const breakfastCalorie = (reduceWeight * 30) / 100;
     const lunchCalorie = (reduceWeight * 40) / 100;
     const dinnerCalorie = (reduceWeight * 30) / 100;
-
-
-    // console.log(`breakfastcalorie`, breakfastCalorie);
-    // console.log(`lunchcalorie`, lunchCalorie);
-    // console.log(`dinnercalorie`, dinnerCalorie);
-
-    let breakfastfood: any;
-    let lunchfood: any;
-    let dinnerfood: any;
-    let data: any = [];
-
-    return (forkJoin([
+    return forkJoin([
       this.getDataOnCategory('breakfast', breakfastCalorie),
       this.getDataOnCategory('lunch', lunchCalorie),
       this.getDataOnCategory('dinner', dinnerCalorie),
-    ])).pipe(map((value:any)=>{
-      console.log(`food data....`,value);
-       
-      const data = {"breakfast" : value[0], "lunch":value[1],"dinner":value[2]};
-       console.log(`data....`,data);
-     return data;
-     
-    }))
-
-    // this.getDataOnCategory('breakfast',breakfastCalorie).subscribe({next:(value:any)=> {breakfastfood=value; console.log(breakfastfood); data.push(breakfastfood)}})
-    // this.getDataOnCategory('lunch',lunchCalorie).subscribe({next:(value:any)=> {lunchfood=value; console.log(lunchfood);data.push(lunchfood)}})
-    // this.getDataOnCategory('dinner',dinnerCalorie).subscribe({next:(value:any)=> {dinnerfood=value; console.log(dinnerfood); console.log(`data....`,data);
-    // data.push(dinnerfood)}})
-    // return data;
-
-    // }
-
-    //  ) )
+    ]).pipe(
+      map((value: any) => {
+        const data = { breakfast: value[0], lunch: value[1], dinner: value[2] };
+        return data;
+      })
+    );
   }
 
   getDataOnCategory(category: string, foodCalorie: number): Observable<any> {
-    const dietUrl = 'http://localhost:3000/diet';
+    const dietUrl = jsonDataUrl.diet;
 
     return this.httpReq.get(dietUrl).pipe(
       map((data: any) => {
-        const DietData: any = data;
+        const DietData = data;
         const categoryFoodItems = DietData.filter((object: any) => {
           for (let item of object.category) {
             if (item === category) return object;
@@ -97,14 +67,12 @@ export class DietService implements OnInit {
           (categoryFoodItems.length - 1 - 0)
         ).toFixed(0);
         const foodItem = categoryFoodItems[randnumber];
-        //  console.log(foodItem);
-        let itemquantity: any = foodCalorie / foodItem.calorie;
+        let itemquantity: string | number = foodCalorie / foodItem.calorie;
         if (foodItem.foodunit == 'g') {
           itemquantity = (foodItem.quantity * itemquantity).toFixed(0);
         } else {
           itemquantity = foodItem.quantity.toFixed(0);
         }
-        // console.log(`item quantity`, itemquantity);
         let sidedishquantity: any = foodCalorie / foodItem.calorie;
         if (foodItem.sidedishunit == 'g' || foodItem.sidedishunit == 'ml') {
           sidedishquantity = (
@@ -113,13 +81,11 @@ export class DietService implements OnInit {
         } else if (foodItem.sidedishunit == 'piece') {
           sidedishquantity = sidedishquantity.toFixed(0);
         }
-        //  console.log(`sidedish quantity`,sidedishquantity);
-        const food = 
-          {
-            foodData: foodItem,
-            itemquantity: itemquantity,
-            sidedishquantity: sidedishquantity,
-          }
+        const food = {
+          foodData: foodItem,
+          itemquantity: itemquantity,
+          sidedishquantity: sidedishquantity,
+        };
         return food;
       })
     );
