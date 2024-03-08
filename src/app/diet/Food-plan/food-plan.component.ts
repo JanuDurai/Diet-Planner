@@ -4,7 +4,6 @@ import { DietService } from 'src/app/services/diet.service';
 import { UserService } from 'src/app/services/user.service';
 import { map } from 'rxjs';
 
-
 @Component({
   selector: 'app-food-plan',
   templateUrl: './food-plan.component.html',
@@ -14,6 +13,7 @@ export class FoodPlanComponent implements OnInit {
   foodData: any;
   username: any;
   userDetail: any;
+  foodDataArray: any;
 
   // object={ firstee:{name:"first"}, secondee:{dept:"second"}}
   // object = {
@@ -85,18 +85,41 @@ export class FoodPlanComponent implements OnInit {
         .calculateDailyCalorie(this.userDetail)
         .subscribe((value: any) => {
           this.foodData = value;
-          console.log(`ts file.....`, this.foodData);
-          //  for (let i of this.foodData ) console.log(i);
+          // console.log(`ts file.....`, this.foodData);
+          this.foodDataArray = [
+            {
+              "catogory": 'BREAKFAST',
+              "img": this.foodData.breakfast.foodData.img,
+              "food": this.foodData.breakfast.foodData.food,
+              "foodQuantity":[this.foodData.breakfast.itemquantity, this.foodData.breakfast.foodData.foodunit].join(''),
+              "sidedish" :this.foodData.breakfast.foodData.sidedish,
+              "sidedishQuantity":[this.foodData.breakfast.sidedishquantity,this.foodData.breakfast.foodData.sidedishunit].join('')
+            },
+            {
+              "catogory": 'LUNCH',
+              "img": this.foodData.lunch.foodData.img,
+              "food": this.foodData.lunch.foodData.food,
+              "foodQuantity":[this.foodData.lunch.itemquantity, this.foodData.lunch.foodData.foodunit].join(''),
+              "sidedish" :this.foodData.lunch.foodData.sidedish,
+              "sidedishQuantity":[this.foodData.lunch.sidedishquantity,this.foodData.lunch.foodData.sidedishunit].join('')
+            },
+            {
+              "catogory": 'DINNER',
+              "img": this.foodData.dinner.foodData.img,
+              "food": this.foodData.dinner.foodData.food,
+              "foodQuantity":[this.foodData.dinner.itemquantity, this.foodData.dinner.foodData.foodunit].join(''),
+              "sidedish" :this.foodData.dinner.foodData.sidedish,
+              "sidedishQuantity":[this.foodData.dinner.sidedishquantity,this.foodData.dinner.foodData.sidedishunit].join('')
+            }
+          ];
+          console.log(this.foodDataArray);
+          
         });
     });
-
-    // .subscribe((value)=>{this.foodData=value; console.log(`food`, this.foodData)}
-    //  );
   }
 }
 
-
-//img 
+//img
 //food name
 //sidedishname
 //foodquantity

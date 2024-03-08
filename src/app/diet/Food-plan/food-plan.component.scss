@@ -20,13 +20,8 @@ img {
    background-color:transparent;
    backdrop-filter: brightness(60%);
    padding: 10px 10px;
+   margin: 100px 350px;
 }
-
-h2 {
-  color: white;
-  text-align: center;
-}
-
 
 .head{
    font-size:xx-large;
@@ -40,8 +35,9 @@ h2 {
    text-align: center;
 }
 
-.food,.quantity{
-   color:rgb(247, 244, 244);
-   font-size: x-large;
-   text-align: center;
+
+p{
+  color:white;
+  font-size: larger;
+  
 }
