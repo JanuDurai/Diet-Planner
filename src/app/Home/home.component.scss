@@ -1,15 +1,20 @@
 .background {
-  background-image: url("/assets/bowl.jpeg");
+  background-image: url("/assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
   background-attachment: fixed;
+}
+#backgroundblur{
+  // backdrop-filter: blur(4px);
+  height: 90vh;
 }
 
 #container {
   display: inline-flex;
   flex-direction: row;
   text-align: center;
+  // backdrop-filter: blur(10px);
+
 
 }
 
@@ -20,7 +25,8 @@
   padding: 5px 5px;
   background-color: transparent;
   backdrop-filter: brightness(70%);
-  width:620px;
+  width:250px;
+  height: 300px;
  
 }
 
@@ -53,22 +59,21 @@
   font-weight: 1500;
 }
 
-#content{
-    color:white;
-    font-size: xx-large;
-    font-weight: bolder;
-    padding: 67px 100px;
-
+.content{
+    color:rgb(179, 20, 219);
+    font-size:30px;
+    padding: 40px 10px;
+    text-align: justify;
+    width: 1200px;
 }
 
 #quote{
     display: block;
-    text-align: end;
-    color:black;
+    text-align: center;
+    color:teal;
     font-weight: medium;
     font-size: xx-large;
-    padding: 150px 0px;
-   
+    padding: 20px 0px;
     
 }
 
@@ -76,7 +81,7 @@
 
     font-weight: medium;
     font-size: larger;
-    color:red;
-    font-family:monospace;
+    color:rgb(238, 21, 21);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       
 }
