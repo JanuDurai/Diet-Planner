@@ -36,13 +36,6 @@ const routes: Routes = [
     path:'diet',
     loadChildren:()=> import('./diet/diet.module').then (m=>m.DietModule)
   }
-// {path:'', redirectTo:'login', pathMatch:'full'},
-// {path:"home", component:HomeComponent,canActivate:[loggedInProfileGuard]},
-// {path:'login', component:LoginComponent,canActivate:[loginGuard]},
-// {path:"login", children:[{path:'register', component:RegisterComponent}]},
-// {path:'register',component:RegisterComponent,canActivate:[loggedInProfileGuard]},
-// {path:"profile",component:ProfileComponent,canActivate:[loggedInProfileGuard]},
-
 ];
   // TODO: add lazy loading for diet module with path 'diet'
 

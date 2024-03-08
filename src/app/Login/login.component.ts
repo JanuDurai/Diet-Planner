@@ -1,7 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { UserService } from '../services/user.service';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,21 +14,37 @@ export class LoginComponent implements OnInit {
   // check private or public
   userData: any;
   public url = 'http://localhost:3000/user';
-  loginusername: string;
+  loginUserDetail: any;
   loginvalid: boolean = false;
+  loginDetailStatus:boolean=false;
 
   route: Router = inject(Router);
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private loginForm: FormBuilder
+  ) {}
   ngOnInit() {}
   // TODO: change this to form builder
 
-  loginDetails = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
+  loginDetails = this.loginForm.group({
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
 
+
+    // public checkPassword(){
+    //   this.userService.getUserDetail(this.loginDetails.value.username).subscribe((value)=> this.loginUserDetail =value);
+    //    console.log(this.loginUserDetail);
+    //    this.loginUserDetail===undefined? this.loginvalid=true:this.loginvalid=false;
+       
+    // }
+
   public checkPassword() {
+    // if (this.loginDetails.invalid) {
+    //   this.loginvalid = false;
+    //   return;
+    // }
     this.userService.getAllUserDetails().subscribe({
       next: (value) => {
         this.userData = value;
@@ -52,5 +70,9 @@ export class LoginComponent implements OnInit {
         }
       },
     });
+  }
+
+  ReEnterPasswordError() {
+    this.loginvalid = false;
   }
 }

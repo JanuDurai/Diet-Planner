@@ -6,14 +6,14 @@ import { loggedInProfileGuard } from '../shared/logged-in-profile.guard';
 const routes: Routes = [
   // TODO: remove diet route and create child paths for food plan component with child route 'plan'
   {
-    path: '', 
+    path: '',
     children: [
       {
         path: 'plan',
         component: FoodPlanComponent,
         canActivate: [loggedInProfileGuard],
       },
-      { path: '', redirectTo: 'plan' ,pathMatch:'full'},
+      { path: '', redirectTo: 'plan', pathMatch: 'full' },
     ],
   },
 ];
