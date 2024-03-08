@@ -172,7 +172,9 @@
       "food": "Millet Upma",
       "quantity": 100,
       "foodunit": "g",
-      "sidedish": ["Coconut Chutney"],
+      "sidedish": [
+        "Coconut Chutney"
+      ],
       "sidedishquantity": 10,
       "sidedishunit": "g",
       "calorie": 116,

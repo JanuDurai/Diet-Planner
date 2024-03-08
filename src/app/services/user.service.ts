@@ -46,9 +46,8 @@ export class UserService {
 
   // TODO: update call
   updateUserDetails(id: number, userData: any) {
-    console.log(this.url + '?id=' + id, userData);
-    console.log(`service: `, userData);
-    console.log(id);
-    this.httpReq.put(this.url + '?id=' + id, userData);
+    console.log(`${this.url}/${id}`);
+    console.log(`service: `, userData.value);
+    this.httpReq.put(this.url + '/' + id, userData.value);
   }
 }

@@ -52,7 +52,7 @@ export class ProfileComponent implements OnInit {
   console.log(this.id);
 
     this.userservice.updateUserDetails(this.id,this.userData);
-  console.log(this.userData);
+  console.log(`entered data`, this.userData.value);
   
     //  TODO: pass username and updated data to
   //   this.httpReq
