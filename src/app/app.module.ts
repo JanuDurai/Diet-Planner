@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { DietService } from './services/diet.service';
 import { UserService } from './services/user.service';
 import { SharedModule } from './shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,15 @@ import { SharedModule } from './shared/shared.module';
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
-  ],
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [DietService, UserService],
   bootstrap: [AppComponent],

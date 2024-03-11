@@ -29,32 +29,8 @@ export class FoodDetailComponent implements OnInit {
       // console.log(this.foodDetails);
     });
 
-    this.AddNewFood = this.AddData.group({
-      category: '',
-      food: '',
-      quantity: '',
-      foodunit: '',
-      sidedish: '',
-      sidedishquantity: '',
-      sidedishunit: '',
-      calorie: '',
-      img: '',
-    });
+    
   }
 
-  closeModal() {
-    this.display = 'none';
-  }
-
-  openModal() {
-    this.display = 'block';
-  }
-
-  AddDataInServer() {
-       
-    this.AddNewFood.value.sidedish = this.AddNewFood.value.sidedish.split(' ');
-
-    this.AddNewFood.value.category = this.AddNewFood.value.category=='breakfast/dinner' ? ['breakfast','dinner']:['lunch'];
-    this.userService.addFoodData(this.AddNewFood.value);
-  }
+  
 }

@@ -1,148 +1,14 @@
 <div class="background">
   <div id="Addnew">
     <label id="newline">Food Details </label>
-
-    <button type="button" class="btn btn-secondary btn-lg float-right" (click)="openModal()" >
-      + Add New Food
-    </button>
-    <div
-      class="modal"
-      tabindex="-1"
-      role="dialog"
-      [ngStyle]="{ display: display }"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="titlealign">Food Details</h4>
-            <button
-              type="button"
-              class="close"
-              aria-label="Close"
-              (click)="closeModal()"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form action="" [formGroup]="AddNewFood">
-              <div class="row">
-                <select
-                  formControlName="category"
-                  id=" "
-                  class="form-control form-control-lg border border-black"
-                >
-                  <option value="" selected>Category</option>
-                  <option *ngFor="let item of category" [value]="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-              <br />
-              <div class="row">
-                <input
-                  type="text"
-                  formControlName="food"
-                  class="form-control form-control-lg border border-black"
-                  placeholder="Food"
-                />
-              </div>
-              <br>
-
-              <div class="row">
-                <input
-                  type="number"
-                  formControlName="quantity"
-                  class="form-control form-control-lg border border-black"
-                  placeholder="FoodQuantity"
-                />
-              </div>
-              <br>
-
-              <div class="row">
-                <input
-                  type="text"
-                  formControlName="foodunit"
-                  class="form-control form-control-lg border border-black"
-                  placeholder="Food Quantity Unit"
-                />
-              </div>
-
-              <br>
-
-              <div class="row">
-                <input
-                  type="text"
-                  formControlName="sidedish"
-                  class="form-control form-control-lg border border-black"
-                  placeholder="Combo"
-                />
-              </div>
-
-              <br>
-
-              <div class="row">
-                <input
-                  type="number"
-                  formControlName="sidedishquantity"
-                  class="form-control form-control-lg border border-black"
-                  placeholder="Combo Quantity"
-                />
-              </div>
-              <br>
-
-              <div class="row">
-                <input
-                  type="text"
-                  formControlName="sidedishunit"
-                  class="form-control form-control-lg border border-black"
-                  placeholder="Combo Quantity Unit"
-                />
-              </div>
-              <br>
-
-              <div class="row">
-                <input
-                  type="number"
-                  formControlName="calorie"
-                  class="form-control form-control-lg border border-black"
-                  placeholder="Calorie"
-                />
-              </div>
-              <br>
-
-              <div class="row">
-                <input
-                  type="text"
-                  formControlName="img"
-                  class="form-control form-control-lg border border-black"
-                  placeholder="Food Image Url" 
-                />
-              </div>
-              <br>
-        <Button (click)="AddDataInServer()">Submit</Button>
-         </form>
-          </div>
-
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-default"
-              (click)="closeModal()"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <app-add-food> </app-add-food>
+    
 
     <table id="tablealign">
       <thead>
         <tr>
-          <th>Category</th>
           <th>Food</th>
+          <th>Category</th>
           <th>FoodItem</th>
           <th>Food Quantity</th>
           <th>Combo</th>
@@ -169,6 +35,32 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
 </div>
 
