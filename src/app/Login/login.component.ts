@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           if (Data.userusername === this.loginDetails.value.username) {
             if (Data.userpassword === this.loginDetails.value.password) {
               this.userService.setUserName(Data.userusername);
-              this.userService. updateLoginStatus();
+              this.userService.updateLoginStatus();
               this.route.navigate(['home']);
               break;
             }

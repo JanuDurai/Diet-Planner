@@ -1,11 +1,12 @@
 <div class="background">
   <label for="" class="newline">User Details </label>
-  <form action="" [formGroup]="userData"><br>
+  <form [formGroup]="userData" *ngIf="userData">
+    <br />
     <div class="row">
       <label for="" class="col"> First Name </label>
       <input
         type="text"
-        formControlName="userfirstname"
+        [formControlName]="'userfirstname'"
         class="form-control form-control-lg border border-white col"
       />
     </div>
@@ -14,7 +15,7 @@
       <label for="" class="col"> Last Name </label>
       <input
         type="text"
-        formControlName="userlastname"
+        [formControlName]="'userlastname'"
         class="form-control form-control-lg border border-white col"
       />
     </div>

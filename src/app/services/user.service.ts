@@ -8,17 +8,19 @@ import { jsonDataUrl } from '../shared/constants/user.constant';
 })
 export class UserService {
   // TODO: move the baseurl to env file ==> http://localhost:3000
-  public url = jsonDataUrl.user;
+  private userUrl = jsonDataUrl.user;
+  private dietUrl = jsonDataUrl.diet;
   public loggedIn: boolean;
+  public adminAcess: boolean = false;
 
   constructor(private httpReq: HttpClient) {}
 
   addUser(data: any) {
-    this.httpReq.post(this.url, data).subscribe((d) => console.log(d));
+    this.httpReq.post(this.userUrl, data).subscribe((d) => console.log(d));
   }
 
   getAllUserDetails() {
-    return this.httpReq.get(this.url);
+    return this.httpReq.get(this.userUrl);
   }
 
   setUserName(username: string) {
@@ -30,7 +32,7 @@ export class UserService {
   }
 
   getUserDetail(username: any) {
-    return this.httpReq.get(this.url + '?userusername=' + username);
+    return this.httpReq.get(this.userUrl + '?userusername=' + username);
   }
 
   getUserName(): string | undefined {
@@ -40,14 +42,32 @@ export class UserService {
   // TODO: updateLoginStatus
 
   updateLoginStatus() {
-    if (sessionStorage.getItem('username') == null) this.loggedIn = false;
-    else this.loggedIn = true;
+    const username = sessionStorage.getItem('username');
+    if (username == null) this.loggedIn = false; 
+    else {
+      this.loggedIn = true;
+      this.getUserDetail(username).subscribe((value) => {
+        const userData: any = value;
+        userData[0].role.join('') == 'useradmin'
+          ? (this.adminAcess = true)
+          : (this.adminAcess = false);
+      });
+    }
   }
 
   // TODO: update call
   updateUserDetails(id: number, userData: any) {
-    console.log(`${this.url}/${id}`);
+    console.log(`${this.userUrl}/${id}`);
     console.log(`service: `, userData.value);
-    this.httpReq.put(this.url + '/' + id, userData.value);
+   return  this.httpReq.put(`${this.userUrl}/${id}`, userData.value);
+      //  this.httpReq.put(this.url + '/'+ id, userData.value);
+  }
+
+
+
+  addFoodData(foodData:any){
+    this.httpReq.post(this.dietUrl,foodData).subscribe((d)=>console.log(d)
+    );
+    
   }
 }

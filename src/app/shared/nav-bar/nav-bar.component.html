@@ -1,14 +1,25 @@
 <nav
   class="navbar navbar-expand-lg navbar-light justify-content-between sticky-top"
   style="background-color: grey"
-  *ngIf="userService.loggedIn"
+
+  *ngIf="userService.loggedIn" 
 >
   <div class="form-inline">
     <a
-      routerLink="diet"
+    routerLink="/diet/fooddetails"
+    routerLinkActive="active-page"
+    class="navbar-brand"
+    style="color: white" 
+    *ngIf="userService.adminAcess"
+    >FoodDetail</a
+
+  >
+    <a
+      routerLink="/diet/plan"
       routerLinkActive="active"
       class="navbar-brand"
       style="color: white"
+      
       >Diet</a
     >
     <a

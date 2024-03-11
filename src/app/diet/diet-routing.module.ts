@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FoodPlanComponent } from './Food-plan/food-plan.component';
 import { loggedInProfileGuard } from '../shared/logged-in-profile.guard';
+import { FoodDetailComponent } from './food-detail/food-detail.component';
+import { adminAcessGuard } from '../shared/admin-acess.guard';
 
 const routes: Routes = [
   // TODO: remove diet route and create child paths for food plan component with child route 'plan'
@@ -15,6 +17,11 @@ const routes: Routes = [
       },
       { path: '', redirectTo: 'plan', pathMatch: 'full' },
     ],
+  },
+  {
+    path:'fooddetails',
+    component: FoodDetailComponent,
+    canActivate: [adminAcessGuard],
   },
 ];
 

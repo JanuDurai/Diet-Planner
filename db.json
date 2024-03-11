@@ -1,60 +1,90 @@
 {
   "user": [
     {
+      "id": "48dd",
+      "userfirstname": "Janu",
+      "userlastname": "Shree",
+      "userage": 21,
+      "usergender": "Female",
+      "userheight": 150,
+      "userweight": 54,
+      "usertargetweight": 0.5,
+      "userchoice": "Weight Loss",
+      "userusername": "Janu",
+      "userpassword": "Janu@123",
+      "userconfirmpassword": "Janu@123",
+      "role": [
+        "user",
+        "admin"
+      ]
+    },
+    {
+      "id": "82c7",
+      "userfirstname": "Dev",
+      "userlastname": "Ashwin",
+      "userage": 35,
+      "usergender": "Male",
+      "userheight": 170,
+      "userweight": 54,
+      "usertargetweight": 0.75,
+      "userchoice": "Weight Loss",
+      "userusername": "Dev",
+      "userpassword": "Dev@123",
+      "userconfirmpassword": "Dev@123",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "746c",
+      "userfirstname": "Vinu",
+      "userlastname": "Dharshini",
+      "userage": 25,
+      "usergender": "Female",
+      "userheight": 165,
+      "userweight": 35,
+      "usertargetweight": 0.75,
+      "userchoice": "Weight Gain",
+      "userusername": "Vinu",
+      "userpassword": "Vinu@123",
+      "userconfirmpassword": "Vinu@123",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "01d6",
       "userfirstname": "Sumeka",
       "userlastname": "Arasakumar",
       "userage": 38,
       "usergender": "Female",
-      "userheight": 172,
-      "userweight": 79,
-      "usertargetweight": 0.25,
-      "userchoice": "Weight Loss",
-      "userusername": "Sumeka",
-      "userpassword": "Sumeka",
-      "userconfirmpassword": "Sume123",
-      "id": "f630"
-    },
-    {
-      "id": "bbcc",
-      "userfirstname": "Vinu",
-      "userlastname": "Dharshini",
-      "userage": 24,
-      "usergender": "Male",
-      "userheight": 175,
-      "userweight": 35,
+      "userheight": 162,
+      "userweight": 40,
       "usertargetweight": 1,
       "userchoice": "Weight Gain",
-      "userusername": "Vinu",
-      "userpassword": "Vinu123",
-      "userconfirmpassword": "Vinu123"
+      "userusername": "Sumeka",
+      "userpassword": "Sumeka",
+      "userconfirmpassword": "Sumeka",
+      "role": [
+        "user"
+      ]
     },
     {
-      "id": "95be",
+      "id": "cdd5",
       "userfirstname": "Vasu",
       "userlastname": "Subburaj",
-      "userage": 40,
+      "userage": 28,
       "usergender": "Male",
       "userheight": 180,
-      "userweight": 90,
-      "usertargetweight": 1,
-      "userchoice": "Weight Loss",
-      "userusername": "Vasu",
-      "userpassword": "Vasi123",
-      "userconfirmpassword": "Vasu123"
-    },
-    {
-      "id": "ee06",
-      "userfirstname": "Janu",
-      "userlastname": "Shree",
-      "userage": 19,
-      "usergender": "Female",
-      "userheight": 150,
-      "userweight": 54,
+      "userweight": 68,
       "usertargetweight": 0,
-      "userchoice": "Weight Loss",
-      "userusername": "Janu",
-      "userpassword": "Janu@123",
-      "userconfirmpassword": "Janu@123"
+      "userchoice": "Weight Maintain",
+      "userusername": "Vasu",
+      "userpassword": "Vasu@123",
+      "userconfirmpassword": "Vasu@123",
+      "role": [
+        "user"
+      ]
     }
   ],
   "diet": [
@@ -504,6 +534,23 @@
       "calorie": 252,
       "img": "/assets/whiterice.jpeg",
       "id": "6263"
+    },
+    {
+      "id": "c546",
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Idiyappam",
+      "quantity": 100,
+      "foodunit": "g",
+      "sidedish": [
+        "KadalaCurry"
+      ],
+      "sidedishquantity": 100,
+      "sidedishunit": "g",
+      "calorie": 257,
+      "img": "/assets/idiyappam.jpg"
     }
   ]
 }

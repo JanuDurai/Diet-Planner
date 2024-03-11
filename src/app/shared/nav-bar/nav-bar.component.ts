@@ -21,6 +21,6 @@ export class NavBarComponent implements OnInit {
   logout() {
     this.userService.DeleteUserName();
     this.userService.updateLoginStatus();
-    this.route.navigate(['login']);
+    this.route.navigate(['login']);  
   }
 }

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './Home/home.component';
 import { LoginComponent } from './Login/login.component';
 import { ProfileComponent } from './Profile/profile.component';
@@ -27,6 +28,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
+    FormsModule
   ],
   providers: [DietService, UserService],
   bootstrap: [AppComponent],

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Validators } from '@angular/forms';
+import { Component, OnInit, inject } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { PasswordMatchValidation } from '../shared/passwordCheck.directive';
 @Component({
@@ -15,6 +15,9 @@ export class RegisterComponent implements OnInit {
   public Data: any;
   public weight: string;
   public invalidform: boolean = false;
+
+  private route:Router=inject(Router);
+  
   constructor(
     private userService: UserService,
     private userData: FormBuilder
@@ -28,7 +31,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.required,
             Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*$/),
-            Validators.minLength(0),
+            Validators.minLength(2),
           ],
         ],
         userlastname: [
@@ -51,7 +54,7 @@ export class RegisterComponent implements OnInit {
         userusername: [
           '',
           [
-            Validators.minLength(4),
+            Validators.minLength(2),
             Validators.maxLength(15),
             Validators.required,
           ],
@@ -61,7 +64,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),
             Validators.required,
-            Validators.minLength(8),
+            Validators.minLength(4),
           ],
         ],
         userconfirmpassword: [
@@ -69,9 +72,10 @@ export class RegisterComponent implements OnInit {
           [
             Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),
             Validators.required,
-            Validators.minLength(8),
+            Validators.minLength(4),
           ],
         ],
+        role:['']
       },
       { validators: PasswordMatchValidation }
     );
@@ -82,7 +86,9 @@ export class RegisterComponent implements OnInit {
       this.invalidform = true;
     } else {
       this.invalidform = false;
+      this.Data.get('role').setValue('["user"]');
       this.userService.addUser(this.Data.value);
+      this.route.navigate(['login']);
     }
   }
   get userfirstname() {

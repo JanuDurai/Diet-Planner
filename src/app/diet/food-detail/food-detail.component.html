@@ -1,0 +1,175 @@
+<div class="background">
+  <div id="Addnew">
+    <label id="newline">Food Details </label>
+
+    <button type="button" class="btn btn-secondary btn-lg float-right" (click)="openModal()" >
+      + Add New Food
+    </button>
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{ display: display }"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="titlealign">Food Details</h4>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              (click)="closeModal()"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="" [formGroup]="AddNewFood">
+              <div class="row">
+                <select
+                  formControlName="category"
+                  id=" "
+                  class="form-control form-control-lg border border-black"
+                >
+                  <option value="" selected>Category</option>
+                  <option *ngFor="let item of category" [value]="item">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+              <br />
+              <div class="row">
+                <input
+                  type="text"
+                  formControlName="food"
+                  class="form-control form-control-lg border border-black"
+                  placeholder="Food"
+                />
+              </div>
+              <br>
+
+              <div class="row">
+                <input
+                  type="number"
+                  formControlName="quantity"
+                  class="form-control form-control-lg border border-black"
+                  placeholder="FoodQuantity"
+                />
+              </div>
+              <br>
+
+              <div class="row">
+                <input
+                  type="text"
+                  formControlName="foodunit"
+                  class="form-control form-control-lg border border-black"
+                  placeholder="Food Quantity Unit"
+                />
+              </div>
+
+              <br>
+
+              <div class="row">
+                <input
+                  type="text"
+                  formControlName="sidedish"
+                  class="form-control form-control-lg border border-black"
+                  placeholder="Combo"
+                />
+              </div>
+
+              <br>
+
+              <div class="row">
+                <input
+                  type="number"
+                  formControlName="sidedishquantity"
+                  class="form-control form-control-lg border border-black"
+                  placeholder="Combo Quantity"
+                />
+              </div>
+              <br>
+
+              <div class="row">
+                <input
+                  type="text"
+                  formControlName="sidedishunit"
+                  class="form-control form-control-lg border border-black"
+                  placeholder="Combo Quantity Unit"
+                />
+              </div>
+              <br>
+
+              <div class="row">
+                <input
+                  type="number"
+                  formControlName="calorie"
+                  class="form-control form-control-lg border border-black"
+                  placeholder="Calorie"
+                />
+              </div>
+              <br>
+
+              <div class="row">
+                <input
+                  type="text"
+                  formControlName="img"
+                  class="form-control form-control-lg border border-black"
+                  placeholder="Food Image Url" 
+                />
+              </div>
+              <br>
+        <Button (click)="AddDataInServer()">Submit</Button>
+         </form>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-default"
+              (click)="closeModal()"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <table id="tablealign">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Food</th>
+          <th>FoodItem</th>
+          <th>Food Quantity</th>
+          <th>Combo</th>
+          <th>Combo Quantity</th>
+          <th>Food Calorie</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let fooditem of foodDetails">
+          <td>{{ fooditem.category }}</td>
+          <td><img [src]="fooditem.img" id="foodimage" /></td>
+          <td>{{ fooditem.food }}</td>
+          <td>{{ fooditem.quantity }}{{ fooditem.foodunit }}</td>
+          <td>{{ fooditem.sidedish }}</td>
+          <td>{{ fooditem.sidedishquantity }}{{ fooditem.sidedishunit }}</td>
+          <td>{{ fooditem.calorie }}</td>
+          <td>
+            <button >
+              <i class="bi-trash">Del</i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
