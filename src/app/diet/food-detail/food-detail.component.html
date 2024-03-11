@@ -29,10 +29,10 @@
           <td>{{ fooditem.sidedishquantity }}{{ fooditem.sidedishunit }}</td>
           <td>{{ fooditem.calorie }}</td>
           <td>
-            <button id="paddingicon" >
+            <button class="paddingicon" (click)="DisplayEditModel(fooditem.id)" >
               <i class="bi bi-pencil" ></i>
             </button>
-            <button>
+            <button class="paddingicon">
               <i class="bi bi-trash"></i>
             </button>
           </td>

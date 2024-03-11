@@ -47,11 +47,14 @@ th{
 
 }
 
-#paddingicon{
+.paddingicon{
     margin-right: 10px;
     background-color: transparent;
     border:none;
+    color: white;
 }
+
 i:active{
     font-size: large;
+    color:black;
 }

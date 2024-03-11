@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { DietService } from 'src/app/services/diet.service';
 import { AddFoodComponent } from '../add-food/add-food.component';
+import { EditFoodComponent } from '../edit-food/edit-food.component';
 
 @Component({
   selector: 'app-food-detail',
@@ -11,27 +12,22 @@ import { AddFoodComponent } from '../add-food/add-food.component';
 })
 export class FoodDetailComponent implements OnInit {
   foodDetails: any;
-  // display = 'none';
-  // AddNewFood: any;
-  // category = ['breakfast/dinner', 'lunch'];
   sidedishArray: Array<string>;
 
   constructor(
     private dietservice: DietService,
-    private modelService: NgbModal // private AddData: FormBuilder,
-  ) // private userService: UserService
-  {}
+    private modelService: NgbModal
+  ) {}
 
   ngOnInit() {
     this.dietservice.getFoodDetails().subscribe((value) => {
       this.foodDetails = value;
-      // console.log(this.foodDetails);
     });
   }
 
   DisplayAddItemModel() {
-    const modelRef = this.modelService.open(AddFoodComponent);
-    modelRef.result.then((result) => {
+    const additemRef = this.modelService.open(AddFoodComponent);
+    additemRef.result.then((result) => {
       this.dietservice
         .addFoodDetails(result)
         .subscribe((data) =>
@@ -39,4 +35,12 @@ export class FoodDetailComponent implements OnInit {
         );
     });
   }
+  DisplayEditModel(id:number){
+    console.log(id);
+    
+    const edititemRef = this.modelService.open(EditFoodComponent);
+
+  }
+
+
 }
