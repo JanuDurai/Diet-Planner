@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-
-
 @Component({
   selector: 'app-add-food',
   templateUrl: './add-food.component.html',
@@ -11,10 +9,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AddFoodComponent implements OnInit {
   addNewData: any;
-  category = ['breakfast','dinner','lunch'];
+  category = ['breakfast', 'dinner', 'lunch'];
 
-  constructor(private formbuilder: FormBuilder,
-    public activeModal:NgbActiveModal) {}
+  constructor(
+    private formbuilder: FormBuilder,
+    public activeModal: NgbActiveModal
+  ) {}
 
   ngOnInit(): void {
     this.addNewData = this.formbuilder.group({
@@ -28,7 +28,7 @@ export class AddFoodComponent implements OnInit {
       calorie: '',
     });
   }
-  DataTransfer(){
+  DataTransfer() {
     this.activeModal.close(this.addNewData.value);
   }
 }

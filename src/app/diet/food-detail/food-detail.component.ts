@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DietService } from 'src/app/services/diet.service';
 import { AddFoodComponent } from '../add-food/add-food.component';
 import { EditFoodComponent } from '../edit-food/edit-food.component';
+import { DeleteFoodComponent } from '../delete-food/delete-food.component';
 
 @Component({
   selector: 'app-food-detail',
@@ -11,8 +12,8 @@ import { EditFoodComponent } from '../edit-food/edit-food.component';
   styleUrls: ['./food-detail.component.scss'],
 })
 export class FoodDetailComponent implements OnInit {
-  foodDetails: any;
-  sidedishArray: Array<string>;
+  public foodDetails: any;
+  public id:string;
 
   constructor(
     private dietservice: DietService,
@@ -35,12 +36,22 @@ export class FoodDetailComponent implements OnInit {
         );
     });
   }
-  DisplayEditModel(id:number){
-    console.log(id);
-    
+  DisplayEditModel(itemId:string){  
+    this.id=itemId; 
     const edititemRef = this.modelService.open(EditFoodComponent);
+    edititemRef.componentInstance.id=itemId;
+    edititemRef.result.then((result)=>{
+         this.dietservice.updateFoodData(this.id,result).subscribe((data)=>(console.log(`Food data updated successfully`)))
+    })
 
   }
+  DeleteFoodData(itemId:string){
+    const deleteitemRef=this.modelService.open(DeleteFoodComponent);
+    deleteitemRef.result.then(()=>{
+      this.dietservice.deleteFoodItem(itemId).subscribe((data)=>{console.log(`Food Item Deleted successfully`);
+      })
+    })
 
+  }
 
 }

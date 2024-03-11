@@ -19,6 +19,18 @@ export class DietService {
   addFoodDetails(foodData: any) {
     return this.httpReq.post(this.dietUrl, foodData);
   }
+  getFoodData(id:string){
+    return  this.httpReq.get(this.dietUrl + '?id=' + id);
+  }
+
+  updateFoodData(id:string,data:any){
+    return this.httpReq.put(`${this.dietUrl}/${id}`,data)
+
+  }
+
+  deleteFoodItem(id:string){
+    return this.httpReq.delete(`${this.dietUrl}/${id}`);
+  }
 
   calculateDailyCalorie(userDetail: any): Observable<any> {
     const userData = userDetail;
