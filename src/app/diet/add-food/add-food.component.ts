@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-add-food',
   templateUrl: './add-food.component.html',
-  styleUrls: ['./add-food.component.scss']
+  styleUrls: ['./add-food.component.scss'],
 })
-export class AddFoodComponent  implements OnInit{
-  display = 'none';
-  AddNewFood: any;
-  category = ['breakfast','dinner', 'lunch'];
-  sidedishArray: Array<string>;
-  constructor( private AddData: FormBuilder,
-    private userService: UserService){}
+export class AddFoodComponent implements OnInit {
+  addNewData: any;
+  category = ['breakfast','dinner','lunch'];
 
-
+  constructor(private formbuilder: FormBuilder,
+    public activeModal:NgbActiveModal) {}
 
   ngOnInit(): void {
-    this.AddNewFood = this.AddData.group({
+    this.addNewData = this.formbuilder.group({
       category: '',
       food: '',
       quantity: '',
@@ -28,23 +26,9 @@ export class AddFoodComponent  implements OnInit{
       sidedishquantity: '',
       sidedishunit: '',
       calorie: '',
-      img: '',
-    });  }
-
-
-  closeModal() {
-    this.display = 'none';
+    });
   }
-
-  openModal() {
-    this.display = 'block';
+  DataTransfer(){
+    this.activeModal.close(this.addNewData.value);
   }
-
-  AddDataInServer() {
-       
-    this.AddNewFood.value.sidedish = this.AddNewFood.value.sidedish.split(' ');
-    this.userService.addFoodData(this.AddNewFood.value);
-  }
-
 }
-

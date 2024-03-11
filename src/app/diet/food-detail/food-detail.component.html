@@ -1,15 +1,16 @@
 <div class="background">
   <div id="Addnew">
     <label id="newline">Food Details </label>
-    <app-add-food> </app-add-food>
-    
+
+    <button type="button" class="btn btn-secondary btn-lg" (click)="DisplayAddItemModel()"> + Add New Food</button>
+    <!-- <app-add-food> </app-add-food> -->
 
     <table id="tablealign">
       <thead>
         <tr>
           <th>Food</th>
-          <th>Category</th>
           <th>FoodItem</th>
+          <th>Category</th>
           <th>Food Quantity</th>
           <th>Combo</th>
           <th>Combo Quantity</th>

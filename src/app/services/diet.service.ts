@@ -10,11 +10,14 @@ import { jsonDataUrl } from '../shared/constants/user.constant';
 export class DietService {
   constructor(private httpReq: HttpClient) {}
 
-  private dietUrl=jsonDataUrl.diet;
+  private dietUrl = jsonDataUrl.diet;
 
-
-  getFoodDetails(){
+  getFoodDetails() {
     return this.httpReq.get(this.dietUrl);
+  }
+
+  addFoodDetails(foodData: any) {
+    return this.httpReq.post(this.dietUrl, foodData);
   }
 
   calculateDailyCalorie(userDetail: any): Observable<any> {

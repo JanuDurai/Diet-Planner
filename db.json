@@ -536,7 +536,7 @@
       "id": "6263"
     },
     {
-      "id": "c546",
+      "id": "90fe",
       "category": [
         "breakfast",
         "dinner"
@@ -544,76 +544,10 @@
       "food": "Idiyappam",
       "quantity": 100,
       "foodunit": "g",
-      "sidedish": [
-        "KadalaCurry"
-      ],
+      "sidedish": "KadalaCurry",
       "sidedishquantity": 100,
       "sidedishunit": "g",
-      "calorie": 257,
-      "img": "/assets/idiyappam.jpg"
-    },
-    {
-      "id": "b83f",
-      "category": [
-        "lunch"
-      ],
-      "food": "Idiyappam",
-      "quantity": 100,
-      "foodunit": "g",
-      "sidedish": [
-        "KadalaCurry"
-      ],
-      "sidedishquantity": 100,
-      "sidedishunit": "g",
-      "calorie": 257,
-      "img": ""
-    },
-    {
-      "id": "8996",
-      "category": [
-        "breakfast",
-        "dinner"
-      ],
-      "food": "",
-      "quantity": "",
-      "foodunit": "",
-      "sidedish": "",
-      "sidedishquantity": "",
-      "sidedishunit": "",
-      "calorie": "",
-      "img": ""
-    },
-    {
-      "id": "3469",
-      "category": [
-        "lunch"
-      ],
-      "food": "",
-      "quantity": "",
-      "foodunit": "",
-      "sidedish": "",
-      "sidedishquantity": "",
-      "sidedishunit": "",
-      "calorie": "",
-      "img": ""
-    },
-    {
-      "id": "df19",
-      "category": [
-        "breakfast",
-        "dinner"
-      ],
-      "food": "Idiyappam",
-      "quantity": 100,
-      "foodunit": "g",
-      "sidedish": [
-        "KadalaCurry",
-        "Curd"
-      ],
-      "sidedishquantity": 100,
-      "sidedishunit": "g",
-      "calorie": 478,
-      "img": ""
+      "calorie": 257
     }
   ]
 }

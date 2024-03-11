@@ -64,10 +64,4 @@ export class UserService {
   }
 
 
-
-  addFoodData(foodData:any){
-    this.httpReq.post(this.dietUrl,foodData).subscribe((d)=>console.log(d)
-    );
-    
-  }
 }
