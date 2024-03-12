@@ -4,7 +4,7 @@ import { inject } from '@angular/core';
 import { UserService } from '../services/user.service';
 
 export const loggedInProfileGuard: CanActivateFn = (route, state): boolean => {
-  return route.url[0].path == 'login'
+  return route.url[0].path == 'login'|| route.url[0].path == 'register'
     ? inject(UserService).loggedIn == true
       ? false
       : true
