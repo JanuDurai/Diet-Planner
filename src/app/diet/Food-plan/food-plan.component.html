@@ -3,7 +3,7 @@
 
   <div id="divcontainer" class="container row">
     <div *ngFor="let category of foodCategory" class="col-sm w-30" id="para">
-      {{ category.label }}
+      <h3>{{ category.label }}</h3>
       <img [src]="foodData[category.name].foodData.img" />
       {{ foodData[category.name].foodData.food }} -
       {{ foodData[category.name].itemquantity }}
