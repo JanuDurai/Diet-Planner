@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class FoodPlanComponent implements OnInit {
   public foodData: any;
-  public username: string|undefined;
+  public username: string | undefined;
   public userDetail: any;
   public foodCategory = [
     {
@@ -38,10 +38,9 @@ export class FoodPlanComponent implements OnInit {
       this.userDetail = data;
       this.dietUser
         .calculateDailyCalorie(this.userDetail)
-        .subscribe((value:any) => {
+        .subscribe((value: any) => {
           this.foodData = value;
-          console.log(`food data`,this.foodData);
-          
+          console.log(`food data`, this.foodData);
         });
     });
   }

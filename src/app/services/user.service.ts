@@ -7,16 +7,14 @@ import { jsonDataUrl } from '../shared/constants/user.constant';
   providedIn: 'root',
 })
 export class UserService {
-  // TODO: move the baseurl to env file ==> http://localhost:3000
   private userUrl = jsonDataUrl.user;
-  private dietUrl = jsonDataUrl.diet;
   public loggedIn: boolean;
-  public adminAcess: boolean = false;
+  public adminAcess: boolean;
 
   constructor(private httpReq: HttpClient) {}
 
   addUser(data: any) {
-    this.httpReq.post(this.userUrl, data).subscribe((d) => console.log(d));
+    return this.httpReq.post(this.userUrl, data);
   }
 
   getAllUserDetails() {
@@ -39,29 +37,20 @@ export class UserService {
     return sessionStorage.getItem('username')?.toString();
   }
 
-  // TODO: updateLoginStatus
-
   updateLoginStatus() {
     const username = sessionStorage.getItem('username');
-    if (username == null) this.loggedIn = false; 
+    if (username == null) this.loggedIn = false;
     else {
       this.loggedIn = true;
-      this.getUserDetail(username).subscribe((value) => {
-        const userData: any = value;
-        userData[0].role.join('') == 'useradmin'
+      this.getUserDetail(username).subscribe((value: any) => {
+        value[0].role.join('') == 'useradmin'
           ? (this.adminAcess = true)
           : (this.adminAcess = false);
       });
     }
   }
 
-  // TODO: update call
   updateUserDetails(id: number, userData: any) {
-    console.log(`${this.userUrl}/${id}`);
-    console.log(`service: `, userData.value);
-   return  this.httpReq.put(`${this.userUrl}/${id}`, userData.value);
-      //  this.httpReq.put(this.url + '/'+ id, userData.value);
+    return this.httpReq.put(`${this.userUrl}/${id}`, userData.value);
   }
-
-
 }

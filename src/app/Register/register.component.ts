@@ -4,6 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { PasswordMatchValidation } from '../shared/passwordCheck.directive';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,8 +17,8 @@ export class RegisterComponent implements OnInit {
   public weight: string;
   public invalidform: boolean = false;
 
-  private route:Router=inject(Router);
-  
+  private route: Router = inject(Router);
+
   constructor(
     private userService: UserService,
     private userData: FormBuilder
@@ -75,7 +76,7 @@ export class RegisterComponent implements OnInit {
             Validators.minLength(4),
           ],
         ],
-        role:['']
+        role: [''],
       },
       { validators: PasswordMatchValidation }
     );
@@ -87,7 +88,9 @@ export class RegisterComponent implements OnInit {
     } else {
       this.invalidform = false;
       this.Data.get('role').setValue('["user"]');
-      this.userService.addUser(this.Data.value);
+      this.userService.addUser(this.Data.value).subscribe((data) => {
+        console.log(`User Details added successfully`);
+      });
       this.route.navigate(['login']);
     }
   }

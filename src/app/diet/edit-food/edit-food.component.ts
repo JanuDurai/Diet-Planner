@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Input } from '@angular/core';
+
 import { DietService } from 'src/app/services/diet.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { DietService } from 'src/app/services/diet.service';
   styleUrls: ['./edit-food.component.scss'],
 })
 export class EditFoodComponent implements OnInit {
-  @Input() public id: string;
+  @Input() id: string;
   foodData: any;
   editData: any;
 
@@ -33,14 +34,13 @@ export class EditFoodComponent implements OnInit {
           sidedishquantity: '',
           sidedishunit: '',
           calorie: '',
-          img:''
+          img: '',
         });
         this.editData.patchValue(this.foodData[0]);
-        console.log(this.editData);
       },
     });
   }
   EditData() {
-    this.activeModal.close(this.editData.value)
+    this.activeModal.close(this.editData.value);
   }
 }

@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { UserService } from '../services/user.service';
 import { Validators } from '@angular/forms';
-import { jsonDataUrl } from '../shared/constants/user.constant';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +12,7 @@ import { jsonDataUrl } from '../shared/constants/user.constant';
 })
 export class LoginComponent implements OnInit {
   public userData: any;
-  public url = jsonDataUrl.user;
   public loginvalid: boolean = false;
-  public loginDetailStatus: boolean = false;
 
   private route: Router = inject(Router);
 
@@ -24,7 +21,6 @@ export class LoginComponent implements OnInit {
     private loginForm: FormBuilder
   ) {}
   ngOnInit() {}
-  // TODO: change this to form builder
 
   loginDetails = this.loginForm.group({
     username: ['', [Validators.required]],

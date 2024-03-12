@@ -12,90 +12,92 @@
 <div class="modal-body">
   <form [formGroup]="addNewData">
     <div class="row">
-        <select
-          formControlName="category"
-          id=" " 
-          class="form-select form-select-lg mb-3 border border-black" multiple aria-label="multiple select example" 
-        >
-          <option value="" selected >Category</option>
-          <option *ngFor="let item of category" [value]="item">
-            {{ item }}
-          </option>
-        </select>
-      </div>
-      <br />
-      <div class="row">
-        <input
-          type="text"
-          formControlName="food"
-          class="form-control form-control-lg border border-black"
-          placeholder="Food"
-        />
-      </div>
-      <br>
+      <select
+        formControlName="category"
+        id=" "
+        class="form-select form-select-lg mb-3 border border-black"
+        multiple
+        aria-label="multiple select example"
+      >
+        <option value="" selected>Category</option>
+        <option *ngFor="let item of category" [value]="item">
+          {{ item }}
+        </option>
+      </select>
+    </div>
+    <br />
+    <div class="row">
+      <input
+        type="text"
+        formControlName="food"
+        class="form-control form-control-lg border border-black"
+        placeholder="Food"
+      />
+    </div>
+    <br />
 
-      <div class="row">
-        <input
-          type="number"
-          formControlName="quantity"
-          class="form-control form-control-lg border border-black"
-          placeholder="FoodQuantity"
-        />
-      </div>
-      <br>
+    <div class="row">
+      <input
+        type="number"
+        formControlName="quantity"
+        class="form-control form-control-lg border border-black"
+        placeholder="FoodQuantity"
+      />
+    </div>
+    <br />
 
-      <div class="row">
-        <input
-          type="text"
-          formControlName="foodunit"
-          class="form-control form-control-lg border border-black"
-          placeholder="Food Quantity Unit"
-        />
-      </div>
+    <div class="row">
+      <input
+        type="text"
+        formControlName="foodunit"
+        class="form-control form-control-lg border border-black"
+        placeholder="Food Quantity Unit"
+      />
+    </div>
 
-      <br>
+    <br />
 
-      <div class="row">
-        <input
-          type="text"
-          formControlName="sidedish"
-          class="form-control form-control-lg border border-black"
-          placeholder="Combo"
-        />
-      </div>
+    <div class="row">
+      <input
+        type="text"
+        formControlName="sidedish"
+        class="form-control form-control-lg border border-black"
+        placeholder="Combo"
+      />
+    </div>
 
-      <br>
+    <br />
 
-      <div class="row">
-        <input
-          type="number"
-          formControlName="sidedishquantity"
-          class="form-control form-control-lg border border-black"
-          placeholder="Combo Quantity"
-        />
-      </div>
-      <br>
+    <div class="row">
+      <input
+        type="number"
+        formControlName="sidedishquantity"
+        class="form-control form-control-lg border border-black"
+        placeholder="Combo Quantity"
+      />
+    </div>
+    <br />
 
-      <div class="row">
-        <input
-          type="text"
-          formControlName="sidedishunit"
-          class="form-control form-control-lg border border-black"
-          placeholder="Combo Quantity Unit"
-        />
-      </div>
-      <br>
+    <div class="row">
+      <input
+        type="text"
+        formControlName="sidedishunit"
+        class="form-control form-control-lg border border-black"
+        placeholder="Combo Quantity Unit"
+      />
+    </div>
+    <br />
 
-      <div class="row">
-        <input
-          type="number"
-          formControlName="calorie"
-          class="form-control form-control-lg border border-black"
-          placeholder="Calorie"
-        />
-      </div>
-      <br>
-    </form>
+    <div class="row">
+      <input
+        type="number"
+        formControlName="calorie"
+        class="form-control form-control-lg border border-black"
+        placeholder="Calorie"
+      />
+    </div>
+    <br />
+  </form>
 </div>
 <div class="modal-footer">
   <button (click)="DataTransfer()">Submit</button>

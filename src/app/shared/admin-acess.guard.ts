@@ -14,8 +14,6 @@ export const adminAcessGuard: CanActivateFn = (
     .getUserDetail(username)
     .pipe(
       map((value: any) => {
-
-     
         return value[0].role.join('') === 'useradmin' ? true : false;
       })
     );

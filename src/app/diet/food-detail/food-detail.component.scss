@@ -1,61 +1,61 @@
 .background {
-    background-image: url("/assets/bowl.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-
-  #newline {
-    font-size: x-large;
-    color: white;
-    font-weight: bolder;
-    height: 70px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;   
-    padding-top: 15px ;
-    padding-left: 800px;
-    padding-right: 500px;
-  }
-  
-table,th,td{
-    table-layout:fixed;
-    border: 2px solid #000000;
-    margin: 100px 350px;
-    padding: 2px 2px;
-    text-align: center;
+  background-image: url("/assets/bowl.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-td{
-    color:white;
-    font-weight: bolder;
-    font-size: x-large;
-}
-th{
-    color:white;
-    font-weight: bolder;
-    font-size: x-large;
-}
-
-#foodimage{
-    width:300px;
-    height:300px;
-    padding: 5px 10px;
+#newline {
+  font-size: x-large;
+  color: white;
+  font-weight: bolder;
+  height: 70px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding-top: 15px;
+  padding-left: 800px;
+  padding-right: 500px;
 }
 
-#Addnew{
-    backdrop-filter: brightness(50%);
-    // text-align: center;
-
+table,
+th,
+td {
+  table-layout: fixed;
+  border: 2px solid #000000;
+  margin: 100px 350px;
+  padding: 2px 2px;
+  text-align: center;
 }
 
-.paddingicon{
-    margin-right: 7px;
-    background-color: transparent;
-    border:none;
-    color: white;
-    border: 1px solid white;
+td {
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
+}
+th {
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
 }
 
-i:active{
-    font-size: larger;
-    color:black;
+#foodimage {
+  width: 300px;
+  height: 300px;
+  padding: 5px 10px;
+}
+
+#Addnew {
+  backdrop-filter: brightness(50%);
+}
+
+.paddingicon {
+  margin-right: 7px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  border: 1px solid white;
+}
+
+button:active {
+  font-size: larger;
+  color: black;
 }

@@ -8,9 +8,9 @@ import { jsonDataUrl } from '../shared/constants/user.constant';
   providedIn: 'root',
 })
 export class DietService {
-  constructor(private httpReq: HttpClient) {}
-
   private dietUrl = jsonDataUrl.diet;
+
+  constructor(private httpReq: HttpClient) {}
 
   getFoodDetails() {
     return this.httpReq.get(this.dietUrl);
@@ -19,16 +19,15 @@ export class DietService {
   addFoodDetails(foodData: any) {
     return this.httpReq.post(this.dietUrl, foodData);
   }
-  getFoodData(id:string){
-    return  this.httpReq.get(this.dietUrl + '?id=' + id);
+  getFoodData(id: string) {
+    return this.httpReq.get(this.dietUrl + '?id=' + id);
   }
 
-  updateFoodData(id:string,data:any){
-    return this.httpReq.put(`${this.dietUrl}/${id}`,data)
-
+  updateFoodData(id: string, data: any) {
+    return this.httpReq.put(`${this.dietUrl}/${id}`, data);
   }
 
-  deleteFoodItem(id:string){
+  deleteFoodItem(id: string) {
     return this.httpReq.delete(`${this.dietUrl}/${id}`);
   }
 
@@ -74,9 +73,7 @@ export class DietService {
   }
 
   getDataOnCategory(category: string, foodCalorie: number): Observable<any> {
-    const dietUrl = jsonDataUrl.diet;
-
-    return this.httpReq.get(dietUrl).pipe(
+    return this.httpReq.get(this.dietUrl).pipe(
       map((data: any) => {
         const DietData = data;
         const categoryFoodItems = DietData.filter((object: any) => {
@@ -109,7 +106,6 @@ export class DietService {
           sidedishquantity: sidedishquantity,
         };
         return food;
-        
       })
     );
   }

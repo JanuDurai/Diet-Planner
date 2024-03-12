@@ -2,7 +2,13 @@
   <div id="Addnew">
     <label id="newline">Food Details </label>
 
-    <button type="button" class="btn btn-secondary btn-lg" (click)="DisplayAddItemModel()"> + Add New Food</button>
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg"
+      (click)="DisplayAddItemModel()"
+    >
+      + Add New Food
+    </button>
 
     <table id="tablealign">
       <thead>
@@ -28,7 +34,7 @@
           <td>{{ fooditem.calorie }}</td>
           <td>
             <button class="paddingicon" (click)="DisplayEditModel(fooditem.id)">
-              <i class="bi bi-pencil" ></i>
+              <i class="bi bi-pencil"></i>
             </button>
             <button class="paddingicon" (click)="DeleteFoodData(fooditem.id)">
               <i class="bi bi-trash"></i>
@@ -39,5 +45,3 @@
     </table>
   </div>
 </div>
-
-

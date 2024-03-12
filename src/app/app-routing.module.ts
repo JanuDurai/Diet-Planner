@@ -21,7 +21,13 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    children: [{ path: 'register', component: RegisterComponent , canActivate: [loggedInProfileGuard]}],
+    children: [
+      {
+        path: 'register',
+        component: RegisterComponent,
+        canActivate: [loggedInProfileGuard],
+      },
+    ],
   },
   {
     path: 'profile',
@@ -33,7 +39,6 @@ const routes: Routes = [
     loadChildren: () => import('./diet/diet.module').then((m) => m.DietModule),
   },
 ];
-// TODO: add lazy loading for diet module with path 'diet'
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

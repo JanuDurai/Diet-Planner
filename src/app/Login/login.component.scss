@@ -27,71 +27,66 @@ form {
   width: 350px;
   background-color: transparent;
   backdrop-filter: brightness(70%);
-  
 }
 
 input {
-   display: block;
-   color:white;
-   background-color: transparent;
-   font-weight: bolder;
-   font-size: larger;
-
-}
-
-input::placeholder{
-   color:white;
-   font-weight: bolder;
-   padding: 5px 5px;
-}
-
-input:focus{
+  display: block;
+  color: white;
   background-color: transparent;
-  color:white;
+  font-weight: bolder;
+  font-size: larger;
 }
 
-
-.paddingdiv{
-   padding: 10px 10px;
+input::placeholder {
+  color: white;
+  font-weight: bolder;
+  padding: 5px 5px;
 }
 
-
-button{
-   color:white;
-   border: 5px solid grey;
-   width:100px;
-   height:50px;
-   border-radius: 2px;
-   background-color: transparent;
-   margin: 2px 2px;
-   font-weight: bold;
-   font-size:medium;
-
+input:focus {
+  background-color: transparent;
+  color: white;
 }
 
-button:hover{
-background-color: transparent;
-color:white;
-border:2px solid white;
-font-weight: bolder;
-font-size:larger;
+.paddingdiv {
+  padding: 10px 10px;
 }
 
-.invalidError{
- color: red;
- font-size: larger;
+button {
+  color: white;
+  border: 5px solid grey;
+  width: 100px;
+  height: 50px;
+  border-radius: 2px;
+  background-color: transparent;
+  margin: 2px 2px;
+  font-weight: bold;
+  font-size: medium;
 }
 
-p{
-  color:white;
+button:hover {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-weight: bolder;
+  font-size: larger;
 }
-a:hover{
-  color:white;
+
+.invalidError {
+  color: red;
+  font-size: larger;
+}
+
+p {
+  color: white;
+}
+a:hover {
+  color: white;
   font-size: larger;
   font-weight: bolder;
 }
 
-a::content{
-  color:white;
-  font-weight:400;
+a::content {
+  color: white;
+  font-weight: 400;
 }

@@ -13,7 +13,7 @@ import { DeleteFoodComponent } from '../delete-food/delete-food.component';
 })
 export class FoodDetailComponent implements OnInit {
   public foodDetails: any;
-  public id:string;
+  public id: string;
 
   constructor(
     private dietservice: DietService,
@@ -36,22 +36,22 @@ export class FoodDetailComponent implements OnInit {
         );
     });
   }
-  DisplayEditModel(itemId:string){  
-    this.id=itemId; 
+  DisplayEditModel(itemId: string) {
+    this.id = itemId;
     const edititemRef = this.modelService.open(EditFoodComponent);
-    edititemRef.componentInstance.id=itemId;
-    edititemRef.result.then((result)=>{
-         this.dietservice.updateFoodData(this.id,result).subscribe((data)=>(console.log(`Food data updated successfully`)))
-    })
-
+    edititemRef.componentInstance.id = itemId;
+    edititemRef.result.then((result) => {
+      this.dietservice
+        .updateFoodData(this.id, result)
+        .subscribe((data) => console.log(`Food data updated successfully`));
+    });
   }
-  DeleteFoodData(itemId:string){
-    const deleteitemRef=this.modelService.open(DeleteFoodComponent);
-    deleteitemRef.result.then(()=>{
-      this.dietservice.deleteFoodItem(itemId).subscribe((data)=>{console.log(`Food Item Deleted successfully`);
-      })
-    })
-
+  DeleteFoodData(itemId: string) {
+    const deleteitemRef = this.modelService.open(DeleteFoodComponent);
+    deleteitemRef.result.then(() => {
+      this.dietservice.deleteFoodItem(itemId).subscribe((data) => {
+        console.log(`Food Item Deleted successfully`);
+      });
+    });
   }
-
 }

@@ -6,7 +6,6 @@ import { FoodDetailComponent } from './food-detail/food-detail.component';
 import { adminAcessGuard } from '../shared/admin-acess.guard';
 
 const routes: Routes = [
-  // TODO: remove diet route and create child paths for food plan component with child route 'plan'
   {
     path: '',
     children: [
@@ -19,7 +18,7 @@ const routes: Routes = [
     ],
   },
   {
-    path:'fooddetails',
+    path: 'fooddetails',
     component: FoodDetailComponent,
     canActivate: [adminAcessGuard],
   },
