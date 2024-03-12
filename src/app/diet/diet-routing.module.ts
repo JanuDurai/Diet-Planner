@@ -13,6 +13,8 @@ const routes: Routes = [
         path: 'plan',
         component: FoodPlanComponent,
         canActivate: [loggedInProfileGuard],
+        title:'Diet Page'
+
       },
       { path: '', redirectTo: 'plan', pathMatch: 'full' },
     ],
@@ -21,6 +23,8 @@ const routes: Routes = [
     path: 'fooddetails',
     component: FoodDetailComponent,
     canActivate: [adminAcessGuard],
+    title:'FoodDetails Page'
+
   },
 ];
 

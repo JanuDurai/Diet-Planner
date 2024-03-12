@@ -13,11 +13,13 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [loggedInProfileGuard],
+    title: 'Home Page',
   },
   {
     path: 'login',
     component: LoginComponent,
     canActivate: [loggedInProfileGuard],
+    title: 'Login Page',
   },
   {
     path: 'login',
@@ -25,6 +27,7 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent,
+        title: 'Register Page',
       },
     ],
   },
@@ -32,6 +35,8 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
     canActivate: [loggedInProfileGuard],
+    title:'Profile Page'
+
   },
   {
     path: 'diet',

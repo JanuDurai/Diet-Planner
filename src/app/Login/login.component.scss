@@ -54,7 +54,7 @@ input:focus {
 
 button {
   color: white;
-  border: 5px solid grey;
+  border: 1px solid white;
   width: 100px;
   height: 50px;
   border-radius: 2px;
@@ -67,7 +67,7 @@ button {
 button:hover {
   background-color: transparent;
   color: white;
-  border: 2px solid white;
+  border: 3px solid white;
   font-weight: bolder;
   font-size: larger;
 }
