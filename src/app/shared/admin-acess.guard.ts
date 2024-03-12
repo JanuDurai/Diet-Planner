@@ -2,22 +2,21 @@ import { CanActivateFn } from '@angular/router';
 
 import { inject } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { map } from 'rxjs';
+import { Observable } from 'rxjs';
 
-export const adminAcessGuard: CanActivateFn = (route, state) => {
+export const adminAcessGuard: CanActivateFn = (
+  route,
+  state
+): Observable<boolean> => {
   const username = sessionStorage.getItem('username');
+  return inject(UserService)
+    .getUserDetail(username)
+    .pipe(
+      map((value: any) => {
 
-  //  inject(UserService)
-  //   .getUserDetail(username)
-  //   .subscribe((value) => {
-  //     const userDetail: any = value;
-  //     return userDetail[0].role.join('') == 'useradmin' ? true : false;
-  //   });
-
-  //  userService.getUserDetail(username).subscribe((value) => {
-  //   const userData: any = value;
-  //   userData[0].role.join('') == 'useradmin'
-  //     ? (this.adminAcess = true)
-  //     : (this.adminAcess = false);
-  // });
-  return true;
+     
+        return value[0].role.join('') === 'useradmin' ? true : false;
+      })
+    );
 };

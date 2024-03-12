@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    children: [{ path: 'register', component: RegisterComponent }],
+    children: [{ path: 'register', component: RegisterComponent , canActivate: [loggedInProfileGuard]}],
   },
   {
     path: 'profile',
