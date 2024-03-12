@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),
             Validators.required,
-            Validators.minLength(4),
+            Validators.minLength(8),
           ],
         ],
         userconfirmpassword: [
@@ -73,10 +73,10 @@ export class RegisterComponent implements OnInit {
           [
             Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),
             Validators.required,
-            Validators.minLength(4),
+            Validators.minLength(8),
           ],
         ],
-        role: [''],
+        role: [],
       },
       { validators: PasswordMatchValidation }
     );
@@ -87,7 +87,7 @@ export class RegisterComponent implements OnInit {
       this.invalidform = true;
     } else {
       this.invalidform = false;
-      this.Data.get('role').setValue('["user"]');
+      this.Data.get('role').setValue(["user"]);
       this.userService.addUser(this.Data.value).subscribe((data) => {
         console.log(`User Details added successfully`);
       });

@@ -85,6 +85,57 @@
       "role": [
         "user"
       ]
+    },
+    {
+      "id": "e718",
+      "userfirstname": "Puvitha",
+      "userlastname": "Shree",
+      "userage": 19,
+      "usergender": "Female",
+      "userheight": 160,
+      "userweight": 42,
+      "usertargetweight": 0.75,
+      "userchoice": "Weight Gain",
+      "userusername": "Puvi",
+      "userpassword": "Puvi@123",
+      "userconfirmpassword": "Puvi@123",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "344a",
+      "userfirstname": "Deva",
+      "userlastname": "Dharshan",
+      "userage": 30,
+      "usergender": "Male",
+      "userheight": 160,
+      "userweight": 56,
+      "usertargetweight": 0.75,
+      "userchoice": "Weight Loss",
+      "userusername": "Dharshan",
+      "userpassword": "Dhar@123",
+      "userconfirmpassword": "Dhar@123",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "e567",
+      "userfirstname": "Deva",
+      "userlastname": "Varshan",
+      "userage": 26,
+      "usergender": "Male",
+      "userheight": 168,
+      "userweight": 56,
+      "usertargetweight": 1,
+      "userchoice": "Weight Gain",
+      "userusername": "Varshan",
+      "userpassword": "Varshan@123",
+      "userconfirmpassword": "Varshan@123",
+      "role": [
+        "user"
+      ]
     }
   ],
   "diet": [
