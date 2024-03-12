@@ -13,31 +13,31 @@ export class UserService {
 
   constructor(private httpReq: HttpClient) {}
 
-  addUser(data: any) {
+  public addUser(data: any) {
     return this.httpReq.post(this.userUrl, data);
   }
 
-  getAllUserDetails() {
+  public getAllUserDetails() {
     return this.httpReq.get(this.userUrl);
   }
 
-  setUserName(username: string) {
+  public setUserName(username: string) {
     sessionStorage.setItem('username', username);
   }
 
-  DeleteUserName() {
+  public deleteUserName() {
     sessionStorage.removeItem('username');
   }
 
-  getUserDetail(username: any) {
+  public getUserDetail(username: any) {
     return this.httpReq.get(this.userUrl + '?username=' + username);
   }
 
-  getUserName(): string | undefined {
+  public getUserName(): string | undefined {
     return sessionStorage.getItem('username')?.toString();
   }
 
-  updateLoginStatus() {
+  public updateLoginStatus() {
     const username = sessionStorage.getItem('username');
     if (username == null) this.loggedIn = false;
     else {
@@ -50,7 +50,7 @@ export class UserService {
     }
   }
 
-  updateUserDetails(id: number, userData: any) {
+  public updateUserDetails(id: number, userData: any) {
     return this.httpReq.put(`${this.userUrl}/${id}`, userData.value);
   }
 }

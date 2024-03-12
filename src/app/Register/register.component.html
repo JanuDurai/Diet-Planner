@@ -15,8 +15,7 @@
           <div
             *ngIf="
               Data.get('firstname')?.invalid &&
-              (Data.get('firstname')?.dirty ||
-                Data.get('firstname')?.touched)
+              (Data.get('firstname')?.dirty || Data.get('firstname')?.touched)
             "
           >
             <p *ngIf="Data.get('firstname')?.errors?.['minLength']">
@@ -44,8 +43,7 @@
           <div
             *ngIf="
               Data.get('lastname')?.invalid &&
-              (Data.get('lastname')?.dirty ||
-                Data.get('lastname')?.touched)
+              (Data.get('lastname')?.dirty || Data.get('lastname')?.touched)
             "
           >
             <div
@@ -85,16 +83,10 @@
             >
               *Age must be given
             </div>
-            <div
-              *ngIf="Data.get('age')?.errors?.['min']"
-              style="color: red"
-            >
+            <div *ngIf="Data.get('age')?.errors?.['min']" style="color: red">
               Age must be greater than 18
             </div>
-            <div
-              *ngIf="Data.get('age')?.errors?.['max']"
-              style="color: red"
-            >
+            <div *ngIf="Data.get('age')?.errors?.['max']" style="color: red">
               Age must be less than 60
             </div>
           </div>
@@ -237,8 +229,7 @@
           <div
             *ngIf="
               Data.get('username')?.invalid &&
-              (Data.get('username')?.dirty ||
-                Data.get('username')?.touched)
+              (Data.get('username')?.dirty || Data.get('username')?.touched)
             "
           >
             <div
@@ -269,8 +260,7 @@
           <div
             *ngIf="
               Data.get('password')?.invalid &&
-              (Data.get('password')?.dirty ||
-                Data.get('password')?.touched)
+              (Data.get('password')?.dirty || Data.get('password')?.touched)
             "
           >
             <div

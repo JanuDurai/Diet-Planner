@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -8,27 +8,31 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./add-food.component.scss'],
 })
 export class AddFoodComponent implements OnInit {
-  addNewData: any;
-  category = ['breakfast', 'dinner', 'lunch'];
+  public addNewData: any;
+  public category = ['breakfast', 'dinner', 'lunch'];
+  public buttonAble: boolean = false;
 
   constructor(
     private formbuilder: FormBuilder,
     public activeModal: NgbActiveModal
   ) {}
-
   ngOnInit(): void {
     this.addNewData = this.formbuilder.group({
-      category: '',
-      food: '',
-      quantity: '',
-      foodunit: '',
-      sidedish: '',
-      sidedishquantity: '',
-      sidedishunit: '',
-      calorie: '',
+      category: ['', [Validators.required]],
+      food: ['', [Validators.required]],
+      quantity: ['', [Validators.required]],
+      foodunit: ['', [Validators.required]],
+      sidedish: ['', [Validators.required]],
+      sidedishquantity: ['', [Validators.required]],
+      sidedishunit: ['', [Validators.required]],
+      calorie: ['', [Validators.required]],
     });
   }
-  DataTransfer() {
-    this.activeModal.close(this.addNewData.value);
+  public dataTransfer() {
+    if (this.addNewData.invalid) this.buttonAble = true;
+    else this.activeModal.close(this.addNewData.value);
+  }
+  public buttonDisable() {
+    this.buttonAble = false;
   }
 }

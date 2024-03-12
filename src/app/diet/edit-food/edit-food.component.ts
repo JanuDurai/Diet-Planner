@@ -12,8 +12,8 @@ import { DietService } from 'src/app/services/diet.service';
 })
 export class EditFoodComponent implements OnInit {
   @Input() id: string;
-  foodData: any;
-  editData: any;
+  public foodData: any;
+  public editData: any;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -40,7 +40,7 @@ export class EditFoodComponent implements OnInit {
       },
     });
   }
-  EditData() {
+  public editFoodData() {
     this.activeModal.close(this.editData.value);
   }
 }

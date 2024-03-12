@@ -5,7 +5,7 @@
     <button
       type="button"
       class="btn btn-secondary btn-lg"
-      (click)="DisplayAddItemModel()"
+      (click)="displayAddItemModel()"
     >
       + Add New Food
     </button>
@@ -25,18 +25,18 @@
       </thead>
       <tbody>
         <tr *ngFor="let fooditem of foodDetails">
-          <td>{{ fooditem.category }}</td>
-          <td><img [src]="fooditem.img" id="foodimage" /></td>
           <td>{{ fooditem.food }}</td>
+          <td><img [src]="fooditem.img" id="foodimage" /></td>
+          <td>{{ fooditem.category }}</td>
           <td>{{ fooditem.quantity }}{{ fooditem.foodunit }}</td>
           <td>{{ fooditem.sidedish }}</td>
           <td>{{ fooditem.sidedishquantity }}{{ fooditem.sidedishunit }}</td>
           <td>{{ fooditem.calorie }}</td>
           <td>
-            <button class="paddingicon" (click)="DisplayEditModel(fooditem.id)">
+            <button class="paddingicon" (click)="displayEditModel(fooditem.id)">
               <i class="bi bi-pencil"></i>
             </button>
-            <button class="paddingicon" (click)="DeleteFoodData(fooditem.id)">
+            <button class="paddingicon" (click)="deleteFoodData(fooditem.id)">
               <i class="bi bi-trash"></i>
             </button>
           </td>

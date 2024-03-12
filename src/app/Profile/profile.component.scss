@@ -17,27 +17,9 @@ form {
   padding: 10px 100px;
 }
 
-button {
-  color: white;
-  background-color: transparent;
-  border: 2px solid grey;
-  width: 100px;
-  height: 50px;
-  border-radius: 2px;
-  font-weight: bold;
-}
-
 #flex {
   display: flex;
   justify-content: center;
-}
-
-button:hover {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  font-weight: bolder;
-  font-size: larger;
 }
 
 input {
@@ -67,4 +49,17 @@ label {
   font-size: larger;
   font-weight: bolder;
   color: white;
+}
+
+button{
+  background-color: grey;
+  font-size: larger;
+  padding: 10px 10px;
+  color:white;
+  border-radius: 4px;
+
+}
+button:hover{
+  background-color: rgb(107, 102, 102);
+  border: 2px solid grey;
 }

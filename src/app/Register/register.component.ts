@@ -82,7 +82,7 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  onsubmit() {
+  public onsubmit() {
     if (this.Data.invalid) {
       this.invalidform = true;
     } else {
@@ -98,7 +98,7 @@ export class RegisterComponent implements OnInit {
     return this.Data.controls['firstname'];
   }
 
-  changeValue(value: string) {
+  public changeValue(value: string) {
     this.weight = value;
   }
 }

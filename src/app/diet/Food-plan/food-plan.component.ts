@@ -10,8 +10,6 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class FoodPlanComponent implements OnInit {
   public foodData: any;
-  public username: string | undefined;
-  public userDetail: any;
   public foodCategory = [
     {
       label: 'BREAKFAST',
@@ -26,6 +24,8 @@ export class FoodPlanComponent implements OnInit {
       name: 'dinner',
     },
   ];
+  private userDetail: any;
+  private username: string | undefined;
 
   constructor(
     private dietUser: DietService,

@@ -141,24 +141,6 @@
   "diet": [
     {
       "category": [
-        "breakfast",
-        "dinner"
-      ],
-      "food": "Idly",
-      "quantity": 1,
-      "foodunit": "piece",
-      "sidedish": [
-        "Sambar",
-        "Coconut Chutney"
-      ],
-      "sidedishquantity": 50,
-      "sidedishunit": "g",
-      "calorie": 123,
-      "img": "/assets/idly.jpeg",
-      "id": "6a81"
-    },
-    {
-      "category": [
         "lunch"
       ],
       "food": "White Rice",
@@ -587,21 +569,6 @@
       "id": "6263"
     },
     {
-      "category": [
-        "breakfast",
-        "dinner"
-      ],
-      "food": "Idiyappam",
-      "quantity": 100,
-      "foodunit": "g",
-      "sidedish": "KadalaCurry",
-      "sidedishquantity": 100,
-      "sidedishunit": "g",
-      "calorie": 258,
-      "img": "",
-      "id": "90fe"
-    },
-    {
       "id": "68e2",
       "category": [
         "lunch"
@@ -612,7 +579,23 @@
       "sidedish": "Mushroommanjurian",
       "sidedishquantity": 100,
       "sidedishunit": "g",
-      "calorie": 403
+      "calorie": 403,
+      "img": "/assets/pulao.jpg"
+    },
+    {
+      "id": "e978",
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "idly",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": "Sambar CoconutChutney",
+      "sidedishquantity": 100,
+      "sidedishunit": "g",
+      "calorie": 180,
+      "img": "/assets/idly.jpeg"
     }
   ]
 }

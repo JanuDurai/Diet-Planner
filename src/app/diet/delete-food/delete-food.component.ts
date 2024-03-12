@@ -9,7 +9,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class DeleteFoodComponent {
   constructor(public activeModal: NgbActiveModal) {}
 
-  DeleteFoodItem() {
+  public deleteFoodItem() {
     this.activeModal.close();
   }
 }

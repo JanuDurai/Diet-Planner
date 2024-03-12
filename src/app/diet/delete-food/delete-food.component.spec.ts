@@ -18,4 +18,11 @@ describe('DeleteFoodComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should check content',()=>{
+  //   const test=TestBed.createComponent(DeleteFoodComponent);
+  //   test.detectChanges();
+  //   const res=test.nativeElement as HTMLElement;
+  //   expect(res.querySelector('h1')?.textContent).toContain('Delete Food')
+  // })
 });

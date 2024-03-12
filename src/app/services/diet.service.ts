@@ -12,26 +12,27 @@ export class DietService {
 
   constructor(private httpReq: HttpClient) {}
 
-  getFoodDetails() {
+  public getFoodDetails() {
     return this.httpReq.get(this.dietUrl);
   }
 
-  addFoodDetails(foodData: any) {
+  public addFoodDetails(foodData: any) {
     return this.httpReq.post(this.dietUrl, foodData);
   }
-  getFoodData(id: string) {
+
+  public getFoodData(id: string) {
     return this.httpReq.get(this.dietUrl + '?id=' + id);
   }
 
-  updateFoodData(id: string, data: any) {
+  public updateFoodData(id: string, data: any) {
     return this.httpReq.put(`${this.dietUrl}/${id}`, data);
   }
 
-  deleteFoodItem(id: string) {
+  public deleteFoodItem(id: string) {
     return this.httpReq.delete(`${this.dietUrl}/${id}`);
   }
 
-  calculateDailyCalorie(userDetail: any): Observable<any> {
+  public calculateDailyCalorie(userDetail: any): Observable<any> {
     const userData = userDetail;
     let BMR!: number;
     let MaintanenceCalorie: number;
@@ -72,7 +73,7 @@ export class DietService {
     );
   }
 
-  getDataOnCategory(category: string, foodCalorie: number): Observable<any> {
+  public getDataOnCategory(category: string, foodCalorie: number): Observable<any> {
     return this.httpReq.get(this.dietUrl).pipe(
       map((data: any) => {
         const DietData = data;

@@ -59,3 +59,12 @@ button:active {
   font-size: larger;
   color: black;
 }
+
+button {
+  background-color: grey;
+  font-size: x-large;
+}
+button:hover {
+  background-color: rgb(107, 102, 102);
+  border: 2px solid grey;
+}

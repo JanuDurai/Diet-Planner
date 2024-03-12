@@ -18,4 +18,12 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should be same text',()=>{
+  //   const result = TestBed.createComponent(FooterComponent);
+  //   result.detectChanges();
+  //   const compile=result.nativeElement as HTMLElement;
+  //   expect(compile.querySelector('pre')?.textContent).toContain('Privacy Policy   o   Sitemap   o   Accessblity   o   Support   o   @Copyrights 2024')
+
+  // })
 });

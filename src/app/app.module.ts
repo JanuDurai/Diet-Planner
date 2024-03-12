@@ -21,7 +21,7 @@ import { SharedModule } from './shared/shared.module';
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
-],
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,7 +29,7 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     SharedModule,
     FormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [DietService, UserService],
   bootstrap: [AppComponent],

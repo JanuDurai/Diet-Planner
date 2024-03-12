@@ -35,23 +35,17 @@ form {
   justify-content: flex-end;
 }
 
-button {
-  color: white;
-  background-color: transparent;
-  border: 2px solid grey;
-  width: 100px;
-  height: 50px;
-  border-radius: 2px;
-  font-weight: bold;
-  font-size: medium;
+button{
+  background-color: grey;
+  font-size: larger;
+  padding: 10px 10px;
+  color:white;
+  border-radius: 4px;
 }
 
-button:hover {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  font-weight: bolder;
-  font-size: larger;
+button:hover{
+  background-color: rgb(107, 102, 102);
+  border: 2px solid grey;
 }
 
 .background {

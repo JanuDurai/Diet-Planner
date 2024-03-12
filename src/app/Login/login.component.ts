@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ReEnterPasswordError() {
+  reenterPasswordError() {
     this.loginvalid = false;
   }
 }

@@ -8,10 +8,9 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  username: any;
-  userDetails: any;
-  userData: FormGroup;
-  id: string;
+  public userDetails: any;
+  public userData: FormGroup;
+  private username: any;
 
   constructor(
     private userservice: UserService,
@@ -44,10 +43,10 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  UpdateChanges() {
+  public updateChanges() {
     console.log(this.userData.value.id);
     console.log(`entered data`, this.userData.value);
-    this.userData.value.confirmpassword=this.userData.value.password;
+    this.userData.value.confirmpassword = this.userData.value.password;
     this.userservice
       .updateUserDetails(this.userData.value.id, this.userData)
       .subscribe((data) => {

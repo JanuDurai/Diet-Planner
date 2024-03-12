@@ -35,8 +35,7 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
     canActivate: [loggedInProfileGuard],
-    title:'Profile Page'
-
+    title: 'Profile Page',
   },
   {
     path: 'diet',

@@ -13,7 +13,7 @@ import { DeleteFoodComponent } from '../delete-food/delete-food.component';
 })
 export class FoodDetailComponent implements OnInit {
   public foodDetails: any;
-  public id: string;
+  private id: string;
 
   constructor(
     private dietservice: DietService,
@@ -21,36 +21,47 @@ export class FoodDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.getfoodData();
+  }
+
+  private getfoodData() {
     this.dietservice.getFoodDetails().subscribe((value) => {
       this.foodDetails = value;
     });
   }
 
-  DisplayAddItemModel() {
-    const additemRef = this.modelService.open(AddFoodComponent);
+  public displayAddItemModel() {
+    const additemRef = this.modelService.open(AddFoodComponent, { size: 'lg' });
     additemRef.result.then((result) => {
-      this.dietservice
-        .addFoodDetails(result)
-        .subscribe((data) =>
-          console.log(`Food Details are added successfully`)
-        );
+      this.dietservice.addFoodDetails(result).subscribe((data) => {
+        console.log(`Food Details are added successfully`);
+        this.getfoodData();
+      });
     });
   }
-  DisplayEditModel(itemId: string) {
+
+  public displayEditModel(itemId: string) {
     this.id = itemId;
-    const edititemRef = this.modelService.open(EditFoodComponent);
+    const edititemRef = this.modelService.open(EditFoodComponent, {
+      size: 'lg',
+    });
     edititemRef.componentInstance.id = itemId;
     edititemRef.result.then((result) => {
-      this.dietservice
-        .updateFoodData(this.id, result)
-        .subscribe((data) => console.log(`Food data updated successfully`));
+      this.dietservice.updateFoodData(this.id, result).subscribe((data) => {
+        console.log(`Food data updated successfully`);
+        this.getfoodData();
+      });
     });
   }
-  DeleteFoodData(itemId: string) {
-    const deleteitemRef = this.modelService.open(DeleteFoodComponent);
+
+  public deleteFoodData(itemId: string) {
+    const deleteitemRef = this.modelService.open(DeleteFoodComponent, {
+      size: 'lg',
+    });
     deleteitemRef.result.then(() => {
       this.dietservice.deleteFoodItem(itemId).subscribe((data) => {
         console.log(`Food Item Deleted successfully`);
+        this.getfoodData();
       });
     });
   }
