@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
           role: [''],
         });
 
-        this.userData.setValue(this.userDetails[0]);
+        this.userData.patchValue(this.userDetails[0]);
       },
     });
   }
@@ -47,7 +47,7 @@ export class ProfileComponent implements OnInit {
   UpdateChanges() {
     console.log(this.userData.value.id);
     console.log(`entered data`, this.userData.value);
-
+    this.userData.value.userconfirmpassword=this.userData.value.userpassword;
     this.userservice
       .updateUserDetails(this.userData.value.id, this.userData)
       .subscribe((data) => {
