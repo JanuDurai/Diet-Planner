@@ -8,24 +8,24 @@
         <div class="col">
           <input
             type="text"
-            formControlName="userfirstname"
+            formControlName="firstname"
             class="form-control form-control-lg border border-white"
             placeholder="First Name"
           />
           <div
             *ngIf="
-              Data.get('userfirstname')?.invalid &&
-              (Data.get('userfirstname')?.dirty ||
-                Data.get('userfirstname')?.touched)
+              Data.get('firstname')?.invalid &&
+              (Data.get('firstname')?.dirty ||
+                Data.get('firstname')?.touched)
             "
           >
-            <p *ngIf="Data.get('userfirstname')?.errors?.['minLength']">
+            <p *ngIf="Data.get('firstname')?.errors?.['minLength']">
               *Name must be greater
             </p>
-            <p *ngIf="Data.get('userfirstname')?.errors?.['pattern']">
+            <p *ngIf="Data.get('firstname')?.errors?.['pattern']">
               *Enter a valid Name
             </p>
-            <p *ngIf="Data.get('userfirstname')?.errors?.['required']">
+            <p *ngIf="Data.get('firstname')?.errors?.['required']">
               *First Name must be given
             </p>
           </div>
@@ -37,25 +37,25 @@
         <div class="col">
           <input
             type="text"
-            formControlName="userlastname"
+            formControlName="lastname"
             class="form-control form-control-lg border border-white"
             placeholder="Last Name"
           />
           <div
             *ngIf="
-              Data.get('userlastname')?.invalid &&
-              (Data.get('userlastname')?.dirty ||
-                Data.get('userlastname')?.touched)
+              Data.get('lastname')?.invalid &&
+              (Data.get('lastname')?.dirty ||
+                Data.get('lastname')?.touched)
             "
           >
             <div
-              *ngIf="Data.get('userlastname')?.errors?.['required']"
+              *ngIf="Data.get('lastname')?.errors?.['required']"
               style="color: red"
             >
               *Last Name must be given
             </div>
             <div
-              *ngIf="Data.get('userlastname')?.errors?.['pattern']"
+              *ngIf="Data.get('lastname')?.errors?.['pattern']"
               style="color: red"
             >
               *Enter a valid Name
@@ -69,30 +69,30 @@
         <div class="col">
           <input
             type="number"
-            formControlName="userage"
+            formControlName="age"
             class="form-control form-control-lg border border-white"
             placeholder="Age"
           />
           <div
             *ngIf="
-              Data.get('userage')?.invalid &&
-              (Data.get('userage')?.dirty || Data.get('userage')?.touched)
+              Data.get('age')?.invalid &&
+              (Data.get('age')?.dirty || Data.get('age')?.touched)
             "
           >
             <div
-              *ngIf="Data.get('userage')?.errors?.['required']"
+              *ngIf="Data.get('age')?.errors?.['required']"
               style="color: red"
             >
               *Age must be given
             </div>
             <div
-              *ngIf="Data.get('userage')?.errors?.['min']"
+              *ngIf="Data.get('age')?.errors?.['min']"
               style="color: red"
             >
               Age must be greater than 18
             </div>
             <div
-              *ngIf="Data.get('userage')?.errors?.['max']"
+              *ngIf="Data.get('age')?.errors?.['max']"
               style="color: red"
             >
               Age must be less than 60
@@ -102,7 +102,7 @@
         <div class="col">
           <select
             name="gender"
-            formControlName="usergender"
+            formControlName="gender"
             class="form-control form-control-lg border border-white"
             id="select"
           >
@@ -114,12 +114,12 @@
 
           <div
             *ngIf="
-              Data.get('usergender')?.invalid &&
-              (Data.get('usergender')?.dirty || Data.get('usergender')?.touched)
+              Data.get('gender')?.invalid &&
+              (Data.get('gender')?.dirty || Data.get('gender')?.touched)
             "
           >
             <div
-              *ngIf="Data.get('usergender')?.errors?.['required']"
+              *ngIf="Data.get('gender')?.errors?.['required']"
               style="color: red"
             >
               *Gender must be given
@@ -134,18 +134,18 @@
         <div class="col">
           <input
             type="number"
-            formControlName="userheight"
+            formControlName="height"
             class="form-control form-control-lg border border-white"
             placeholder="Height in cm"
           />
           <div
             *ngIf="
-              Data.get('userheight')?.invalid &&
-              (Data.get('userheight')?.dirty || Data.get('userheight')?.touched)
+              Data.get('height')?.invalid &&
+              (Data.get('height')?.dirty || Data.get('height')?.touched)
             "
           >
             <div
-              *ngIf="Data.get('userheight')?.errors?.['required']"
+              *ngIf="Data.get('height')?.errors?.['required']"
               style="color: red"
             >
               *Height must be given
@@ -155,18 +155,18 @@
         <div class="col">
           <input
             type="number"
-            formControlName="userweight"
+            formControlName="weight"
             class="form-control form-control-lg border border-white"
             placeholder="Current Weight"
           />
           <div
             *ngIf="
-              Data.get('userweight')?.invalid &&
-              (Data.get('userweight')?.dirty || Data.get('userweight')?.touched)
+              Data.get('weight')?.invalid &&
+              (Data.get('weight')?.dirty || Data.get('weight')?.touched)
             "
           >
             <div
-              *ngIf="Data.get('userweight')?.errors?.['required']"
+              *ngIf="Data.get('weight')?.errors?.['required']"
               style="color: red"
             >
               *Weight must be given
@@ -180,7 +180,7 @@
         <div class="col">
           <select
             name="choice"
-            formControlName="userchoice"
+            formControlName="choice"
             class="form-control form-control-lg border border-white"
             id="select"
           >
@@ -191,12 +191,12 @@
           </select>
           <div
             *ngIf="
-              Data.get('userchoice')?.invalid &&
-              (Data.get('userchoice')?.dirty || Data.get('userchoice')?.touched)
+              Data.get('choice')?.invalid &&
+              (Data.get('choice')?.dirty || Data.get('choice')?.touched)
             "
           >
             <div
-              *ngIf="Data.get('userchoice')?.errors?.['required']"
+              *ngIf="Data.get('choice')?.errors?.['required']"
               style="color: red"
             >
               *Choice must be given
@@ -213,7 +213,7 @@
 
           <input
             type="range"
-            formControlName="usertargetweight"
+            formControlName="targetweight"
             class="form-control form-control-lg form-range border border-white form-range-track-bg:white"
             id="range"
             min="0"
@@ -230,25 +230,25 @@
         <div class="col">
           <input
             type="text"
-            formControlName="userusername"
+            formControlName="username"
             placeholder="Username"
             class="form-control form-control-lg border border-white"
           />
           <div
             *ngIf="
-              Data.get('userusername')?.invalid &&
-              (Data.get('userusername')?.dirty ||
-                Data.get('userusername')?.touched)
+              Data.get('username')?.invalid &&
+              (Data.get('username')?.dirty ||
+                Data.get('username')?.touched)
             "
           >
             <div
-              *ngIf="Data.get('userusername')?.errors?.['required']"
+              *ngIf="Data.get('username')?.errors?.['required']"
               style="color: red"
             >
               *Username must be given
             </div>
             <div
-              *ngIf="Data.get('userusername')?.errors?.['pattern']"
+              *ngIf="Data.get('username')?.errors?.['pattern']"
               style="color: red"
             >
               *Enter a valid UserName
@@ -262,31 +262,31 @@
         <div class="col">
           <input
             type="password"
-            formControlName="userpassword"
+            formControlName="password"
             placeholder="Password"
             class="form-control form-control-lg border border-white"
           />
           <div
             *ngIf="
-              Data.get('userpassword')?.invalid &&
-              (Data.get('userpassword')?.dirty ||
-                Data.get('userpassword')?.touched)
+              Data.get('password')?.invalid &&
+              (Data.get('password')?.dirty ||
+                Data.get('password')?.touched)
             "
           >
             <div
-              *ngIf="Data.get('userpassword')?.errors?.['required']"
+              *ngIf="Data.get('password')?.errors?.['required']"
               style="color: red"
             >
               *Password must be given
             </div>
             <div
-              *ngIf="Data.get('userpassword')?.errors?.['pattern']"
+              *ngIf="Data.get('password')?.errors?.['pattern']"
               style="color: red"
             >
               Password must not contain & * , ( )
             </div>
             <div
-              *ngIf="Data.get('userpassword')?.errors?.['minLength']"
+              *ngIf="Data.get('password')?.errors?.['minLength']"
               style="color: red"
             >
               *Password must be greater than 8 characters
@@ -296,31 +296,31 @@
         <div class="col">
           <input
             type="password"
-            formControlName="userconfirmpassword"
+            formControlName="confirmpassword"
             placeholder="Confirm Password"
             class="form-control form-control-lg border border-white"
           />
           <div
             *ngIf="
-              Data.get('userconfirmpassword')?.invalid &&
-              (Data.get('userconfirmpassword')?.dirty ||
-                Data.get('userconfirmpassword')?.touched)
+              Data.get('confirmpassword')?.invalid &&
+              (Data.get('confirmpassword')?.dirty ||
+                Data.get('confirmpassword')?.touched)
             "
           >
             <div
-              *ngIf="Data.get('userconfirmpassword')?.errors?.['required']"
+              *ngIf="Data.get('confirmpassword')?.errors?.['required']"
               style="color: red"
             >
               *Password must be given
             </div>
             <div
-              *ngIf="Data.get('userconfirmpassword')?.errors?.['pattern']"
+              *ngIf="Data.get('confirmpassword')?.errors?.['pattern']"
               style="color: red"
             >
               Password must not contain & * , ( )
             </div>
             <div
-              *ngIf="Data.get('userconfirmpassword')?.errors?.['minLength']"
+              *ngIf="Data.get('confirmpassword')?.errors?.['minLength']"
               style="color: red"
             >
               *Password must be greater than 8 characters

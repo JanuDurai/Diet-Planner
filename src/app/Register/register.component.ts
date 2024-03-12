@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.Data = this.userData.group(
       {
-        userfirstname: [
+        firstname: [
           '',
           [
             Validators.required,
@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
             Validators.minLength(2),
           ],
         ],
-        userlastname: [
+        lastname: [
           '',
           [
             Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*$/),
@@ -43,16 +43,16 @@ export class RegisterComponent implements OnInit {
             Validators.minLength(3),
           ],
         ],
-        userage: [
+        age: [
           '',
           [Validators.min(18), Validators.max(60), Validators.required],
         ],
-        usergender: ['', [Validators.required]],
-        userheight: ['', [Validators.required]],
-        userweight: ['', [Validators.required]],
-        usertargetweight: ['', [Validators.required]],
-        userchoice: ['', [Validators.required]],
-        userusername: [
+        gender: ['', [Validators.required]],
+        height: ['', [Validators.required]],
+        weight: ['', [Validators.required]],
+        targetweight: ['', [Validators.required]],
+        choice: ['', [Validators.required]],
+        username: [
           '',
           [
             Validators.minLength(2),
@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
             Validators.required,
           ],
         ],
-        userpassword: [
+        password: [
           '',
           [
             Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),
@@ -68,7 +68,7 @@ export class RegisterComponent implements OnInit {
             Validators.minLength(8),
           ],
         ],
-        userconfirmpassword: [
+        confirmpassword: [
           '',
           [
             Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),
@@ -95,7 +95,7 @@ export class RegisterComponent implements OnInit {
     }
   }
   get userfirstname() {
-    return this.Data.controls['userfirstname'];
+    return this.Data.controls['firstname'];
   }
 
   changeValue(value: string) {

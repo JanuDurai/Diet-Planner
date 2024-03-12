@@ -25,17 +25,17 @@ export class ProfileComponent implements OnInit {
         this.userDetails = value;
         this.userData = this.ProfileData.group({
           id: [''],
-          userfirstname: [''],
-          userlastname: [''],
-          userage: [''],
-          usergender: [''],
-          userheight: [''],
-          userweight: [''],
-          usertargetweight: [''],
-          userchoice: [''],
-          userusername: [''],
-          userpassword: [''],
-          userconfirmpassword: [''],
+          firstname: [''],
+          lastname: [''],
+          age: [''],
+          gender: [''],
+          height: [''],
+          weight: [''],
+          targetweight: [''],
+          choice: [''],
+          username: [''],
+          password: [''],
+          confirmpassword: [''],
           role: [''],
         });
 
@@ -47,7 +47,7 @@ export class ProfileComponent implements OnInit {
   UpdateChanges() {
     console.log(this.userData.value.id);
     console.log(`entered data`, this.userData.value);
-    this.userData.value.userconfirmpassword=this.userData.value.userpassword;
+    this.userData.value.confirmpassword=this.userData.value.password;
     this.userservice
       .updateUserDetails(this.userData.value.id, this.userData)
       .subscribe((data) => {

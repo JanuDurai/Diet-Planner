@@ -30,7 +30,7 @@ export class UserService {
   }
 
   getUserDetail(username: any) {
-    return this.httpReq.get(this.userUrl + '?userusername=' + username);
+    return this.httpReq.get(this.userUrl + '?username=' + username);
   }
 
   getUserName(): string | undefined {

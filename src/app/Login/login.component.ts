@@ -34,10 +34,9 @@ export class LoginComponent implements OnInit {
         console.log(this.userData);
         this.loginvalid = false;
         for (let Data of this.userData) {
-          console.log(Data.userusername, this.loginDetails.value.username);
-          if (Data.userusername === this.loginDetails.value.username) {
-            if (Data.userpassword === this.loginDetails.value.password) {
-              this.userService.setUserName(Data.userusername);
+          if (Data.username === this.loginDetails.value.username) {
+            if (Data.password === this.loginDetails.value.password) {
+              this.userService.setUserName(Data.username);
               this.userService.updateLoginStatus();
               this.route.navigate(['home']);
               break;

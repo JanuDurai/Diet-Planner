@@ -35,26 +35,26 @@ export class DietService {
     const userData = userDetail;
     let BMR!: number;
     let MaintanenceCalorie: number;
-    const reduceCalorie = userData[0].usertargetweight * 1100;
+    const reduceCalorie = userData[0].targetweight * 1100;
     let reduceWeight: number;
 
-    if (userData[0].usergender === 'Male') {
+    if (userData[0].gender === 'Male') {
       BMR =
         66.473 +
-        13.7516 * userData[0].userweight +
-        5.0033 * userData[0].userheight -
-        6.755 * userData[0].userage;
-    } else if (userData[0].usergender === 'Female') {
+        13.7516 * userData[0].weight +
+        5.0033 * userData[0].height -
+        6.755 * userData[0].age;
+    } else if (userData[0].gender === 'Female') {
       BMR =
         655.1 +
-        9.563 * userData[0].userweight +
-        1.85 * userData[0].userheight -
-        4.676 * userData[0].userage;
+        9.563 * userData[0].weight +
+        1.85 * userData[0].height -
+        4.676 * userData[0].age;
     }
     MaintanenceCalorie = BMR * 1.55;
-    if (userData[0].userchoice === 'Weight Loss')
+    if (userData[0].choice === 'Weight Loss')
       reduceWeight = MaintanenceCalorie - reduceCalorie;
-    else if (userData[0].userchoice === 'Weight Gain')
+    else if (userData[0].choice === 'Weight Gain')
       reduceWeight = MaintanenceCalorie + reduceCalorie;
     else reduceWeight = MaintanenceCalorie;
     const breakfastCalorie = (reduceWeight * 30) / 100;
