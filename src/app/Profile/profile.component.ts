@@ -44,8 +44,6 @@ export class ProfileComponent implements OnInit {
   }
 
   public updateChanges() {
-    console.log(this.userData.value.id);
-    console.log(`entered data`, this.userData.value);
     this.userData.value.confirmpassword = this.userData.value.password;
     this.userservice
       .updateUserDetails(this.userData.value.id, this.userData)

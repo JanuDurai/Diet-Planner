@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
     this.userService.getAllUserDetails().subscribe({
       next: (value) => {
         this.userData = value;
-        console.log(this.userData);
         this.loginvalid = false;
         for (let Data of this.userData) {
           if (Data.username === this.loginDetails.value.username) {

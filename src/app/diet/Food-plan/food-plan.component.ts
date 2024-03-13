@@ -38,9 +38,8 @@ export class FoodPlanComponent implements OnInit {
       this.userDetail = data;
       this.dietUser
         .calculateDailyCalorie(this.userDetail)
-        .subscribe((value: any) => {
+        .subscribe((value) => {
           this.foodData = value;
-          console.log(`food data`, this.foodData);
         });
     });
   }

@@ -94,9 +94,6 @@ export class RegisterComponent implements OnInit {
       this.route.navigate(['login']);
     }
   }
-  get userfirstname() {
-    return this.Data.controls['firstname'];
-  }
 
   public changeValue(value: string) {
     this.weight = value;

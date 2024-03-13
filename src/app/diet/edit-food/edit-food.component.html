@@ -1,100 +1,103 @@
-<div class="modal-header">
-  <h5 class="modal-title" id="titlealign">Edit</h5>
-  <button
-    type="button"
-    class="close"
-    aria-label="Close"
-    (click)="activeModal.dismiss('Cross click')"
-    class="btn btn-lg"
-  >
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body w-100">
-  <form [formGroup]="editData" *ngIf="editData">
-    <div class="row">
-      <input
-        type="text"
-        formControlName="category"
-        class="form-control form-control-lg border border-black"
-        placeholder="Category"
-      />
-    </div>
-    <br />
-    <div class="row">
-      <input
-        type="text"
-        formControlName="food"
-        class="form-control form-control-lg border border-black"
-        placeholder="Food"
-      />
-    </div>
-    <br />
-
-    <div class="row">
-      <input
-        type="number"
-        formControlName="quantity"
-        class="form-control form-control-lg border border-black"
-        placeholder="FoodQuantity"
-      />
-    </div>
-    <br />
-
-    <div class="row">
-      <input
-        type="text"
-        formControlName="foodunit"
-        class="form-control form-control-lg border border-black"
-        placeholder="Food Quantity Unit"
-      />
-    </div>
-
-    <br />
-
-    <div class="row">
-      <input
-        type="text"
-        formControlName="sidedish"
-        class="form-control form-control-lg border border-black"
-        placeholder="Combo"
-      />
-    </div>
-
-    <br />
-
-    <div class="row">
-      <input
-        type="number"
-        formControlName="sidedishquantity"
-        class="form-control form-control-lg border border-black"
-        placeholder="Combo Quantity"
-      />
-    </div>
-    <br />
-
-    <div class="row">
-      <input
-        type="text"
-        formControlName="sidedishunit"
-        class="form-control form-control-lg border border-black"
-        placeholder="Combo Quantity Unit"
-      />
-    </div>
-    <br />
-
-    <div class="row">
-      <input
-        type="number"
-        formControlName="calorie"
-        class="form-control form-control-lg border border-black"
-        placeholder="Calorie"
-      />
-    </div>
-    <br />
-  </form>
-  <div class="modal-footer">
-    <button (click)="editFoodData()" class="btn btn-lg">Update</button>
-
+<div class="container">
+  <div class="modal-header">
+    <h5 class="modal-title" id="titlealign">Edit</h5>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="activeModal.dismiss('Cross click')"
+      class="btn btn-lg"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
+  <div class="modal-body w-100">
+    <form [formGroup]="editData" *ngIf="editData">
+      <div class="row">
+        <input
+          type="text"
+          formControlName="category"
+          class="form-control form-control-lg border border-black"
+          placeholder="Category"
+        />
+      </div>
+      <br />
+      <div class="row">
+        <input
+          type="text"
+          formControlName="food"
+          class="form-control form-control-lg border border-black"
+          placeholder="Food"
+        />
+      </div>
+      <br />
+  
+      <div class="row">
+        <input
+          type="number"
+          formControlName="quantity"
+          class="form-control form-control-lg border border-black"
+          placeholder="FoodQuantity"
+        />
+      </div>
+      <br />
+  
+      <div class="row">
+        <input
+          type="text"
+          formControlName="foodunit"
+          class="form-control form-control-lg border border-black"
+          placeholder="Food Quantity Unit"
+        />
+      </div>
+  
+      <br />
+  
+      <div class="row">
+        <input
+          type="text"
+          formControlName="sidedish"
+          class="form-control form-control-lg border border-black"
+          placeholder="Combo"
+        />
+      </div>
+  
+      <br />
+  
+      <div class="row">
+        <input
+          type="number"
+          formControlName="sidedishquantity"
+          class="form-control form-control-lg border border-black"
+          placeholder="Combo Quantity"
+        />
+      </div>
+      <br />
+  
+      <div class="row">
+        <input
+          type="text"
+          formControlName="sidedishunit"
+          class="form-control form-control-lg border border-black"
+          placeholder="Combo Quantity Unit"
+        />
+      </div>
+      <br />
+  
+      <div class="row">
+        <input
+          type="number"
+          formControlName="calorie"
+          class="form-control form-control-lg border border-black"
+          placeholder="Calorie"
+        />
+      </div>
+      <br />
+    </form>
+  </div>
+    <div class="modal-footer">
+      <button (click)="editFoodData()" class="btn btn-lg">Update</button>
+  
+    </div>
+  
 </div>
