@@ -1,7 +1,7 @@
 <div class="background">
   <label for="" class="head">Today's Meal Plan</label>
 
-  <div id="divcontainer" class="container row">
+  <div id="divcontainer" class="container row" *ngIf="foodData" >
     <div *ngFor="let category of foodCategory" class="col-sm w-30" id="para">
       <h3>{{ category.label }}</h3>
       <img [src]="foodData[category.name].foodData.img" />

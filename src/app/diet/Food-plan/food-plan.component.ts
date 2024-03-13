@@ -33,14 +33,18 @@ export class FoodPlanComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.username = this.userService.getUserName();
-    this.userService.getUserDetail(this.username).subscribe((data) => {
-      this.userDetail = data;
-      this.dietUser
-        .calculateDailyCalorie(this.userDetail)
-        .subscribe((value) => {
-          this.foodData = value;
-        });
-    });
-  }
+  this.getData();
+}
+
+private getData(){
+  this.username = this.userService.getUserName();
+  this.userService.getUserDetail(this.username).subscribe((data) => {
+    this.userDetail = data;
+    this.dietUser
+      .calculateDailyCalorie(this.userDetail)
+      .subscribe((value) => {
+        this.foodData = value;
+      });
+  });
+}
 }
