@@ -32,6 +32,7 @@ export class AddFoodComponent implements OnInit {
     if (this.addNewData.invalid) this.buttonAble = true;
     else this.activeModal.close(this.addNewData.value);
   }
+  
   public buttonDisable() {
     this.buttonAble = false;
   }

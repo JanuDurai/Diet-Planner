@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddFoodComponent } from './add-food.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('AddFoodComponent', () => {
   let component: AddFoodComponent;
@@ -8,7 +10,9 @@ describe('AddFoodComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AddFoodComponent]
+      declarations: [AddFoodComponent],
+      // imports:[HttpClientTestingModule],
+      // providers:[NgbActiveModal]
     });
     fixture = TestBed.createComponent(AddFoodComponent);
     component = fixture.componentInstance;

@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DeleteFoodComponent } from './delete-food.component';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 describe('DeleteFoodComponent', () => {
   let component: DeleteFoodComponent;
@@ -8,7 +10,8 @@ describe('DeleteFoodComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DeleteFoodComponent]
+      declarations: [DeleteFoodComponent],
+      providers:[NgbActiveModal]
     });
     fixture = TestBed.createComponent(DeleteFoodComponent);
     component = fixture.componentInstance;

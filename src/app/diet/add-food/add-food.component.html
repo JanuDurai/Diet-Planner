@@ -12,7 +12,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <form [formGroup]="addNewData" (input)="buttonDisable()">
+    <form [formGroup]="addNewData" (input)="buttonDisable()" >
       <p *ngIf="buttonAble" style="color: red">*Enter Valid Details</p>
       <div class="row">
         <label class="categoryAlign">Category</label>

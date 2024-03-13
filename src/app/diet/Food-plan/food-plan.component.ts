@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./food-plan.component.scss'],
 })
 export class FoodPlanComponent implements OnInit {
-  public foodData: any;
+  public foodData:any;
   public foodCategory = [
     {
       label: 'BREAKFAST',
