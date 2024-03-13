@@ -58,9 +58,11 @@ export class DietService {
     else if (userData[0].choice === 'Weight Gain')
       reduceWeight = MaintanenceCalorie + reduceCalorie;
     else reduceWeight = MaintanenceCalorie;
+
     const breakfastCalorie = (reduceWeight * 30) / 100;
     const lunchCalorie = (reduceWeight * 40) / 100;
     const dinnerCalorie = (reduceWeight * 30) / 100;
+
     return forkJoin([
       this.getDataOnCategory('breakfast', breakfastCalorie),
       this.getDataOnCategory('lunch', lunchCalorie),
@@ -74,6 +76,7 @@ export class DietService {
   }
 
   public getDataOnCategory(category: string, foodCalorie: number): Observable<any> {
+
     return this.httpReq.get(this.dietUrl).pipe(
       map((data: any) => {
         const DietData = data;
@@ -84,15 +87,18 @@ export class DietService {
         });
         const randnumber = (
           Math.random() *
-          (categoryFoodItems.length - 1 - 0)
+          (categoryFoodItems.length - 1)
         ).toFixed(0);
+
         const foodItem = categoryFoodItems[randnumber];
+
         let itemquantity: string | number = foodCalorie / foodItem.calorie;
         if (foodItem.foodunit == 'g') {
           itemquantity = (foodItem.quantity * itemquantity).toFixed(0);
         } else {
           itemquantity = foodItem.quantity.toFixed(0);
         }
+
         let sidedishquantity: any = foodCalorie / foodItem.calorie;
         if (foodItem.sidedishunit == 'g' || foodItem.sidedishunit == 'ml') {
           sidedishquantity = (
@@ -101,6 +107,7 @@ export class DietService {
         } else if (foodItem.sidedishunit == 'piece') {
           sidedishquantity = sidedishquantity.toFixed(0);
         }
+        
         const food = {
           foodData: foodItem,
           itemquantity: itemquantity,
