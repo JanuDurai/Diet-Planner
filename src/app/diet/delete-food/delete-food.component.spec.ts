@@ -22,10 +22,11 @@ describe('DeleteFoodComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should check content',()=>{
-  //   const test=TestBed.createComponent(DeleteFoodComponent);
-  //   test.detectChanges();
-  //   const res=test.nativeElement as HTMLElement;
-  //   expect(res.querySelector('h1')?.textContent).toContain('Delete Food')
-  // })
+  it('should check content',()=>{
+    const test=TestBed.createComponent(DeleteFoodComponent);
+    test.detectChanges();
+    const res:HTMLElement = test.nativeElement as HTMLElement;
+    expect(res.querySelector('h5')?.textContent).toContain('Delete')
+  })
+  
 });
