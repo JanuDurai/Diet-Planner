@@ -53,23 +53,6 @@
       ]
     },
     {
-      "id": "e16d",
-      "firstname": "Sumeka",
-      "lastname": "Arasakumar",
-      "age": 38,
-      "gender": "Female",
-      "height": 168,
-      "weight": 40,
-      "targetweight": 1,
-      "choice": "Weight Gain",
-      "username": "Sumeka",
-      "password": "Sumeka@123",
-      "confirmpassword": "Sumeka@123",
-      "role": [
-        "user"
-      ]
-    },
-    {
       "id": "adc1",
       "firstname": "Vasumitha",
       "lastname": "Subburaj",
