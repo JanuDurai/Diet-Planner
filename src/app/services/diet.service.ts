@@ -7,7 +7,9 @@ import { jsonDataUrl } from '../shared/constants/user.constant';
 @Injectable({
   providedIn: 'root',
 })
+
 export class DietService {
+  
   private dietUrl = jsonDataUrl.diet;
 
   constructor(private httpReq: HttpClient) {}
