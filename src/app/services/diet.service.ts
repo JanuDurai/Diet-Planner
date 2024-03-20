@@ -37,7 +37,7 @@ export class DietService {
   public calculateDailyCalorie(userDetail: any): Observable<any> {
     const userData = userDetail;
     let BMR!: number;
-    let MaintanenceCalorie: number;
+    // let MaintanenceCalorie: number;
     const reduceCalorie = userData[0].targetweight * 1100;
     let reduceWeight: number;
 
@@ -54,7 +54,7 @@ export class DietService {
         1.85 * userData[0].height -
         4.676 * userData[0].age;
     }
-    MaintanenceCalorie = BMR * 1.55;
+      const  MaintanenceCalorie = BMR * 1.55;
     if (userData[0].choice === 'Weight Loss')
       reduceWeight = MaintanenceCalorie - reduceCalorie;
     else if (userData[0].choice === 'Weight Gain')
@@ -83,7 +83,7 @@ export class DietService {
       map((data: any) => {
         const DietData = data;
         const categoryFoodItems = DietData.filter((object: any) => {
-          for (let item of object.category) {
+          for (const item of object.category) {
             if (item === category) return object;
           }
         });

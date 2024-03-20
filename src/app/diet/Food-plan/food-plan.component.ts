@@ -36,7 +36,7 @@ export class FoodPlanComponent implements OnInit {
   this.getData();
 }
 
-private getData(){
+public getData(){
   this.username = this.userService.getUserName();
   this.userService.getUserDetail(this.username).subscribe((data) => {
     this.userDetail = data;

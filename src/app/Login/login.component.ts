@@ -10,9 +10,9 @@ import { UserService } from '../services/user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
   public userData: any;
-  public loginvalid: boolean = false;
+  public loginvalid = false;
 
   private route: Router = inject(Router);
 
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private loginForm: FormBuilder
   ) {}
-  ngOnInit() {}
+
 
   loginDetails = this.loginForm.group({
     username: ['', [Validators.required]],
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       next: (value) => {
         this.userData = value;
         this.loginvalid = false;
-        for (let Data of this.userData) {
+        for (const Data of this.userData) {
           if (Data.username === this.loginDetails.value.username) {
             if (Data.password === this.loginDetails.value.password) {
               this.userService.setUserName(Data.username);
@@ -54,4 +54,5 @@ export class LoginComponent implements OnInit {
   reenterPasswordError() {
     this.loginvalid = false;
   }
+  
 }

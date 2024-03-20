@@ -1,6 +1,6 @@
 <div class="container p-4">
   <div class="modal-header">
-    <h5 class="modal-title" id="titlealign">Add</h5>
+    <h2 class="modal-title" id="titlealign">Add</h2>
     <button
       type="button"
       class="close"
@@ -15,7 +15,7 @@
     <form [formGroup]="addNewData" (input)="buttonDisable()" >
       <p *ngIf="buttonAble" style="color: red">*Enter Valid Details</p>
       <div class="row">
-        <label class="categoryAlign">Category</label>
+        <h6 class="categoryAlign">Category</h6>
         <select
           formControlName="category"
           id=" "

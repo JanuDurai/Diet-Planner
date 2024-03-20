@@ -22,4 +22,15 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should reset loginvalid to false when user reenters password',()=>{
+        component.loginvalid = true;
+        component.reenterPasswordError();
+        expect(component.loginvalid).toBeFalse;
+  })
+
+
+
+  
 });

@@ -47,7 +47,7 @@ export class ProfileComponent implements OnInit {
     this.userData.value.confirmpassword = this.userData.value.password;
     this.userservice
       .updateUserDetails(this.userData.value.id, this.userData)
-      .subscribe((data) => {
+      .subscribe(() => {
         console.log(`Sucessfully updated`);
       });
   }

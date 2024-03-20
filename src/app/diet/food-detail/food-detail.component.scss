@@ -11,9 +11,10 @@
   color: white;
   font-weight: bolder;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  padding-top: 15px;
+  padding-top: 50px;
   padding-left: 800px;
   padding-right: 500px;
+  display: inline-block;
   
 }
 
@@ -51,23 +52,26 @@ th {
 }
 
 .paddingicon {
-  margin-right: 7px;
+  margin-right: 5px;
   background-color: transparent;
   border: none;
   color: white;
   border: 1px solid white;
 }
 
-button:active {
-  font-size: larger;
-  color: black;
+button:active{
+  background-color: transparent;
+    border: 3px solid white;
+    font-size: larger;
 }
 
 button {
-  background-color: grey;
-  font-size: x-large;
+  background-color: transparent;
+  font-size: large;
+  border: 2px solid white
 }
-button:hover {
-  background-color: rgb(107, 102, 102);
-  border: 2px solid grey;
+button:hover{
+  background-color: transparent;
+  border: 2px solid white;
+  
 }

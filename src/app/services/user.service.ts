@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { jsonDataUrl } from '../shared/constants/user.constant';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   private userUrl = jsonDataUrl.user;
-  public loggedIn: boolean;
-  public adminAcess: boolean;
+  public adminAcess = true;
+  public loginStatus: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(private httpReq: HttpClient) {}
 
@@ -37,11 +38,15 @@ export class UserService {
     return sessionStorage.getItem('username')?.toString();
   }
 
+  public updateUserDetails(id: string, userData: any) {
+    return this.httpReq.put(`${this.userUrl}/${id}`, userData.value);
+  }
+
   public updateLoginStatus() {
     const username = sessionStorage.getItem('username');
-    if (username == null) this.loggedIn = false;
+    if (username == null) this.loginStatus.next(false);
     else {
-      this.loggedIn = true;
+      this.loginStatus.next(true);
       this.getUserDetail(username).subscribe((value: any) => {
         value[0].role.join('') == 'useradmin'
           ? (this.adminAcess = true)
@@ -50,7 +55,8 @@ export class UserService {
     }
   }
 
-  public updateUserDetails(id: number, userData: any) {
-    return this.httpReq.put(`${this.userUrl}/${id}`, userData.value);
+  public isloggedIn() {
+    // console.log(this.loginStatus.getValue() );
+    return this.loginStatus.getValue() == true ? true : false;
   }
 }

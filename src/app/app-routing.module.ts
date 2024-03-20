@@ -8,18 +8,12 @@ import { RegisterComponent } from './Register/register.component';
 import { loggedInProfileGuard } from './shared/logged-in-profile.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent,canActivate:[loggedInProfileGuard]  },
+  { path: 'profile', component: ProfileComponent,canActivate:[loggedInProfileGuard]  },
+  { path: 'login', component: LoginComponent,canActivate:[loggedInProfileGuard] },
   {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [loggedInProfileGuard],
-    title: 'Home Page',
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [loggedInProfileGuard],
-    title: 'Login Page',
+    path: 'diet',
+    loadChildren: () => import('./diet/diet.module').then((m) => m.DietModule),
   },
   {
     path: 'login',
@@ -27,21 +21,14 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent,
-        title: 'Register Page',
-        canActivate: [loggedInProfileGuard],
+        canActivate:[loggedInProfileGuard]
       },
     ],
   },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [loggedInProfileGuard],
-    title: 'Profile Page',
-  },
-  {
-    path: 'diet',
-    loadChildren: () => import('./diet/diet.module').then((m) => m.DietModule),
-  },
+  { path: '', redirectTo:'login', pathMatch:'full'}
+  // { path: '', component:LoginComponent,canActivate:[loggedInProfileGuard]},
+  // {path:'',redirectTo:'home',pathMatch:'full'}
+
 ];
 
 @NgModule({

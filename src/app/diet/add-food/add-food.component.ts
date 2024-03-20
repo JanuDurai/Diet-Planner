@@ -10,7 +10,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class AddFoodComponent implements OnInit {
   public addNewData: any;
   public category = ['breakfast', 'dinner', 'lunch'];
-  public buttonAble: boolean = false;
+  public buttonAble = false;
 
   constructor(
     private formbuilder: FormBuilder,

@@ -18,4 +18,15 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render a text',()=>{
+
+    const compile=fixture.nativeElement as HTMLElement;
+    expect(compile.querySelector('h3')?.textContent).toContain('A HEALTHY')
+  });
+  
+  it('should render a text',()=>{
+    const compile=fixture.nativeElement as HTMLElement;
+    expect(compile.querySelector('h1')?.textContent).toContain('OUTSIDE')
+  });
 });

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FoodPlanComponent } from './Food-plan/food-plan.component';
-import { loggedInProfileGuard } from '../shared/logged-in-profile.guard';
-import { FoodDetailComponent } from './food-detail/food-detail.component';
 import { adminAcessGuard } from '../shared/admin-acess.guard';
+import { loggedInProfileGuard } from '../shared/logged-in-profile.guard';
+import { FoodPlanComponent } from './Food-plan/food-plan.component';
+import { FoodDetailComponent } from './food-detail/food-detail.component';
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
         title:'Diet Page'
 
       },
-      { path: '', redirectTo: 'plan', pathMatch: 'full' },
+      // { path: '', redirectTo: 'plan', pathMatch: 'full' },
     ],
   },
   {

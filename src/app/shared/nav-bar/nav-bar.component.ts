@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  route: Router = inject(Router);
+  private route: Router = inject(Router);
 
   constructor(public userService: UserService) {}
 
@@ -18,9 +18,9 @@ export class NavBarComponent implements OnInit {
     this.userService.updateLoginStatus();
   }
 
-  logout() {
+  public logout() {
     this.userService.deleteUserName();
     this.userService.updateLoginStatus();
-    this.route.navigate(['login']);
+    this.route.navigate(['/login']);
   }
 }

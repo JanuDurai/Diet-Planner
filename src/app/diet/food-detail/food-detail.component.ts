@@ -33,7 +33,7 @@ export class FoodDetailComponent implements OnInit {
   public displayAddItemModel() {
     const additemRef = this.modelService.open(AddFoodComponent, { size: 'lg' });
     additemRef.result.then((result) => {
-      this.dietservice.addFoodDetails(result).subscribe((data) => {
+      this.dietservice.addFoodDetails(result).subscribe(() => {
         console.log(`Food Details are added successfully`);
         this.getfoodData();
       });
@@ -47,7 +47,7 @@ export class FoodDetailComponent implements OnInit {
     });
     edititemRef.componentInstance.id = itemId;
     edititemRef.result.then((result) => {
-      this.dietservice.updateFoodData(this.id, result).subscribe((data) => {
+      this.dietservice.updateFoodData(this.id, result).subscribe(() => {
         console.log(`Food data updated successfully`);
         this.getfoodData();
       });
@@ -59,7 +59,7 @@ export class FoodDetailComponent implements OnInit {
       size: 'lg',
     });
     deleteitemRef.result.then(() => {
-      this.dietservice.deleteFoodItem(itemId).subscribe((data) => {
+      this.dietservice.deleteFoodItem(itemId).subscribe(() => {
         console.log(`Food Item Deleted successfully`);
         this.getfoodData();
       });

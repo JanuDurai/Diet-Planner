@@ -5,10 +5,7 @@ import { UserService } from '../services/user.service';
 import { map } from 'rxjs';
 import { Observable } from 'rxjs';
 
-export const adminAcessGuard: CanActivateFn = (
-  route,
-  state
-): Observable<boolean> => {
+export const adminAcessGuard: CanActivateFn = (): Observable<boolean> => {
   const username = sessionStorage.getItem('username');
   return inject(UserService)
     .getUserDetail(username)

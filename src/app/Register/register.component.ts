@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   public choice = ['Weight Loss', 'Weight Gain', 'Weight Maintain'];
   public Data: any;
   public weight: string;
-  public invalidform: boolean = false;
+  public invalidform = false;
 
   private route: Router = inject(Router);
 
@@ -88,7 +88,7 @@ export class RegisterComponent implements OnInit {
     } else {
       this.invalidform = false;
       this.Data.get('role').setValue(["user"]);
-      this.userService.addUser(this.Data.value).subscribe((data) => {
+      this.userService.addUser(this.Data.value).subscribe(() => {
         console.log(`User Details added successfully`);
       });
       this.route.navigate(['login']);
