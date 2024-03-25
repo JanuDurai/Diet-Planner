@@ -4,13 +4,14 @@ import { Router } from '@angular/router';
 
 import { Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent{
+export class LoginComponent {
   public userData: any;
   public loginvalid = false;
 
@@ -18,9 +19,9 @@ export class LoginComponent{
 
   constructor(
     private userService: UserService,
-    private loginForm: FormBuilder
+    private loginForm: FormBuilder,
+    private toastr:ToastrService
   ) {}
-
 
   loginDetails = this.loginForm.group({
     username: ['', [Validators.required]],
@@ -31,13 +32,13 @@ export class LoginComponent{
     this.userService.getAllUserDetails().subscribe({
       next: (value) => {
         this.userData = value;
-        this.loginvalid = false;
         for (const Data of this.userData) {
           if (Data.username === this.loginDetails.value.username) {
             if (Data.password === this.loginDetails.value.password) {
               this.userService.setUserName(Data.username);
               this.userService.updateLoginStatus();
               this.route.navigate(['home']);
+              this.toastr.success('Logged in successfully');
               break;
             }
           } else if (
@@ -54,5 +55,4 @@ export class LoginComponent{
   reenterPasswordError() {
     this.loginvalid = false;
   }
-  
 }

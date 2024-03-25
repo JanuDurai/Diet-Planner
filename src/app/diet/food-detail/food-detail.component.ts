@@ -24,7 +24,7 @@ export class FoodDetailComponent implements OnInit {
     this.getfoodData();
   }
 
-  private getfoodData() {
+  public getfoodData() {
     this.dietservice.getFoodDetails().subscribe((value) => {
       this.foodDetails = value;
     });

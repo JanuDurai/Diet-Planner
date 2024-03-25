@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, forkJoin, map } from 'rxjs';
 
 import { jsonDataUrl } from '../shared/constants/user.constant';
+import { fooddetailInterface } from '../shared/fooddetailInterface';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class DietService {
     return this.httpReq.get(this.dietUrl);
   }
 
-  public addFoodDetails(foodData: any) {
+  public addFoodDetails(foodData: fooddetailInterface) {
     return this.httpReq.post(this.dietUrl, foodData);
   }
 
@@ -26,18 +27,17 @@ export class DietService {
     return this.httpReq.get(this.dietUrl + '?id=' + id);
   }
 
-  public updateFoodData(id: string, data: any) {
-    return this.httpReq.put(`${this.dietUrl}/${id}`, data);
+  public updateFoodData(id: string, fooddata: fooddetailInterface) {
+    return this.httpReq.put(`${this.dietUrl}/${id}`, fooddata);
   }
 
   public deleteFoodItem(id: string) {
     return this.httpReq.delete(`${this.dietUrl}/${id}`);
   }
 
-  public calculateDailyCalorie(userDetail: any): Observable<any> {
-    const userData = userDetail;
+  public calculateDailyCalorie(userData:any): Observable<any> {
+
     let BMR!: number;
-    // let MaintanenceCalorie: number;
     const reduceCalorie = userData[0].targetweight * 1100;
     let reduceWeight: number;
 
@@ -54,6 +54,7 @@ export class DietService {
         1.85 * userData[0].height -
         4.676 * userData[0].age;
     }
+
       const  MaintanenceCalorie = BMR * 1.55;
     if (userData[0].choice === 'Weight Loss')
       reduceWeight = MaintanenceCalorie - reduceCalorie;
@@ -87,6 +88,7 @@ export class DietService {
             if (item === category) return object;
           }
         });
+
         const randnumber = (
           Math.random() *
           (categoryFoodItems.length - 1)
@@ -95,7 +97,7 @@ export class DietService {
         const foodItem = categoryFoodItems[randnumber];
 
         let itemquantity: string | number = foodCalorie / foodItem.calorie;
-        if (foodItem.foodunit == 'g') {
+        if (foodItem.foodunit == 'g' || foodItem.foodunit=='ml') {
           itemquantity = (foodItem.quantity * itemquantity).toFixed(0);
         } else {
           itemquantity = foodItem.quantity.toFixed(0);

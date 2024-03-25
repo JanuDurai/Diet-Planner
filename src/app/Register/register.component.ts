@@ -4,6 +4,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { PasswordMatchValidation } from '../shared/passwordCheck.directive';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-register',
@@ -14,14 +16,15 @@ export class RegisterComponent implements OnInit {
   public gender = ['Male', 'Female'];
   public choice = ['Weight Loss', 'Weight Gain', 'Weight Maintain'];
   public Data: any;
-  public weight: string;
   public invalidform = false;
+  public targetweight: string;
 
   private route: Router = inject(Router);
 
   constructor(
     private userService: UserService,
-    private userData: FormBuilder
+    private userData: FormBuilder,
+    private toastr:ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -31,8 +34,9 @@ export class RegisterComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*$/),
-            Validators.minLength(2),
+            Validators.pattern(/^[A-Za-z]+(?: [a-zA-Z]+)*$/),
+            Validators.minLength(3),
+            Validators.maxLength(20),
           ],
         ],
         lastname: [
@@ -41,6 +45,7 @@ export class RegisterComponent implements OnInit {
             Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*$/),
             Validators.required,
             Validators.minLength(3),
+            Validators.maxLength(20),
           ],
         ],
         age: [
@@ -48,14 +53,21 @@ export class RegisterComponent implements OnInit {
           [Validators.min(18), Validators.max(60), Validators.required],
         ],
         gender: ['', [Validators.required]],
-        height: ['', [Validators.required]],
-        weight: ['', [Validators.required]],
-        targetweight: ['', [Validators.required]],
+        height: [
+          '',
+          [Validators.required, Validators.min(55), Validators.max(272)],
+        ],
+        weight: [
+          '',
+          [Validators.required, Validators.min(30), Validators.max(650)],
+        ],
+        targetweight: [0, Validators.required],
         choice: ['', [Validators.required]],
         username: [
           '',
           [
-            Validators.minLength(2),
+            Validators.pattern(/^[A-za-z]+$/),
+            Validators.minLength(4),
             Validators.maxLength(15),
             Validators.required,
           ],
@@ -63,23 +75,20 @@ export class RegisterComponent implements OnInit {
         password: [
           '',
           [
-            Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),
+            Validators.pattern(/^[A-za-z0-9@#$%]+$/),
             Validators.required,
             Validators.minLength(8),
           ],
         ],
         confirmpassword: [
           '',
-          [
-            Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),
-            Validators.required,
-            Validators.minLength(8),
-          ],
+          [Validators.pattern(/^[A-za-z0-9@#$%]+$/), Validators.required],
         ],
-        role: [],
+        role: [''],
       },
       { validators: PasswordMatchValidation }
     );
+    this.Data.get('role').setValue(['user']);
   }
 
   public onsubmit() {
@@ -87,15 +96,15 @@ export class RegisterComponent implements OnInit {
       this.invalidform = true;
     } else {
       this.invalidform = false;
-      this.Data.get('role').setValue(["user"]);
       this.userService.addUser(this.Data.value).subscribe(() => {
         console.log(`User Details added successfully`);
+        this.route.navigate(['login']);
+        this.toastr.success('Registered successfully');
       });
-      this.route.navigate(['login']);
     }
   }
 
-  public changeValue(value: string) {
-    this.weight = value;
+  public invalidFormError() {
+    this.invalidform = false;
   }
 }

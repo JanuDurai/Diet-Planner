@@ -12,16 +12,34 @@
     </button>
   </div>
   <div class="modal-body w-100">
-    <form [formGroup]="editData" *ngIf="editData">
+    <form [formGroup]="editData" *ngIf="editData" (input)="submitButtonAble()">
+      <p *ngIf="buttondisable">*Enter valid food details</p>
       <div class="row">
-        <input
-          type="text"
+        <select
           formControlName="category"
           class="form-control form-control-lg border border-black"
-          placeholder="Category"
-        />
+          multiple
+        >
+          <option *ngFor="let category of categories" [value]="category">
+            {{ category }}
+          </option>
+        </select>
+        <div
+          *ngIf="
+            editData.get('category')?.invalid &&
+            (editData.get('category')?.dirty ||
+              editData.get('category')?.touched)
+          "
+        >
+          <p
+            *ngIf="editData.get('category').hasError('required')" 
+          >
+            *Category must be given
+      </p>
+        </div>
       </div>
       <br />
+
       <div class="row">
         <input
           type="text"
@@ -29,19 +47,56 @@
           class="form-control form-control-lg border border-black"
           placeholder="Food"
         />
+        <div
+          *ngIf="
+            editData.get('food')?.invalid &&
+            (editData.get('food')?.dirty || editData.get('food')?.touched)
+          "
+        >
+          <p
+            *ngIf="editData.get('food')?.errors?.['required']"
+        
+          >
+            *Food must be given
+      </p>
+          <p
+            *ngIf="editData.get('food')?.errors?.['pattern']"
+            
+          >
+            *Valid Food Name must be given
+    </p>
+        </div>
       </div>
       <br />
-  
+
       <div class="row">
         <input
           type="number"
           formControlName="quantity"
           class="form-control form-control-lg border border-black"
           placeholder="FoodQuantity"
-        />
+          min="1"
+        /><div
+          *ngIf="
+            editData.get('quantity')?.invalid &&
+            (editData.get('quantity')?.dirty ||
+              editData.get('quantity')?.touched)
+          "
+        >
+          <p
+            *ngIf="editData.get('quantity')?.errors?.['required']"
+          >
+            *Food Quantity must be given
+      </p>
+      <p
+      *ngIf="editData.get('quantity')?.errors?.['min']"
+    >
+      *Quantity should not be negative 
+</p>
+        </div>
       </div>
       <br />
-  
+
       <div class="row">
         <input
           type="text"
@@ -49,10 +104,28 @@
           class="form-control form-control-lg border border-black"
           placeholder="Food Quantity Unit"
         />
+        
       </div>
-  
+      <div
+      *ngIf="
+        editData.get('foodunit')?.invalid &&
+        (editData.get('foodunit')?.dirty ||
+          editData.get('foodunit')?.touched)
+      "
+    >
+      <p
+        *ngIf="editData.get('foodunit')?.errors?.['required']"
+      >
+        *Food Quantity Unit must be given
+    </p>
+      <p
+        *ngIf="editData.get('foodunit').hasError('pattern')"
+      >
+        *Food Quantity Unit should be in lowercase
+  </p>
+    </div>
       <br />
-  
+
       <div class="row">
         <input
           type="text"
@@ -60,20 +133,58 @@
           class="form-control form-control-lg border border-black"
           placeholder="Combo"
         />
+        <div
+        *ngIf="
+          editData.get('sidedish')?.invalid &&
+          (editData.get('sidedish')?.dirty ||
+            editData.get('sidedish')?.touched)
+        "
+      >
+        <p
+          *ngIf="editData.get('sidedish')?.errors?.['required']"
+        >
+          * Combo must be given
+      </p>
+        <p
+          *ngIf="editData.get('sidedish').hasError('pattern')"
+        >
+          *Valid Combo should be given
+    </p>
       </div>
-  
+        
+      </div>
+
       <br />
-  
+
       <div class="row">
         <input
           type="number"
           formControlName="sidedishquantity"
           class="form-control form-control-lg border border-black"
           placeholder="Combo Quantity"
+          min="1"
         />
+        <div
+        *ngIf="
+          editData.get('sidedishquantity')?.invalid &&
+          (editData.get('sidedishquantity')?.dirty ||
+            editData.get('sidedishquantity')?.touched)
+        "
+      >
+        <p
+          *ngIf="editData.get('sidedishquantity')?.errors?.['required']"
+        >
+          *Combo Quantity must be given
+      </p>
+      <p
+      *ngIf="editData.get('sidedishquantity')?.errors?.['min']"
+    >
+      *Quantity should not be negative
+  </p>
+      </div>
       </div>
       <br />
-  
+
       <div class="row">
         <input
           type="text"
@@ -81,23 +192,58 @@
           class="form-control form-control-lg border border-black"
           placeholder="Combo Quantity Unit"
         />
+        <div
+          *ngIf="
+            editData.get('sidedishunit')?.invalid &&
+            (editData.get('sidedishunit')?.dirty ||
+              editData.get('sidedishunit')?.touched)
+          "
+        >
+          <p
+            *ngIf="editData.get('sidedishunit')?.errors?.['required']"
+          >
+            *Combo Quantity Unit must be given
+      </p>
+          <p
+            *ngIf="editData.get('sidedishunit')?.errors?.['pattern']"
+          >
+            *Combo Quantity Unit must be in lowercase
+    </p>
+        </div>
       </div>
       <br />
-  
+
       <div class="row">
         <input
           type="number"
           formControlName="calorie"
           class="form-control form-control-lg border border-black"
           placeholder="Calorie"
+          min="1"
         />
+        <div
+        *ngIf="
+          editData.get('calorie')?.invalid &&
+          (editData.get('calorie')?.dirty ||
+            editData.get('calorie')?.touched)
+        "
+      >
+        <p
+          *ngIf="editData.get('calorie')?.errors?.['required']"
+        >
+          *Calorie must be given
+      </p>
+      <p
+      *ngIf="editData.get('calorie')?.errors?.['min']"
+    >
+      *Calorie should not be negative
+  </p>
+      </div>
       </div>
       <br />
     </form>
   </div>
-    <div class="modal-footer">
-      <button (click)="editFoodData()" class="btn btn-lg">Update</button>
-  
-    </div>
-  
+  <div class="modal-footer">
+    <button (click)="editFoodData()" class="btn btn-lg " [disabled]="buttondisable">Update</button>
+  </div>
 </div>

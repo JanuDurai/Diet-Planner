@@ -4,13 +4,13 @@
       "id": "5220",
       "firstname": "Janu",
       "lastname": "Shree",
-      "age": 21,
+      "age": 23,
       "gender": "Female",
       "height": 150,
-      "weight": 54,
-      "targetweight": 0.25,
-      "choice": "Weight Loss",
-      "username": "Janu",
+      "weight": 38,
+      "targetweight": 1,
+      "choice": "Weight Gain",
+      "username": "Shree",
       "password": "Janu@123",
       "confirmpassword": "Janu@123",
       "role": [
@@ -22,11 +22,11 @@
       "id": "e4fb",
       "firstname": "Vinu",
       "lastname": "Dharshini",
-      "age": 25,
-      "gender": "Female",
-      "height": 167,
-      "weight": 35,
-      "targetweight": 0.75,
+      "age": 24,
+      "gender": "Male",
+      "height": 169,
+      "weight": 41,
+      "targetweight": 1,
       "choice": "Weight Gain",
       "username": "Vinu",
       "password": "Vinu@123",
@@ -133,6 +133,193 @@
       "username": "Sumeka",
       "password": "Sumeka@123",
       "confirmpassword": "Sumeka@123",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "40f3",
+      "firstname": "Vinu",
+      "lastname": "Boireni",
+      "age": 19,
+      "gender": "Female",
+      "height": 123,
+      "weight": 123,
+      "targetweight": 0.75,
+      "choice": "Weight Maintain",
+      "username": "jbwiv r jivn",
+      "password": "Abc@12345678",
+      "confirmpassword": "Abc@12345678",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "9cc0",
+      "firstname": "ghjk",
+      "lastname": "vbn",
+      "age": 34,
+      "gender": "Male",
+      "height": 2433,
+      "weight": 2353,
+      "targetweight": 0.25,
+      "choice": "Weight Gain",
+      "username": "asdfgh",
+      "password": "12345678",
+      "confirmpassword": "12345678",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "b309",
+      "firstname": "Binu",
+      "lastname": "Ashok",
+      "age": 34,
+      "gender": "Female",
+      "height": 137,
+      "weight": 50,
+      "targetweight": 1,
+      "choice": "Weight Loss",
+      "username": "Binu",
+      "password": "Binubinu",
+      "confirmpassword": "Binubinu",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "2b58",
+      "firstname": "Akilnath",
+      "lastname": "Arasakumaran",
+      "age": 18,
+      "gender": "Male",
+      "height": 152,
+      "weight": 51,
+      "targetweight": 0,
+      "choice": "Weight Maintain",
+      "username": "Akilnath",
+      "password": "Sumi@akil$1206200830",
+      "confirmpassword": "Sumi@akil$1206200830",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "8cc3",
+      "firstname": "Harini",
+      "lastname": "Nandha",
+      "age": 24,
+      "gender": "Female",
+      "height": 157,
+      "weight": 39,
+      "targetweight": 0.5,
+      "choice": "Weight Gain",
+      "username": "Harini",
+      "password": "123456789",
+      "confirmpassword": "123456789",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "0956",
+      "firstname": "cfgvhj",
+      "lastname": "vbnm",
+      "age": 23,
+      "gender": "Male",
+      "height": 123,
+      "weight": 241,
+      "targetweight": 0.5,
+      "choice": "Weight Gain",
+      "username": "cghn",
+      "password": "12345678",
+      "confirmpassword": "12345678",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "f232",
+      "firstname": "fghjkl",
+      "lastname": "fghjk",
+      "age": 23,
+      "gender": "Female",
+      "height": 55,
+      "weight": 34,
+      "targetweight": 0.5,
+      "choice": "Weight Gain",
+      "username": "fghjkl",
+      "password": "12345678",
+      "confirmpassword": "12345678",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "0d08",
+      "firstname": "dfghjk",
+      "lastname": "fghjk",
+      "age": 31,
+      "gender": "Male",
+      "height": 213,
+      "weight": 233,
+      "targetweight": 0.5,
+      "choice": "Weight Loss",
+      "username": "fghjkl",
+      "password": "12345678",
+      "confirmpassword": "12345678",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "76d7",
+      "firstname": "tyuio",
+      "lastname": "fghjk",
+      "age": 42,
+      "gender": "Male",
+      "height": 244,
+      "weight": 412,
+      "targetweight": 0.25,
+      "choice": "Weight Loss",
+      "username": "dfghjkl",
+      "password": "12345678",
+      "confirmpassword": "12345678",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "e2e9",
+      "firstname": "Janu",
+      "lastname": "Shree",
+      "age": 32,
+      "gender": "Female",
+      "height": 134,
+      "weight": 456,
+      "targetweight": 0,
+      "choice": "Weight Maintain",
+      "username": "janu",
+      "password": "12345678",
+      "confirmpassword": "12345678",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "5b78",
+      "firstname": "ghjk",
+      "lastname": "ghjk",
+      "age": 32,
+      "gender": "Male",
+      "height": 67,
+      "weight": 252,
+      "targetweight": 0.25,
+      "choice": "Weight Gain",
+      "username": "fghjkl",
+      "password": "12345678",
+      "confirmpassword": "12345678",
       "role": [
         "user"
       ]
@@ -569,33 +756,64 @@
       "id": "6263"
     },
     {
-      "id": "68e2",
-      "category": [
-        "lunch"
-      ],
-      "food": "Panner Pulao",
-      "quantity": 100,
-      "foodunit": "g",
-      "sidedish": "Mushroommanjurian",
-      "sidedishquantity": 100,
-      "sidedishunit": "g",
-      "calorie": 403,
-      "img": "/assets/pulao.jpg"
-    },
-    {
-      "id": "e978",
       "category": [
         "breakfast",
         "dinner"
       ],
-      "food": "idly",
+      "food": "Idly",
       "quantity": 1,
       "foodunit": "piece",
-      "sidedish": "Sambar CoconutChutney",
+      "sidedish": [
+        "Sambar",
+        "Coconut chutney"
+      ],
       "sidedishquantity": 100,
       "sidedishunit": "g",
       "calorie": 180,
-      "img": "/assets/idly.jpeg"
+      "img": "/assets/idly.jpeg",
+      "id": "74df"
+    },
+    {
+      "category": [
+        "dinner"
+      ],
+      "food": "Ragi Roti",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": [
+        "Coconut Chutney",
+        " Sambar"
+      ],
+      "sidedishquantity": 100,
+      "sidedishunit": "g",
+      "calorie": 110,
+      "id": "2da4"
+    },
+    {
+      "category": [
+        "dinner"
+      ],
+      "food": "fghjkl",
+      "quantity": 3,
+      "foodunit": "j",
+      "sidedish": "fg ghj u,fg yu fgh,fgh gui,ui  fghj",
+      "sidedishquantity": 3,
+      "sidedishunit": "h",
+      "calorie": 6789,
+      "id": "e46f"
+    },
+    {
+      "category": [
+        "breakfast"
+      ],
+      "food": "Mini Idly",
+      "quantity": 10,
+      "foodunit": "piece",
+      "sidedish": "Sambar,Chutney",
+      "sidedishquantity": 100,
+      "sidedishunit": "ml",
+      "calorie": 204,
+      "id": "bade"
     }
   ]
 }

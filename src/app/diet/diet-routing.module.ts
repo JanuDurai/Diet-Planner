@@ -16,7 +16,7 @@ const routes: Routes = [
         title:'Diet Page'
 
       },
-      // { path: '', redirectTo: 'plan', pathMatch: 'full' },
+      { path: '', redirectTo: 'plan', pathMatch: 'full' },
     ],
   },
   {

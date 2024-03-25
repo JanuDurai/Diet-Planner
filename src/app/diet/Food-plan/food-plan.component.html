@@ -2,12 +2,13 @@
   <label for="" class="head">Today's Meal Plan</label>
   
   <div id="divcontainer" class="container row" *ngIf="foodData" >
+
     <div *ngFor="let category of foodCategory" class="col-sm w-30" id="para">
       <h3>{{ category.label }}</h3>
       <img [src]="foodData[category.name].foodData.img" [alt]="foodData[category.name].foodData.food"/>
       {{ foodData[category.name].foodData.food }} -
       {{ foodData[category.name].itemquantity }}
-      {{ foodData[category.name].foodData.foodunit }}
+      {{ foodData[category.name].foodData.foodunit}}
       <p
         *ngIf="foodData[category.name].foodData.foodunit === 'g'; else elseblock"
       >

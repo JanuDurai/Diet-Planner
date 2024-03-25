@@ -5,13 +5,16 @@ import { UserService } from '../services/user.service';
 import { map } from 'rxjs';
 import { Observable } from 'rxjs';
 
-export const adminAcessGuard: CanActivateFn = (): Observable<boolean> => {
-  const username = sessionStorage.getItem('username');
-  return inject(UserService)
-    .getUserDetail(username)
-    .pipe(
-      map((value: any) => {
-        return value[0].role.join('') === 'useradmin' ? true : false;
-      })
-    );
+export const adminAcessGuard: CanActivateFn = (): boolean => {
+  const userservice = inject(UserService);
+  // const username = userservice.getUserName();
+  // return userservice
+  //   .getUserDetail(username)
+  //   .pipe(
+  //     map((value: any) => {
+  //       // return value[0].role.join('') === 'useradmin' ? true : false;
+  //     })
+  //   );
+  return userservice.adminAcess==true ? true:false;
+
 };

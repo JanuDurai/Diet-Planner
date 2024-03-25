@@ -12,19 +12,17 @@ describe('ProfileComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ProfileComponent],
-      imports:[HttpClientTestingModule],
-      providers:[UserService]
+      imports: [HttpClientTestingModule],
+      providers: [UserService],
     });
     fixture = TestBed.createComponent(ProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    userservice=TestBed.inject(UserService);
+    userservice = TestBed.inject(UserService);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-});
-
-
+})

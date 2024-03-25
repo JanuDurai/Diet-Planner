@@ -1,106 +1,340 @@
 <div class="background">
   <label for="" class="newline">User Details </label>
-  <form [formGroup]="userData" *ngIf="userData">
+  <form
+    [formGroup]="userData"
+    *ngIf="userData"
+    (input)="userDetailsStatusUpdate()"
+  >
+    <p *ngIf="this.userDetailstatus">*Enter Valid Details</p>
+
     <br />
     <div class="row">
       <label for="" class="col"> First Name </label>
-      <input
-        type="text"
-        [formControlName]="'firstname'"
-        class="form-control form-control-lg border border-white col"
-      />
+      <div class="col">
+        <input
+          type="text"
+          [formControlName]="'firstname'"
+          class="form-control form-control-lg border border-white col"
+        />
+
+        <div
+          *ngIf="
+            userData.get('firstname')?.invalid &&
+            (userData.get('firstname')?.dirty ||
+              userData.get('firstname')?.touched)
+          "
+        >
+          <div *ngIf="userData.get('firstname')?.hasError('required')">
+            *First Name must be given
+          </div>
+          <div *ngIf="userData.get('firstname')?.hasError('pattern')">
+            *Enter a valid Name
+          </div>
+          <div
+            *ngIf="
+              userData.get('firstname')?.hasError('minlength') &&
+              !userData.get('firstname')?.hasError('pattern')
+            "
+          >
+            *First Name must be atleast 3 characters
+          </div>
+          <div
+            *ngIf="
+              userData.get('firstname')?.hasError('maxlength') &&
+              !userData.get('firstname')?.hasError('pattern')
+            "
+          >
+            *First Name must be atleast 3 characters
+          </div>
+        </div>
+      </div>
     </div>
     <br />
+
     <div class="row">
       <label for="" class="col"> Last Name </label>
-      <input
-        type="text"
-        [formControlName]="'lastname'"
-        class="form-control form-control-lg border border-white col"
-      />
+      <div class="col">
+        <input
+          type="text"
+          [formControlName]="'lastname'"
+          class="form-control form-control-lg border border-white col"
+        />
+
+        <div
+          *ngIf="
+            userData.get('lastname')?.invalid &&
+            (userData.get('lastname')?.dirty ||
+              userData.get('lastname')?.touched)
+          "
+        >
+          <div *ngIf="userData.get('lastname')?.hasError('required')">
+            *Last Name must be given
+          </div>
+          <div *ngIf="userData.get('lastname')?.hasError('pattern')">
+            *Enter a valid Name
+          </div>
+          <div
+            *ngIf="
+              userData.get('lastname')?.hasError('minlength') &&
+              !userData.get('lastname')?.hasError('pattern')
+            "
+          >
+            *Last Name must be atleast 3 characters
+          </div>
+          <div
+            *ngIf="
+              userData.get('lastname')?.hasError('maxlength') &&
+              !userData.get('lastname')?.hasError('pattern')
+            "
+          >
+            *Last Name must be atleast 3 characters
+          </div>
+        </div>
+      </div>
     </div>
     <br />
 
     <div class="row">
       <label for="" class="col"> Age </label>
-      <input
-        type="number"
-        formControlName="age"
-        class="form-control form-control-lg border border-white col"
-      />
+      <div class="col">
+        <input
+          type="number"
+          formControlName="age"
+          class="form-control form-control-lg border border-white col"
+        />
+        <div
+          *ngIf="
+            userData.get('age')?.invalid &&
+            (userData.get('age')?.dirty || userData.get('age')?.touched)
+          "
+        >
+          <div *ngIf="userData.get('age')?.hasError('required')">
+            *Age must be given
+          </div>
+          <div *ngIf="userData.get('age')?.hasError('min')">
+            *Age must be greater than 18
+          </div>
+          <div *ngIf="userData.get('age')?.hasError('max')">
+            *Age must be less than 60
+          </div>
+        </div>
+      </div>
     </div>
     <br />
 
     <div class="row">
       <label for="" class="col"> Gender </label>
-      <input
-        type="text"
-        formControlName="gender"
-        class="form-control form-control-lg border border-white col"
-      />
+      <div class="col">
+        <select
+          name="gender"
+          formControlName="gender"
+          class="form-control form-control-lg border border-white col"
+          id="select"
+        >
+          <option *ngFor="let item of gender" [value]="item">
+            {{ item }}
+          </option>
+        </select>
+      </div>
     </div>
     <br />
 
     <div class="row">
       <label for="" class="col"> Height </label>
-      <input
-        type="number"
-        formControlName="height"
-        class="form-control form-control-lg border border-white col"
-      />
+      <div class="col">
+        <input
+          type="number"
+          formControlName="height"
+          class="form-control form-control-lg border border-white"
+        />
+
+        <div
+          *ngIf="
+            userData.get('height')?.invalid &&
+            (userData.get('height')?.dirty || userData.get('height')?.touched)
+          "
+        >
+          <div *ngIf="userData.get('height')?.hasError('required')">
+            *Height must be given
+          </div>
+        </div>
+      </div>
     </div>
     <br />
 
     <div class="row">
       <label for="" class="col"> Weight </label>
-      <input
-        type="number"
-        formControlName="weight"
-        class="form-control form-control-lg border border-white col"
-      />
-    </div>
-    <br />
-
-    <div class="row">
-      <label for="" class="col"> Target Weight </label>
-      <input
-        type="number"
-        formControlName="targetweight"
-        class="form-control form-control-lg border border-white col"
-        min="0"
-        max="1"
-      />
+      <div class="col">
+        <input
+          type="number"
+          formControlName="weight"
+          class="form-control form-control-lg border border-white"
+        />
+        <div
+          *ngIf="
+            userData.get('weight')?.invalid &&
+            (userData.get('weight')?.dirty || userData.get('weight')?.touched)
+          "
+        >
+          <div *ngIf="userData.get('weight')?.hasError('required')">
+            *Weight must be given
+          </div>
+        </div>
+      </div>
     </div>
     <br />
 
     <div class="row">
       <label for="" class="col"> Preferrence </label>
-      <input
-        type="text"
-        formControlName="choice"
-        class="form-control form-control-lg border border-white col"
-      />
+      <div class="col">
+        <select
+          name="Preferrence"
+          formControlName="choice"
+          class="form-control form-control-lg border border-white"
+          id="select"
+        >
+          <option *ngFor="let item of choice" [value]="item">
+            {{ item }}
+          </option>
+        </select>
+      </div>
     </div>
+    <br />
+
+    <div
+      class="row"
+      *ngIf="
+        this.userData.value.choice === 'Weight Loss' ||
+        this.userData.value.choice === 'Weight Gain'
+      "
+    >
+      <label for="" class="col"> Target Weight </label>
+      <div class="col">
+        <div class="range">
+          <select
+            formControlName="targetweight"
+            class="form-control form-control-lg form-range border border-white"
+            id="range"
+          >
+            <option *ngFor="let range of targetweightRange" [value]="range">
+              {{ range }} kg/week
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
     <br />
 
     <div class="row">
       <label for="" class="col"> UserName </label>
-      <input
-        type="text"
-        formControlName="username"
-        class="form-control form-control-lg border border-white col"
-      />
+      <div class="col">
+        <input
+          type="text"
+          formControlName="username"
+          class="form-control form-control-lg border border-white col"
+        />
+        <div
+          *ngIf="
+            userData.get('username')?.invalid &&
+            (userData.get('username')?.dirty ||
+              userData.get('username')?.touched)
+          "
+        >
+          <div *ngIf="userData.get('username')?.hasError('required')">
+            *Username must be given
+          </div>
+          <div *ngIf="userData.get('username')?.hasError('pattern')">
+            *Enter a valid UserName
+          </div>
+          <div
+            *ngIf="
+              userData.get('username')?.hasError('minlength') &&
+              !userData.get('username')?.hasError('pattern')
+            "
+          >
+            *UserName must be atleast 4 characters
+          </div>
+          <div *ngIf="userData.get('username')?.hasError('maxlength')">
+            *UserName must be less than 15 characters
+          </div>
+        </div>
+      </div>
     </div>
     <br />
 
     <div class="row">
       <label for="" class="col"> Password </label>
-      <input
-        type="text"
-        formControlName="password"
-        class="form-control form-control-lg border border-white col"
-      />
+      <div class="col">
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control form-control-lg border border-white"
+          (input)="confirmpassworInputDisplay()"
+        />
+
+        <div
+          *ngIf="
+            userData.get('password')?.invalid &&
+            (userData.get('password')?.dirty ||
+              userData.get('password')?.touched)
+          "
+        >
+          <div *ngIf="userData.get('password')?.hasError('required')">
+            *Password must be given
+          </div>
+          <div *ngIf="userData.get('password')?.hasError('pattern')">
+            Password must not contain & * , ( ) space
+          </div>
+          <div
+            *ngIf="
+              userData.get('password')?.hasError('minlength') &&
+              !userData.get('password')?.hasError('pattern')
+            "
+          >
+            *Password must be atleast 8 characters
+          </div>
+        </div>
+      </div>
     </div>
+    <br />
+    <div class="row" *ngIf="confirmpasswordvisible">
+      <label class="col">Confirm Password</label>
+
+      <div class="col">
+        <div class="col">
+          <input
+            type="password"
+            formControlName="confirmpassword"
+            class="form-control form-control-lg border border-white"
+          />
+          <div
+            *ngIf="
+              userData.get('confirmpassword')?.invalid &&
+              (userData.get('confirmpassword')?.dirty ||
+                userData.get('confirmpassword')?.touched)
+            "
+          >
+            <div *ngIf="userData.get('confirmpassword')?.hasError('required')">
+              *Confirm Password must be given
+            </div>
+            <div *ngIf="userData.get('confirmpassword')?.hasError('pattern')">
+              *Confirm Password must not contain & * , ( ) space
+            </div>
+            <div
+              *ngIf="
+                userData.hasError('passwordMismatch') &&
+                !userData.get('confirmpassword')?.hasError('pattern') &&
+                !userData.get('confirmpassword')?.hasError('required')
+              "
+            >
+              *Confirm Password should match
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <br />
 
     <div id="flex">
@@ -108,3 +342,5 @@
     </div>
   </form>
 </div>
+
+

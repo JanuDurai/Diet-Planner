@@ -2,7 +2,7 @@
   background-image: url("/assets/bowl.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 98vh;
+  height: 150vh;
   background-attachment: fixed;
 }
 
@@ -22,10 +22,11 @@ form {
   justify-content: center;
 }
 
-input {
+input,select {
   display: block;
   background-color: transparent;
   color: white;
+  padding: 10px 10px;
 }
 
 .newline {
@@ -40,7 +41,7 @@ input {
   text-align: center;
 }
 
-input:focus {
+input:focus,select:focus {
   background-color: transparent;
   color: white;
 }
@@ -63,3 +64,16 @@ button:hover{
   background-color: rgb(107, 102, 102);
   border: 2px solid grey;
 }
+
+div{
+  color:red;
+  text-align: left;
+  font-size: large;
+}
+
+
+option{
+  background-color: transparent;
+
+}
+

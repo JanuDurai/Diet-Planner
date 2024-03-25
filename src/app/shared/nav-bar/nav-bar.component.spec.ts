@@ -9,38 +9,42 @@ import { BehaviorSubject } from 'rxjs';
 describe('NavBarComponent', () => {
   let component: NavBarComponent;
   let fixture: ComponentFixture<NavBarComponent>;
-  let userservicemock: Partial<UserService>;
+  let userservice: UserService
   let router: Router;
 
   beforeEach(() => {
-  userservicemock = {
-    deleteUserName: jasmine.createSpy().and.returnValue(String),
-    updateLoginStatus: jasmine.createSpy().and.returnValue(Boolean),
-    loginStatus:new BehaviorSubject<boolean>(false)
-  }
 
     TestBed.configureTestingModule({
       declarations: [NavBarComponent],
       imports: [HttpClientTestingModule],
-      providers: [{ provide: UserService, useValue: userservicemock }],
+      providers: [UserService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NavBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     router = TestBed.inject(Router);
-    userservicemock = TestBed.inject(UserService);
+    userservice = TestBed.inject(UserService);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should call update login status method on initialisation',()=>{
+    spyOn(userservice,'updateLoginStatus');
+    component.ngOnInit();
+    expect(userservice.updateLoginStatus).toBeTruthy();
+  })
+
   it('should user logout', () => {
+    spyOn(userservice, 'deleteUserName');
+    spyOn(userservice, 'updateLoginStatus');
+    spyOn(router, 'navigate');
     component.logout();
-    expect(userservicemock.deleteUserName).toHaveBeenCalled();
-    expect(userservicemock.updateLoginStatus).toHaveBeenCalled();
-    expect(router.url).toBe('/login');
+    expect(userservice.deleteUserName).toHaveBeenCalled();
+    expect(userservice.updateLoginStatus).toHaveBeenCalled();
+    expect(router.navigate).toHaveBeenCalledWith(['/login']);
   });
 
 });

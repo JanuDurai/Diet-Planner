@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { DietService } from './services/diet.service';
 import { UserService } from './services/user.service';
 import { SharedModule } from './shared/shared.module';
+import { ToastNoAnimationModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,11 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     FormsModule,
     NgbModule,
+    ToastNoAnimationModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [DietService, UserService],
   bootstrap: [AppComponent],

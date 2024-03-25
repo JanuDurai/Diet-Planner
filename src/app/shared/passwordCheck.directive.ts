@@ -6,9 +6,21 @@ export const PasswordMatchValidation: ValidatorFn = (
   const password = form.get('password');
   const confirmpassword = form.get('confirmpassword');
 
-  if (!password || !confirmpassword) return null;
+  if (!password || !confirmpassword) {
+    return null;
+  }
 
-  return password.value === confirmpassword.value
-    ? null
-    : { passwordMismatch: true };
+  if (confirmpassword.errors && !confirmpassword.errors?.['passwordMismatch']) {
+    return null;
+  }
+
+  if (password.value !== confirmpassword.value) {
+    confirmpassword.setErrors({ passwordMismatch: true });
+    return { passwordMismatch: true };
+  } else {
+    confirmpassword.setErrors(null);
+    return null;
+  }
+  
 };
+

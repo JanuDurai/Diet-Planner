@@ -25,7 +25,7 @@ export class FoodPlanComponent implements OnInit {
     },
   ];
   private userDetail: any;
-  private username: string | undefined;
+  public username: any;
 
   constructor(
     private dietUser: DietService,
@@ -47,4 +47,5 @@ public getData(){
       });
   });
 }
+
 }

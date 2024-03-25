@@ -13,16 +13,15 @@
   </div>
   <div class="modal-body">
     <form [formGroup]="addNewData" (input)="buttonDisable()" >
-      <p *ngIf="buttonAble" style="color: red">*Enter Valid Details</p>
+      <p *ngIf="buttonAble">*Enter Valid Details</p>
       <div class="row">
-        <h6 class="categoryAlign">Category</h6>
+        <label class="categoryAlign">Category</label>
         <select
           formControlName="category"
           id=" "
           class="form-select form-select-lg mb-3 border border-black"
           multiple
-          aria-label="multiple select example"
-          required
+         
         >
           <option
             *ngFor="let item of category"
@@ -41,7 +40,7 @@
         >
           <div
             *ngIf="addNewData.get('category')?.errors?.['required']"
-            style="color: red"
+          
           >
             *Category must be given
           </div>
@@ -54,7 +53,7 @@
           formControlName="food"
           class="form-control form-control-lg border border-black"
           placeholder="Food"
-          required
+         
         />
         <div
           *ngIf="
@@ -64,9 +63,15 @@
         >
           <div
             *ngIf="addNewData.get('food')?.errors?.['required']"
-            style="color: red"
+        
           >
             *Food must be given
+          </div>
+          <div
+            *ngIf="addNewData.get('food')?.errors?.['pattern']"
+            
+          >
+            *Valid Food Name must be given
           </div>
         </div>
       </div>
@@ -78,7 +83,7 @@
           formControlName="quantity"
           class="form-control form-control-lg border border-black"
           placeholder="FoodQuantity"
-          required
+          min="1"
         />
         <div
           *ngIf="
@@ -89,9 +94,14 @@
         >
           <div
             *ngIf="addNewData.get('quantity')?.errors?.['required']"
-            style="color: red"
+        
           >
             *Food Quantity must be given
+          </div>
+          <div
+            *ngIf="addNewData.get('quantity')?.errors?.['min']"
+          >
+            * Valid Food Quantity should be given
           </div>
         </div>
       </div>
@@ -114,9 +124,15 @@
         >
           <div
             *ngIf="addNewData.get('foodunit')?.errors?.['required']"
-            style="color: red"
+            
           >
             *Food Quantity Unit must be given
+          </div>
+          <div
+            *ngIf="addNewData.get('foodunit').hasError('pattern')"
+            
+          >
+            *Food Quantity Unit must be in lowercase
           </div>
         </div>
       </div>
@@ -128,8 +144,7 @@
           type="text"
           formControlName="sidedish"
           class="form-control form-control-lg border border-black"
-          placeholder="Combo"
-          required
+          placeholder="Combo" 
         />
         <div
           *ngIf="
@@ -140,9 +155,12 @@
         >
           <div
             *ngIf="addNewData.get('sidedish')?.errors?.['required']"
-            style="color: red"
+            
           >
             *Combo must be given
+          </div>
+          <div *ngIf="addNewData.get('sidedish').hasError('pattern')"> *Valid Combo must be given
+
           </div>
         </div>
       </div>
@@ -155,7 +173,7 @@
           formControlName="sidedishquantity"
           class="form-control form-control-lg border border-black"
           placeholder="Combo Quantity"
-          required
+          min="1"
         />
         <div
           *ngIf="
@@ -166,9 +184,15 @@
         >
           <div
             *ngIf="addNewData.get('sidedishquantity')?.errors?.['required']"
-            style="color: red"
+            
           >
             *Combo Quantity must be given
+          </div>
+          <div
+            *ngIf="addNewData.get('sidedishquantity')?.errors?.['min']"
+           
+          >
+            *Valid Combo Quantity should be given
           </div>
         </div>
       </div>
@@ -180,7 +204,7 @@
           formControlName="sidedishunit"
           class="form-control form-control-lg border border-black"
           placeholder="Combo Quantity Unit"
-          required
+     
         />
         <div
           *ngIf="
@@ -191,9 +215,14 @@
         >
           <div
             *ngIf="addNewData.get('sidedishunit')?.errors?.['required']"
-            style="color: red"
+      
           >
             *Combo Quantity Unit must be given
+          </div>
+          <div
+            *ngIf="addNewData.get('sidedishunit')?.errors?.['pattern']"
+          >
+            *Combo Quantity Unit must be in lowercase
           </div>
         </div>
       </div>
@@ -215,7 +244,6 @@
         >
           <div
             *ngIf="addNewData.get('calorie')?.errors?.['required']"
-            style="color: red"
           >
             *Calorie must be given
           </div>
