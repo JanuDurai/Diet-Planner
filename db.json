@@ -8,7 +8,7 @@
       "gender": "Female",
       "height": 150,
       "weight": 38,
-      "targetweight": 1,
+      "targetweight": 0.75,
       "choice": "Weight Gain",
       "username": "Shree",
       "password": "Janu@123",
@@ -298,8 +298,8 @@
       "gender": "Female",
       "height": 134,
       "weight": 456,
-      "targetweight": 0,
-      "choice": "Weight Maintain",
+      "targetweight": 0.5,
+      "choice": "Weight Gain",
       "username": "janu",
       "password": "12345678",
       "confirmpassword": "12345678",
@@ -318,6 +318,23 @@
       "targetweight": 0.25,
       "choice": "Weight Gain",
       "username": "fghjkl",
+      "password": "12345678",
+      "confirmpassword": "12345678",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "49d2",
+      "firstname": "fghj",
+      "lastname": "cgvhj",
+      "age": 32,
+      "gender": "Female",
+      "height": 234,
+      "weight": 234,
+      "targetweight": 0.25,
+      "choice": "Weight Gain",
+      "username": "dfvh",
       "password": "12345678",
       "confirmpassword": "12345678",
       "role": [
@@ -772,48 +789,6 @@
       "calorie": 180,
       "img": "/assets/idly.jpeg",
       "id": "74df"
-    },
-    {
-      "category": [
-        "dinner"
-      ],
-      "food": "Ragi Roti",
-      "quantity": 1,
-      "foodunit": "piece",
-      "sidedish": [
-        "Coconut Chutney",
-        " Sambar"
-      ],
-      "sidedishquantity": 100,
-      "sidedishunit": "g",
-      "calorie": 110,
-      "id": "2da4"
-    },
-    {
-      "category": [
-        "dinner"
-      ],
-      "food": "fghjkl",
-      "quantity": 3,
-      "foodunit": "j",
-      "sidedish": "fg ghj u,fg yu fgh,fgh gui,ui  fghj",
-      "sidedishquantity": 3,
-      "sidedishunit": "h",
-      "calorie": 6789,
-      "id": "e46f"
-    },
-    {
-      "category": [
-        "breakfast"
-      ],
-      "food": "Mini Idly",
-      "quantity": 10,
-      "foodunit": "piece",
-      "sidedish": "Sambar,Chutney",
-      "sidedishquantity": 100,
-      "sidedishunit": "ml",
-      "calorie": 204,
-      "id": "bade"
     }
   ]
 }

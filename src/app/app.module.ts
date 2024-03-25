@@ -33,7 +33,7 @@ import { ToastNoAnimationModule } from 'ngx-toastr';
     NgbModule,
     ToastNoAnimationModule.forRoot({
       timeOut: 2000,
-      positionClass: 'toast-top-right',
+      positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
   ],

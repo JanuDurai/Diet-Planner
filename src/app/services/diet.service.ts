@@ -100,7 +100,7 @@ export class DietService {
         if (foodItem.foodunit == 'g' || foodItem.foodunit=='ml') {
           itemquantity = (foodItem.quantity * itemquantity).toFixed(0);
         } else {
-          itemquantity = foodItem.quantity.toFixed(0);
+          itemquantity = itemquantity.toFixed(0);
         }
 
         let sidedishquantity: any = foodCalorie / foodItem.calorie;
