@@ -47,7 +47,10 @@ export class UserService {
 
   public updateLoginStatus() {
     const username = this.getUserName();
-    if (username == null) this.loginStatus.next(false);
+    if (username == null) {
+      this.loginStatus.next(false);
+      this.adminAcess=false;
+    }
     else {
       this.loginStatus.next(true);
       this.getUserDetail(username).subscribe((value: any) => {
