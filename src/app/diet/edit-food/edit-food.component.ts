@@ -51,6 +51,7 @@ export class EditFoodComponent implements OnInit {
             [Validators.required, Validators.pattern(/^[a-z]+$/)],
           ],
           calorie: ['', [Validators.required, Validators.min(1)]],
+          img:''
         });
         this.editData.patchValue(this.foodData[0]);
       },

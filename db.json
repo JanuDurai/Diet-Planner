@@ -7,9 +7,9 @@
       "age": 23,
       "gender": "Female",
       "height": 150,
-      "weight": 38,
+      "weight": 39,
       "targetweight": 0.5,
-      "choice": "Weight Loss",
+      "choice": "Weight Gain",
       "username": "Janu",
       "password": "Janu@123",
       "confirmpassword": "Janu@123",
@@ -180,15 +180,10 @@
       "food": "White Rice",
       "quantity": 100,
       "foodunit": "g",
-      "sidedish": [
-        "Dal",
-        "Rasam",
-        "Curd",
-        "Beetroot"
-      ],
+      "sidedish": "Dal,Rasam,Curd,Beetroot",
       "sidedishquantity": 200,
       "sidedishunit": "g",
-      "calorie": 310,
+      "calorie": 286,
       "img": "/assets/whiterice.jpeg",
       "id": "72d0"
     },
@@ -313,6 +308,21 @@
       "calorie": 150,
       "img": "/assets/kitchadi.jpg",
       "id": "8ce6"
+    },
+    {
+      "category": [
+        "breakfast",
+        "dinner"
+      ],
+      "food": "Poori",
+      "quantity": 1,
+      "foodunit": "piece",
+      "sidedish": "Potato Masal",
+      "sidedishquantity": 50,
+      "sidedishunit": "g",
+      "calorie": 167,
+      "img": "/assets/poori.jpeg",
+      "id": "e56b"
     },
     {
       "category": [
@@ -503,23 +513,6 @@
     },
     {
       "category": [
-        "breakfast",
-        "dinner"
-      ],
-      "food": "Poori",
-      "quantity": 1,
-      "foodunit": "piece",
-      "sidedish": [
-        "Potato Masala"
-      ],
-      "sidedishquantity": 50,
-      "sidedishunit": "g",
-      "calorie": 167,
-      "img": "/assets/poori.jpeg",
-      "id": "e56b"
-    },
-    {
-      "category": [
         "lunch"
       ],
       "food": "White Rice",
@@ -577,9 +570,7 @@
       "food": "Chappathi",
       "quantity": 1,
       "foodunit": "piece",
-      "sidedish": [
-        "Pepper Chicken"
-      ],
+      "sidedish": "Pepper Chicken",
       "sidedishquantity": 75,
       "sidedishunit": "g",
       "calorie": 141,

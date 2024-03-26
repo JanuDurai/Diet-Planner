@@ -86,13 +86,6 @@ describe('RegisterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  //  it('should change weight value',()=>{
-  //     expect(component.targetweight).toBeUndefined();
-  //     const value = '50';
-  //     component.setTargetweight(value)
-  //     expect(component.targetweight).toBe(value); 
-  //  })
-
    it('should set invalidform to true',()=>{
       component.Data.markAllAsTouched(); 
       spyOn(userservice,'addUser');
@@ -103,31 +96,31 @@ describe('RegisterComponent', () => {
       expect(router.navigate).not.toHaveBeenCalled();
    })
 
-  //  it('should add user details and navigate to login page if form is valid',()=>{
-  //     const sampleuserdata={
-  //       "firstname": "Vasumitha",
-  //       "lastname": "Subburaj",
-  //       "age": 28,
-  //       "gender": "Male",
-  //       "height": 180,
-  //       "weight": 68,
-  //       "targetweight": 0.25,
-  //       "choice": "Weight Loss",
-  //       "username": "Vasu",
-  //       "password": "Vasu@123",
-  //       "confirmpassword": "Vasu@123",
-  //       "role": [
-  //         "user"
-  //       ]
-  //     };
+   it('should add user details and navigate to login page if form is valid',()=>{
+      const sampleuserdata={
+        "firstname": "Vasumitha",
+        "lastname": "Subburaj",
+        "age": 28,
+        "gender": "Male",
+        "height": 180,
+        "weight": 68,
+        "targetweight": 0.25,
+        "choice": "Weight Loss",
+        "username": "Vasu",
+        "password": "Vasu@123",
+        "confirmpassword": "Vasu@123",
+        "role": [
+          "user"
+        ]
+      };
 
-  //     component.Data.setValue(sampleuserdata);
-  //     spyOn(userservice,'addUser');
-  //     spyOn(router,'navigate');   
-  //     component.onsubmit()
-  //      expect(component.invalidform).toBeFalse();
-  //      expect(userservice.addUser).toHaveBeenCalledWith(component.Data.value);
-  //      expect(console.log).toHaveBeenCalledWith(`User Details added successfully`);
-  //      expect(router.navigate).toHaveBeenCalledWith(['/login'])
-  //  })
+      component.Data.setValue(sampleuserdata);
+      spyOn(userservice,'addUser');
+      spyOn(router,'navigate');   
+      component.onsubmit()
+       expect(component.invalidform).toBeFalse();
+       expect(userservice.addUser).toHaveBeenCalledWith(component.Data.value);
+       expect(console.log).toHaveBeenCalledWith(`User Details added successfully`);
+       expect(router.navigate).toHaveBeenCalledWith(['/login'])
+   })
 });
