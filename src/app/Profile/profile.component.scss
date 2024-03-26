@@ -22,7 +22,8 @@ form {
   justify-content: center;
 }
 
-input,select {
+input,
+select {
   display: block;
   background-color: transparent;
   color: white;
@@ -41,7 +42,8 @@ input,select {
   text-align: center;
 }
 
-input:focus,select:focus {
+input:focus,
+select:focus {
   background-color: transparent;
   color: white;
 }
@@ -52,28 +54,24 @@ label {
   color: white;
 }
 
-button{
+button {
   background-color: grey;
   font-size: larger;
   padding: 10px 10px;
-  color:white;
+  color: white;
   border-radius: 4px;
-
 }
-button:hover{
+button:hover {
   background-color: rgb(107, 102, 102);
   border: 2px solid grey;
 }
 
-div{
-  color:red;
+div {
+  color: red;
   text-align: left;
   font-size: large;
 }
 
-
-option{
+option {
   background-color: transparent;
-
 }
-

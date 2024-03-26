@@ -2,10 +2,9 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../services/user.service';
 import { PasswordMatchValidation } from '../shared/passwordCheck.directive';
-import { ToastrService } from 'ngx-toastr';
-
 
 @Component({
   selector: 'app-register',
@@ -24,7 +23,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private userService: UserService,
     private userData: FormBuilder,
-    private toastr:ToastrService
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {

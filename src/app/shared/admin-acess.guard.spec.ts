@@ -4,8 +4,8 @@ import { CanActivateFn } from '@angular/router';
 import { adminAcessGuard } from './admin-acess.guard';
 
 describe('adminAcessGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => adminAcessGuard(...guardParameters));
+  const executeGuard: CanActivateFn = (...guardParameters) =>
+    TestBed.runInInjectionContext(() => adminAcessGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
@@ -14,5 +14,4 @@ describe('adminAcessGuard', () => {
   it('should be created', () => {
     expect(executeGuard).toBeTruthy();
   });
-
 });

@@ -8,9 +8,9 @@
       "gender": "Female",
       "height": 150,
       "weight": 38,
-      "targetweight": 0.75,
-      "choice": "Weight Gain",
-      "username": "Shree",
+      "targetweight": 0.5,
+      "choice": "Weight Loss",
+      "username": "Janu",
       "password": "Janu@123",
       "confirmpassword": "Janu@123",
       "role": [
@@ -23,7 +23,7 @@
       "firstname": "Vinu",
       "lastname": "Dharshini",
       "age": 24,
-      "gender": "Male",
+      "gender": "Female",
       "height": 169,
       "weight": 41,
       "targetweight": 1,
@@ -337,6 +337,23 @@
       "username": "dfvh",
       "password": "12345678",
       "confirmpassword": "12345678",
+      "role": [
+        "user"
+      ]
+    },
+    {
+      "id": "5be1",
+      "firstname": "Banu",
+      "lastname": "Nandha",
+      "age": 26,
+      "gender": "Female",
+      "height": 158,
+      "weight": 39,
+      "targetweight": 0.75,
+      "choice": "Weight Gain",
+      "username": "Banu",
+      "password": "Banu@123",
+      "confirmpassword": "Banu@123",
       "role": [
         "user"
       ]
@@ -789,6 +806,21 @@
       "calorie": 180,
       "img": "/assets/idly.jpeg",
       "id": "74df"
+    },
+    {
+      "category": [
+        "lunch"
+      ],
+      "food": "Egg Fried Rice",
+      "quantity": 200,
+      "foodunit": "g",
+      "sidedish": [
+        "Mushroom Manchurian"
+      ],
+      "sidedishquantity": 50,
+      "sidedishunit": "g",
+      "calorie": 300,
+      "id": "8eef"
     }
   ]
 }

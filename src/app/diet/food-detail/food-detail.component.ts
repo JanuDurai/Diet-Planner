@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 import { DietService } from 'src/app/services/diet.service';
 import { AddFoodComponent } from '../add-food/add-food.component';
-import { EditFoodComponent } from '../edit-food/edit-food.component';
 import { DeleteFoodComponent } from '../delete-food/delete-food.component';
+import { EditFoodComponent } from '../edit-food/edit-food.component';
 
 @Component({
   selector: 'app-food-detail',
@@ -17,7 +18,8 @@ export class FoodDetailComponent implements OnInit {
 
   constructor(
     private dietservice: DietService,
-    private modelService: NgbModal
+    private modelService: NgbModal,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -36,6 +38,7 @@ export class FoodDetailComponent implements OnInit {
       this.dietservice.addFoodDetails(result).subscribe(() => {
         console.log(`Food Details are added successfully`);
         this.getfoodData();
+        this.toastr.success(`Added Successfully`);
       });
     });
   }
@@ -50,6 +53,7 @@ export class FoodDetailComponent implements OnInit {
       this.dietservice.updateFoodData(this.id, result).subscribe(() => {
         console.log(`Food data updated successfully`);
         this.getfoodData();
+        this.toastr.success(`Updated Successfully`);
       });
     });
   }
@@ -62,6 +66,7 @@ export class FoodDetailComponent implements OnInit {
       this.dietservice.deleteFoodItem(itemId).subscribe(() => {
         console.log(`Food Item Deleted successfully`);
         this.getfoodData();
+        this.toastr.success(`Deleted Successfully`);
       });
     });
   }

@@ -6,11 +6,27 @@ import { LoginComponent } from './Login/login.component';
 import { ProfileComponent } from './Profile/profile.component';
 import { RegisterComponent } from './Register/register.component';
 import { loggedInProfileGuard } from './shared/logged-in-profile.guard';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent,canActivate:[loggedInProfileGuard]  },
-  { path: 'profile', component: ProfileComponent,canActivate:[loggedInProfileGuard]  },
-  { path: 'login', component: LoginComponent,canActivate:[loggedInProfileGuard] },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [loggedInProfileGuard],
+    title: 'Home Page',
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [loggedInProfileGuard],
+    title: 'Profile Page',
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [loggedInProfileGuard],
+    title: 'Login Page',
+  },
   {
     path: 'diet',
     loadChildren: () => import('./diet/diet.module').then((m) => m.DietModule),
@@ -21,14 +37,13 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent,
-        canActivate:[loggedInProfileGuard]
+        canActivate: [loggedInProfileGuard],
+        title: 'Register Page',
       },
     ],
   },
-  { path: '', redirectTo:'login', pathMatch:'full'}
-  // { path: '', component:LoginComponent,canActivate:[loggedInProfileGuard]},
-  // {path:'',redirectTo:'home',pathMatch:'full'}
-
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {path:'**', component:PagenotfoundComponent, title:'Page Not Found'}
 ];
 
 @NgModule({

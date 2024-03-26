@@ -57,7 +57,7 @@ describe('DietService', () => {
   });
 
   it('should add food data to json', () => {
-   const foodData = {
+    const foodData = {
       category: ['breakfast', 'dinner'],
       food: 'Chappathi',
       quantity: 1,
@@ -78,7 +78,7 @@ describe('DietService', () => {
     expect(result.request.method).toBe('POST');
   });
 
-   it('should update food data in json',()=>{
+  it('should update food data in json', () => {
     const foodData = {
       category: ['breakfast', 'dinner'],
       food: 'Chappathi',
@@ -91,23 +91,20 @@ describe('DietService', () => {
       img: '/assets/chapathi.jpg',
       id: 'ad1c',
     };
-    const id=foodData.id;
-     service.updateFoodData(id,foodData).subscribe((data)=>{
-        expect(data).toBeTruthy();
-     })
-     const result = httpMock.expectOne('http://localhost:3000/diet/'+ id);
-     expect(result.request.method).toBe('PUT');
-   })
+    const id = foodData.id;
+    service.updateFoodData(id, foodData).subscribe((data) => {
+      expect(data).toBeTruthy();
+    });
+    const result = httpMock.expectOne('http://localhost:3000/diet/' + id);
+    expect(result.request.method).toBe('PUT');
+  });
 
-
-   it('should delete food item in json',()=>{
-    const id="123";
-      service.deleteFoodItem(id).subscribe((data)=>{
-          expect(data).toBeTruthy();
-      })
-      const result=httpMock.expectOne('http://localhost:3000/diet/'+ id);
-      expect(result.request.method).toBe('DELETE')
-   })
-
-
+  it('should delete food item in json', () => {
+    const id = '123';
+    service.deleteFoodItem(id).subscribe((data) => {
+      expect(data).toBeTruthy();
+    });
+    const result = httpMock.expectOne('http://localhost:3000/diet/' + id);
+    expect(result.request.method).toBe('DELETE');
+  });
 });

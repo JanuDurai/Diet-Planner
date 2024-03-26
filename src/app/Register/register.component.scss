@@ -4,17 +4,17 @@ input:focus,select:focus {
   background-color: transparent;
   color: white;
   margin: 15px 5px;
+font-size: x-large;
 }
 input::placeholder {
   color: white;
-  font-size:large;
 }
 
 form {
   display: inline-block;
   border-radius: 6px;
   background-color: transparent;
-  backdrop-filter: brightness(80%);
+  backdrop-filter: brightness(60%);
   margin-top: 40px;
 }
 #newline {

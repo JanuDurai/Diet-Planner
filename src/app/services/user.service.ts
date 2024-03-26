@@ -35,15 +35,14 @@ export class UserService {
     return this.httpReq.get(this.userUrl + '?username=' + username);
   }
 
-  public getUserName(){
+  public getUserName() {
     return sessionStorage.getItem('username')?.toString();
   }
 
   public updateUserDetails(id: string, userData: any) {
     this.deleteUserName();
-    this.setUserName(userData.value.username)
+    this.setUserName(userData.value.username);
     return this.httpReq.put(`${this.userUrl}/${id}`, userData.value);
-
   }
 
   public updateLoginStatus() {
@@ -53,8 +52,8 @@ export class UserService {
       this.loginStatus.next(true);
       this.getUserDetail(username).subscribe((value: any) => {
         value[0].role.join('') == 'useradmin'
-          ? this.adminAcess = true
-          : this.adminAcess = false;
+          ? (this.adminAcess = true)
+          : (this.adminAcess = false);
       });
     }
   }
@@ -62,5 +61,4 @@ export class UserService {
   public isloggedIn() {
     return this.loginStatus.getValue() == true ? true : false;
   }
-  
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { adminAcessGuard } from '../shared/admin-acess.guard';
 import { loggedInProfileGuard } from '../shared/logged-in-profile.guard';
+
 import { FoodPlanComponent } from './Food-plan/food-plan.component';
 import { FoodDetailComponent } from './food-detail/food-detail.component';
 
@@ -13,8 +14,7 @@ const routes: Routes = [
         path: 'plan',
         component: FoodPlanComponent,
         canActivate: [loggedInProfileGuard],
-        title:'Diet Page'
-
+        title: 'Diet Page',
       },
       { path: '', redirectTo: 'plan', pathMatch: 'full' },
     ],
@@ -23,8 +23,7 @@ const routes: Routes = [
     path: 'fooddetails',
     component: FoodDetailComponent,
     canActivate: [adminAcessGuard],
-    title:'FoodDetails Page'
-
+    title: 'Admin Page',
   },
 ];
 

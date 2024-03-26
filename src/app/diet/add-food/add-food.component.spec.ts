@@ -12,8 +12,8 @@ describe('AddFoodComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [AddFoodComponent],
-      imports:[ReactiveFormsModule],
-      providers:[NgbActiveModal]
+      imports: [ReactiveFormsModule],
+      providers: [NgbActiveModal],
     });
     fixture = TestBed.createComponent(AddFoodComponent);
     component = fixture.componentInstance;
@@ -23,11 +23,9 @@ describe('AddFoodComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
-  it('should button disable',()=>{
-      component.buttonDisable();
-      expect(component.buttonAble).toBeFalse();
-  })
 
-
+  it('should button disable', () => {
+    component.buttonDisable();
+    expect(component.buttonAble).toBeFalse();
+  });
 });

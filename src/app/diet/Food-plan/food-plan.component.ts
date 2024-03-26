@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./food-plan.component.scss'],
 })
 export class FoodPlanComponent implements OnInit {
-  public foodData:any;
+  public foodData: any;
   public foodCategory = [
     {
       label: 'BREAKFAST',
@@ -33,19 +33,18 @@ export class FoodPlanComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-  this.getData();
-}
+    this.getData();
+  }
 
-public getData(){
-  this.username = this.userService.getUserName();
-  this.userService.getUserDetail(this.username).subscribe((data) => {
-    this.userDetail = data;
-    this.dietUser
-      .calculateDailyCalorie(this.userDetail)
-      .subscribe((value) => {
-        this.foodData = value;
-      });
-  });
-}
-
+  public getData() {
+    this.username = this.userService.getUserName();
+    this.userService.getUserDetail(this.username).subscribe((data) => {
+      this.userDetail = data;
+      this.dietUser
+        .calculateDailyCalorie(this.userDetail)
+        .subscribe((value) => {
+          this.foodData = value;
+        });
+    });
+  }
 }

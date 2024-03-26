@@ -15,8 +15,7 @@ export class EditFoodComponent implements OnInit {
   public foodData: any;
   public editData: any;
   public categories = ['breakfast', 'dinner', 'lunch'];
-  public buttondisable=false;
-
+  public buttondisable = false;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -29,32 +28,44 @@ export class EditFoodComponent implements OnInit {
         this.foodData = value;
         console.log(`Food data received from server`);
         this.editData = this.formbuilder.group({
-          category: ['',[Validators.required]],
-          food: ['',[Validators.required,Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
-          quantity: ['',[Validators.required,Validators.min(1)]],
-          foodunit: ['',[Validators.required,Validators.pattern(/^[a-z]+$/)]],
-          sidedish: ['',[Validators.required,Validators.pattern(/^[a-zA-Z ]+(?:,[a-zA-Z ]+)*$/)]],
-          sidedishquantity: ['',[Validators.required,Validators.min(1)]],
-          sidedishunit: ['',[Validators.required,Validators.pattern(/^[a-z]+$/)]],
-          calorie: ['',[Validators.required,Validators.min(1)]],  
+          category: ['', [Validators.required]],
+          food: [
+            '',
+            [
+              Validators.required,
+              Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/),
+            ],
+          ],
+          quantity: ['', [Validators.required, Validators.min(1)]],
+          foodunit: ['', [Validators.required, Validators.pattern(/^[a-z]+$/)]],
+          sidedish: [
+            '',
+            [
+              Validators.required,
+              Validators.pattern(/^[a-zA-Z ]+(?:,[a-zA-Z ]+)*$/),
+            ],
+          ],
+          sidedishquantity: ['', [Validators.required, Validators.min(1)]],
+          sidedishunit: [
+            '',
+            [Validators.required, Validators.pattern(/^[a-z]+$/)],
+          ],
+          calorie: ['', [Validators.required, Validators.min(1)]],
         });
         this.editData.patchValue(this.foodData[0]);
       },
     });
   }
-  
+
   public editFoodData() {
-    if(this.editData.valid)
-    {
-    this.activeModal.close(this.editData.value);
-    }
-    else{
-      this.buttondisable= true;
+    if (this.editData.valid) {
+      this.activeModal.close(this.editData.value);
+    } else {
+      this.buttondisable = true;
     }
   }
 
-  submitButtonAble(){
-    this.buttondisable=false;
+  submitButtonAble() {
+    this.buttondisable = false;
   }
-  
 }

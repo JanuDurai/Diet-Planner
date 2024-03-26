@@ -1,6 +1,6 @@
 <div class="background">
   <div id="Addnew">
-    <h2 id="newline">Food Details </h2>
+    <h2 id="newline">Food Details</h2>
     <button
       type="button"
       class="btn btn-secondary btn-lg"
@@ -25,7 +25,9 @@
       <tbody>
         <tr *ngFor="let fooditem of foodDetails">
           <td>{{ fooditem.food }}</td>
-          <td><img [src]="fooditem.img" id="foodimage" [alt]="fooditem.food" /></td>
+          <td>
+            <img [src]="fooditem.img" id="foodimage" [alt]="fooditem.food" />
+          </td>
           <td>{{ fooditem.category }}</td>
           <td>{{ fooditem.quantity }}{{ fooditem.foodunit }}</td>
           <td>{{ fooditem.sidedish }}</td>

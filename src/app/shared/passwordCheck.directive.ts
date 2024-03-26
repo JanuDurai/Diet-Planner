@@ -21,6 +21,4 @@ export const PasswordMatchValidation: ValidatorFn = (
     confirmpassword.setErrors(null);
     return null;
   }
-  
 };
-

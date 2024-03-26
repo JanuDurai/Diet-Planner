@@ -21,8 +21,8 @@ describe('FooterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should be same text', () => {
-  //   const compile = fixture.nativeElement as HTMLElement;
-  //   expect(compile.querySelector('pre')?.textContent).toContain('Privacy Policy   o   Sitemap   o   Accessblity   o   Support   o   @Copyrights 2024 ');
-  // });
+  it('should be same text', () => {
+    const compile = fixture.nativeElement as HTMLElement;
+    expect(compile.querySelector('pre')?.textContent).toContain('Privacy Policy   o   Sitemap   o   Accessblity   o   Support   o   Copyrights 2024 ');
+  });
 });

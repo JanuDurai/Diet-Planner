@@ -12,7 +12,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <form [formGroup]="addNewData" (input)="buttonDisable()" >
+    <form [formGroup]="addNewData" (input)="buttonDisable()">
       <p *ngIf="buttonAble">*Enter Valid Details</p>
       <div class="row">
         <label class="categoryAlign">Category</label>
@@ -21,7 +21,6 @@
           id=" "
           class="form-select form-select-lg mb-3 border border-black"
           multiple
-         
         >
           <option
             *ngFor="let item of category"
@@ -38,22 +37,19 @@
               addNewData.get('category')?.touched)
           "
         >
-          <div
-            *ngIf="addNewData.get('category')?.errors?.['required']"
-          
-          >
+          <div *ngIf="addNewData.get('category')?.errors?.['required']">
             *Category must be given
           </div>
         </div>
       </div>
       <br />
+
       <div class="row">
         <input
           type="text"
           formControlName="food"
           class="form-control form-control-lg border border-black"
           placeholder="Food"
-         
         />
         <div
           *ngIf="
@@ -61,16 +57,10 @@
             (addNewData.get('food')?.dirty || addNewData.get('food')?.touched)
           "
         >
-          <div
-            *ngIf="addNewData.get('food')?.errors?.['required']"
-        
-          >
+          <div *ngIf="addNewData.get('food')?.errors?.['required']">
             *Food must be given
           </div>
-          <div
-            *ngIf="addNewData.get('food')?.errors?.['pattern']"
-            
-          >
+          <div *ngIf="addNewData.get('food')?.errors?.['pattern']">
             *Valid Food Name must be given
           </div>
         </div>
@@ -92,15 +82,10 @@
               addNewData.get('quantity')?.touched)
           "
         >
-          <div
-            *ngIf="addNewData.get('quantity')?.errors?.['required']"
-        
-          >
+          <div *ngIf="addNewData.get('quantity')?.errors?.['required']">
             *Food Quantity must be given
           </div>
-          <div
-            *ngIf="addNewData.get('quantity')?.errors?.['min']"
-          >
+          <div *ngIf="addNewData.get('quantity')?.errors?.['min']">
             * Valid Food Quantity should be given
           </div>
         </div>
@@ -122,16 +107,10 @@
               addNewData.get('foodunit')?.touched)
           "
         >
-          <div
-            *ngIf="addNewData.get('foodunit')?.errors?.['required']"
-            
-          >
+          <div *ngIf="addNewData.get('foodunit')?.errors?.['required']">
             *Food Quantity Unit must be given
           </div>
-          <div
-            *ngIf="addNewData.get('foodunit').hasError('pattern')"
-            
-          >
+          <div *ngIf="addNewData.get('foodunit').hasError('pattern')">
             *Food Quantity Unit must be in lowercase
           </div>
         </div>
@@ -144,7 +123,7 @@
           type="text"
           formControlName="sidedish"
           class="form-control form-control-lg border border-black"
-          placeholder="Combo" 
+          placeholder="Combo"
         />
         <div
           *ngIf="
@@ -153,14 +132,11 @@
               addNewData.get('sidedish')?.touched)
           "
         >
-          <div
-            *ngIf="addNewData.get('sidedish')?.errors?.['required']"
-            
-          >
+          <div *ngIf="addNewData.get('sidedish')?.errors?.['required']">
             *Combo must be given
           </div>
-          <div *ngIf="addNewData.get('sidedish').hasError('pattern')"> *Valid Combo must be given
-
+          <div *ngIf="addNewData.get('sidedish').hasError('pattern')">
+            *Valid Combo should be given
           </div>
         </div>
       </div>
@@ -182,16 +158,10 @@
               addNewData.get('sidedishquantity')?.touched)
           "
         >
-          <div
-            *ngIf="addNewData.get('sidedishquantity')?.errors?.['required']"
-            
-          >
+          <div *ngIf="addNewData.get('sidedishquantity')?.errors?.['required']">
             *Combo Quantity must be given
           </div>
-          <div
-            *ngIf="addNewData.get('sidedishquantity')?.errors?.['min']"
-           
-          >
+          <div *ngIf="addNewData.get('sidedishquantity')?.errors?.['min']">
             *Valid Combo Quantity should be given
           </div>
         </div>
@@ -204,7 +174,6 @@
           formControlName="sidedishunit"
           class="form-control form-control-lg border border-black"
           placeholder="Combo Quantity Unit"
-     
         />
         <div
           *ngIf="
@@ -213,15 +182,10 @@
               addNewData.get('sidedishunit')?.touched)
           "
         >
-          <div
-            *ngIf="addNewData.get('sidedishunit')?.errors?.['required']"
-      
-          >
+          <div *ngIf="addNewData.get('sidedishunit')?.errors?.['required']">
             *Combo Quantity Unit must be given
           </div>
-          <div
-            *ngIf="addNewData.get('sidedishunit')?.errors?.['pattern']"
-          >
+          <div *ngIf="addNewData.get('sidedishunit')?.errors?.['pattern']">
             *Combo Quantity Unit must be in lowercase
           </div>
         </div>
@@ -234,6 +198,7 @@
           formControlName="calorie"
           class="form-control form-control-lg border border-black"
           placeholder="Calorie"
+          min="1"
         />
         <div
           *ngIf="
@@ -242,10 +207,11 @@
               addNewData.get('calorie')?.touched)
           "
         >
-          <div
-            *ngIf="addNewData.get('calorie')?.errors?.['required']"
-          >
+          <div *ngIf="addNewData.get('calorie')?.errors?.['required']">
             *Calorie must be given
+          </div>
+          <div *ngIf="addNewData.get('calorie')?.errors?.['min']">
+            *Valid Calorie should be given
           </div>
         </div>
       </div>
@@ -254,7 +220,7 @@
   </div>
   <div class="modal-footer">
     <button
-      class="btn btn-secondary btn-lg "
+      class="btn btn-secondary btn-lg"
       (click)="dataTransfer()"
       [disabled]="buttonAble"
     >

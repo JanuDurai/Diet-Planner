@@ -8,9 +8,7 @@ import { fooddetailInterface } from '../shared/fooddetailInterface';
 @Injectable({
   providedIn: 'root',
 })
-
 export class DietService {
-  
   private dietUrl = jsonDataUrl.diet;
 
   constructor(private httpReq: HttpClient) {}
@@ -35,8 +33,7 @@ export class DietService {
     return this.httpReq.delete(`${this.dietUrl}/${id}`);
   }
 
-  public calculateDailyCalorie(userData:any): Observable<any> {
-
+  public calculateDailyCalorie(userData: any): Observable<any> {
     let BMR!: number;
     const reduceCalorie = userData[0].targetweight * 1100;
     let reduceWeight: number;
@@ -55,7 +52,7 @@ export class DietService {
         4.676 * userData[0].age;
     }
 
-      const  MaintanenceCalorie = BMR * 1.55;
+    const MaintanenceCalorie = BMR * 1.55;
     if (userData[0].choice === 'Weight Loss')
       reduceWeight = MaintanenceCalorie - reduceCalorie;
     else if (userData[0].choice === 'Weight Gain')
@@ -78,8 +75,10 @@ export class DietService {
     );
   }
 
-  public getDataOnCategory(category: string, foodCalorie: number): Observable<any> {
-
+  public getDataOnCategory(
+    category: string,
+    foodCalorie: number
+  ): Observable<any> {
     return this.httpReq.get(this.dietUrl).pipe(
       map((data: any) => {
         const DietData = data;
@@ -97,7 +96,7 @@ export class DietService {
         const foodItem = categoryFoodItems[randnumber];
 
         let itemquantity: string | number = foodCalorie / foodItem.calorie;
-        if (foodItem.foodunit == 'g' || foodItem.foodunit=='ml') {
+        if (foodItem.foodunit == 'g' || foodItem.foodunit == 'ml') {
           itemquantity = (foodItem.quantity * itemquantity).toFixed(0);
         } else {
           itemquantity = itemquantity.toFixed(0);
@@ -111,7 +110,7 @@ export class DietService {
         } else if (foodItem.sidedishunit == 'piece') {
           sidedishquantity = sidedishquantity.toFixed(0);
         }
-        
+
         const food = {
           foodData: foodItem,
           itemquantity: itemquantity,

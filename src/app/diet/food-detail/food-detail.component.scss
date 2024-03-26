@@ -3,7 +3,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  
 }
 
 #newline {
@@ -15,7 +14,6 @@
   padding-left: 800px;
   padding-right: 500px;
   display: inline-block;
-  
 }
 
 table,
@@ -23,9 +21,9 @@ th,
 td {
   table-layout: fixed;
   border: 2px solid #000000;
-  margin-top:100px ;
-  margin-right:  350px;
-  margin-left:  350px;
+  margin-top: 100px;
+  margin-right: 350px;
+  margin-left: 350px;
   padding: 2px 2px;
   text-align: center;
 }
@@ -59,19 +57,18 @@ th {
   border: 1px solid white;
 }
 
-button:active{
+button:active {
   background-color: transparent;
-    border: 3px solid white;
-    font-size: larger;
+  border: 3px solid white;
+  font-size: larger;
 }
 
 button {
   background-color: transparent;
   font-size: large;
-  border: 2px solid white
+  border: 2px solid white;
 }
-button:hover{
+button:hover {
   background-color: transparent;
   border: 2px solid white;
-  
 }

@@ -5,8 +5,6 @@ import { UserService } from '../services/user.service';
 import { PasswordMatchValidation } from '../shared/passwordCheck.directive';
 import { ToastrService } from 'ngx-toastr';
 
-
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -16,17 +14,17 @@ export class ProfileComponent implements OnInit {
   public userDetails: any;
   public userData: FormGroup;
   private username: any;
-  public gender = ['Male', 'Female'];
-  public choice = ['Weight Loss', 'Weight Gain', 'Weight Maintain'];
-  public targetweightRange = [0.25,0.5,0.75,1]
   public targetweightinrange: number;
   public userDetailstatus: boolean = false;
-  public confirmpasswordvisible:boolean=false;
+  public confirmpasswordvisible: boolean = false;
+  public gender = ['Male', 'Female'];
+  public choice = ['Weight Loss', 'Weight Gain', 'Weight Maintain'];
+  public targetweightRange = [0.25, 0.5, 0.75, 1];
 
   constructor(
     private userservice: UserService,
     private ProfileData: FormBuilder,
-    private updatetoast:ToastrService
+    private updatetoast: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -44,7 +42,7 @@ export class ProfileComponent implements OnInit {
                 Validators.required,
                 Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*$/),
                 Validators.minLength(3),
-                Validators.maxLength(20)
+                Validators.maxLength(20),
               ],
             ],
             lastname: [
@@ -53,7 +51,7 @@ export class ProfileComponent implements OnInit {
                 Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*$/),
                 Validators.required,
                 Validators.minLength(3),
-                Validators.maxLength(20)
+                Validators.maxLength(20),
               ],
             ],
             age: [
@@ -82,12 +80,7 @@ export class ProfileComponent implements OnInit {
                 Validators.minLength(8),
               ],
             ],
-            confirmpassword: [
-              '',
-              [
-                Validators.pattern(/^[A-za-z0-9@#$%]+$/),
-              ],
-            ],
+            confirmpassword: ['', [Validators.pattern(/^[A-za-z0-9@#$%]+$/)]],
             role: [''],
           },
           { validators: PasswordMatchValidation }
@@ -101,18 +94,17 @@ export class ProfileComponent implements OnInit {
   public updateChanges() {
     if (this.userData.valid) {
       if (this.userData.value.choice === 'Weight Maintain')
-          this.userData.get('targetweight')?.setValue(0);
+        this.userData.get('targetweight')?.setValue(0);
       else
-           this.userData.value.targetweight=   parseFloat(this.userData.value.targetweight)
-      
-        console.log(`...............`,this.userData.value.targetweight);
-        this.userservice
+        this.userData.value.targetweight = parseFloat(
+          this.userData.value.targetweight
+        );
+      this.userservice
         .updateUserDetails(this.userData.value.id, this.userData)
         .subscribe(() => {
           console.log(`Successfully updated`);
-          this.confirmpasswordvisible=false;
-
-          this.updatetoast.success("Updated successfully");
+          this.confirmpasswordvisible = false;
+          this.updatetoast.success('Updated successfully');
         });
     } else {
       this.userDetailstatus = true;
@@ -120,7 +112,7 @@ export class ProfileComponent implements OnInit {
   }
 
   confirmpassworInputDisplay() {
-    this.confirmpasswordvisible=true;
+    this.confirmpasswordvisible = true;
     this.userData.get('confirmpassword')?.setValue('');
   }
 

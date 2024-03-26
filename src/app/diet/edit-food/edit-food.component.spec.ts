@@ -9,17 +9,17 @@ import { of } from 'rxjs';
 describe('EditFoodComponent', () => {
   let component: EditFoodComponent;
   let fixture: ComponentFixture<EditFoodComponent>;
-  let dietservice:DietService;
+  let dietservice: DietService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [EditFoodComponent],
       imports: [HttpClientTestingModule],
-      providers: [NgbActiveModal,DietService],
+      providers: [NgbActiveModal, DietService],
     });
     fixture = TestBed.createComponent(EditFoodComponent);
     component = fixture.componentInstance;
-    dietservice=TestBed.inject(DietService);
+    dietservice = TestBed.inject(DietService);
     fixture.detectChanges();
   });
 
@@ -32,7 +32,7 @@ describe('EditFoodComponent', () => {
     expect(component.buttondisable).toBeFalse();
   });
 
-  it('should initialize editData in ngOnInit',()=>{
+  it('should initialize editData in ngOnInit', () => {
     const sampledata = {
       category: ['lunch'],
       food: 'White rice',
@@ -43,19 +43,17 @@ describe('EditFoodComponent', () => {
       sidedishunit: 'g',
       calorie: 252,
       img: '/assets/whiterice.jpeg',
-      id:"h14"
+      id: 'h14',
     };
 
-    spyOn(dietservice,'getFoodData')
-    dietservice.getFoodData.arguments
-    .returnValue(of([sampledata])); 
-    
+    spyOn(dietservice, 'getFoodData');
+    dietservice.getFoodData.arguments.returnValue(of([sampledata]));
+
     component.ngOnInit();
-   
+
     expect(dietservice.getFoodData).toHaveBeenCalledWith(sampledata.id);
     expect(component.foodData).toEqual([sampledata]);
     expect(component.editData).toBeDefined();
-
   });
 
   it('should close active modal if food data is valid', () => {
@@ -70,9 +68,8 @@ describe('EditFoodComponent', () => {
       calorie: 252,
       img: '/assets/whiterice.jpeg',
     };
-    // spyOn(component.activeModal, 'close');
-    // // expect(editData).toBeTrue();
-    // component.editData.valid = true;
-    // expect(component.activeModal.close).toHaveBeenCalledWith(sampledata);
+    spyOn(component.activeModal, 'close');
+    component.editData.valid = true;
+    expect(component.activeModal.close).toHaveBeenCalledWith(sampledata);
   });
 });

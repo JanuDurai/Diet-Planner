@@ -9,8 +9,7 @@ describe('FoodPlanComponent', () => {
   let component: FoodPlanComponent;
   let fixture: ComponentFixture<FoodPlanComponent>;
   let userservice: UserService;
-  let httpMock : HttpTestingController;
-  
+  let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -22,9 +21,8 @@ describe('FoodPlanComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     userservice = TestBed.inject(UserService);
-    httpMock =TestBed.inject(HttpTestingController);
+    httpMock = TestBed.inject(HttpTestingController);
   });
-
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -37,15 +35,12 @@ describe('FoodPlanComponent', () => {
   });
 
   it('should get food data', () => {
-     const username="Janu";
+    const username = 'Janu';
     spyOn(userservice, 'getUserName');
     component.getData();
     expect(userservice.getUserName).toHaveBeenCalled();
-    userservice.getUserDetail(username).subscribe((data)=>{
-    expect(data).toBeTruthy();   
+    userservice.getUserDetail(username).subscribe((data) => {
+      expect(data).toBeTruthy();
     });
+  });
 });
-
-});
-
-

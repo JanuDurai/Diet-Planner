@@ -11,8 +11,7 @@ export class AddFoodComponent implements OnInit {
   public addNewData: any;
   public category = ['breakfast', 'dinner', 'lunch'];
   public buttonAble = false;
-  private sidedishArray: any;
-  
+  private sidedishArray: Array<string>;
 
   constructor(
     private formbuilder: FormBuilder,
@@ -26,11 +25,8 @@ export class AddFoodComponent implements OnInit {
         '',
         [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)],
       ],
-      quantity: ['', [Validators.required,Validators.min(1)]],
-      foodunit: [
-        '',
-        [Validators.required, Validators.pattern(/^[a-z]+$/)],
-      ],
+      quantity: ['', [Validators.required, Validators.min(1)]],
+      foodunit: ['', [Validators.required, Validators.pattern(/^[a-z]+$/)]],
       sidedish: [
         '',
         [
@@ -38,20 +34,17 @@ export class AddFoodComponent implements OnInit {
           Validators.pattern(/^[a-zA-Z ]+(?:,[a-zA-Z ]+)*$/),
         ],
       ],
-      sidedishquantity: ['', [Validators.required,Validators.min(1)]],
-      sidedishunit: [
-        '',
-        [Validators.required, Validators.pattern(/^[a-z]+$/)],
-      ],
-      calorie: ['', [Validators.required,Validators.min(1)]],
+      sidedishquantity: ['', [Validators.required, Validators.min(1)]],
+      sidedishunit: ['', [Validators.required, Validators.pattern(/^[a-z]+$/)]],
+      calorie: ['', [Validators.required, Validators.min(1)]],
     });
   }
 
   public dataTransfer() {
     if (this.addNewData.invalid) this.buttonAble = true;
-    else {   
-       [...this.sidedishArray] = this.addNewData.value.sidedish.split(',');
-       this.addNewData.value.sidedish=this.sidedishArray;
+    else {
+      [...this.sidedishArray] = this.addNewData.value.sidedish.split(',');
+      this.addNewData.value.sidedish = this.sidedishArray;
       this.activeModal.close(this.addNewData.value);
     }
   }

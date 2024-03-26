@@ -14,6 +14,7 @@ import { DietService } from './services/diet.service';
 import { UserService } from './services/user.service';
 import { SharedModule } from './shared/shared.module';
 import { ToastNoAnimationModule } from 'ngx-toastr';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ToastNoAnimationModule } from 'ngx-toastr';
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
+    PagenotfoundComponent,
   ],
   imports: [
     BrowserModule,

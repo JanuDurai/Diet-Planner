@@ -8,7 +8,7 @@ describe('HomeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent]
+      declarations: [HomeComponent],
     });
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
@@ -19,14 +19,13 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render a text',()=>{
-
-    const compile=fixture.nativeElement as HTMLElement;
-    expect(compile.querySelector('h3')?.textContent).toContain('A HEALTHY')
+  it('should render a text', () => {
+    const compile = fixture.nativeElement as HTMLElement;
+    expect(compile.querySelector('h3')?.textContent).toContain('A HEALTHY');
   });
-  
-  it('should render a text',()=>{
-    const compile=fixture.nativeElement as HTMLElement;
-    expect(compile.querySelector('h1')?.textContent).toContain('OUTSIDE')
+
+  it('should render a text', () => {
+    const compile = fixture.nativeElement as HTMLElement;
+    expect(compile.querySelector('h1')?.textContent).toContain('OUTSIDE');
   });
 });

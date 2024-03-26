@@ -5,20 +5,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { UserService } from '../services/user.service';
 
-
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  let userservice:UserService;
+  let userservice: UserService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [LoginComponent],
-      imports:[ReactiveFormsModule,HttpClientTestingModule]
+      imports: [ReactiveFormsModule, HttpClientTestingModule],
     });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
-    userservice=TestBed.inject(UserService);
+    userservice = TestBed.inject(UserService);
     fixture.detectChanges();
   });
 
@@ -26,13 +25,8 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
-  it('should set loginvalid to false when user reenters password',()=>{
-        component.reenterPasswordError();
-        expect(component.loginvalid).toBeFalse();
-  })
-
-  
-
-  
+  it('should set loginvalid to false when user reenters password', () => {
+    component.reenterPasswordError();
+    expect(component.loginvalid).toBeFalse();
+  });
 });

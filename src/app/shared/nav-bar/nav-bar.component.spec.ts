@@ -1,19 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavBarComponent } from './nav-bar.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
+import { NavBarComponent } from './nav-bar.component';
 
 describe('NavBarComponent', () => {
   let component: NavBarComponent;
   let fixture: ComponentFixture<NavBarComponent>;
-  let userservice: UserService
+  let userservice: UserService;
   let router: Router;
 
   beforeEach(() => {
-
     TestBed.configureTestingModule({
       declarations: [NavBarComponent],
       imports: [HttpClientTestingModule],
@@ -31,11 +29,11 @@ describe('NavBarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call update login status method on initialisation',()=>{
-    spyOn(userservice,'updateLoginStatus');
+  it('should call update login status method on initialisation', () => {
+    spyOn(userservice, 'updateLoginStatus');
     component.ngOnInit();
     expect(userservice.updateLoginStatus).toBeTruthy();
-  })
+  });
 
   it('should user logout', () => {
     spyOn(userservice, 'deleteUserName');
@@ -46,6 +44,4 @@ describe('NavBarComponent', () => {
     expect(userservice.updateLoginStatus).toHaveBeenCalled();
     expect(router.navigate).toHaveBeenCalledWith(['/login']);
   });
-
 });
-
